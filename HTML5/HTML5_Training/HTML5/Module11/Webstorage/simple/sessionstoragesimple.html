@@ -1,0 +1,26 @@
+<!doctype html>
+<head>
+    <title>HTML5 Session Storage Demo</title>
+</head>
+<body>
+    <header>
+        <h1>HTML5 Session Storage Demo</h1>
+    </header>
+
+
+        <p>You Have Viewed This Page <b>
+        <script>
+            if (!sessionStorage.pg)
+                sessionStorage.setItem('pg',0);
+            sessionStorage.setItem('pg',parseInt(sessionStorage.pg)+1);
+            document.write(sessionStorage.pg);
+        </script>
+        </b> Time(s).</p>
+
+        <p><input value="Clear sessionStorage" type="button" onClick="sessionStorage.clear();location.reload(true);" />
+
+        <input value="Reload Page" type="button" onClick="location.reload(true);" /></p>
+
+<a href="session.html">Session preserve across pages</a>
+</body>
+</html>

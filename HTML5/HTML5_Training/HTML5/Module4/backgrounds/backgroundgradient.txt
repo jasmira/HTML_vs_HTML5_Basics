@@ -1,0 +1,1 @@
+webkit-gradient([linear|radial], point [, radius]?, point [, radius], stop, stop [, stop]*)

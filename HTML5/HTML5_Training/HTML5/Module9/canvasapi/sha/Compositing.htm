@@ -1,0 +1,488 @@
+﻿<!DOCTYPE html>
+<html dir="ltr" id="developer-mozilla-org" lang="en"><head>
+  <title>Compositing - MDN</title>
+
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="initial-scale=1.0, width=device-width">
+<meta name="MSSmartTagsPreventParsing" content="true">
+<meta name="Copyright" content="Copyright (c) 2005-2012 Mozilla.">
+<meta name="Rating" content="General">
+
+<link rel="home" href="https://developer.mozilla.org/">
+<link rel="copyright" href="#copyright">
+<meta name="robots" content="index,follow">
+<link rel="shortcut icon" href="https://developer.mozilla.org/favicon.ico">
+<link rel="alternate" type="application/rss+xml" title="What's new feed" href="https://developer.mozilla.org/index.php?title=Special:Recentchanges&amp;feed=rss">
+<link rel="alternate" type="application/rss+xml" title="Page and subpages changes feed" href="https://developer.mozilla.org/index.php?title=Special:Article&amp;type=feed&amp;feedtype=subpagechanges&amp;pageid=20621">
+<link rel="alternate" type="application/rss+xml" title="Page changes feed" href="https://developer.mozilla.org/index.php?title=Special:Article&amp;type=feed&amp;pageid=20621">
+<meta name="generator" content="MindTouch">
+<link rel="search" type="application/opensearchdescription+xml" title="MDN Search" href="https://developer.mozilla.org/deki/gui/opensearch.php?type=description">
+<link rel="stylesheet" type="text/css" media="screen" href="Compositing_files/css.css"> <!--[if IE 7]><style type="text/css">@import "/skins/common/_ie7.css";</style><![endif]--><!--[if IE 6]><style type="text/css">@import "/skins/common/_ie.css";</style><![endif]--><link rel="stylesheet" type="text/css" media="print" href="Compositing_files/print.css">
+<link rel="stylesheet" type="text/css" media="screen,projection" href="Compositing_files/css_002.css">
+<!--[if lte IE 7]><link rel="stylesheet" type="text/css" media="all" href="/skins/mdn/Transitional/ie7.css"><![endif]-->
+<!--[if lte IE 6]><link rel="stylesheet" type="text/css" media="all" href="/skins/mdn/Transitional/ie6.css"><![endif]-->
+<link rel="stylesheet" type="text/css" media="print" href="Compositing_files/print_002.css">
+
+<script type="text/javascript">CKEDITOR_BASEPATH = "/deki/plugins/page_editor_ckeditor/ckeditor/";</script>
+<script type="text/javascript" src="Compositing_files/js.php"></script><script type="text/javascript">var _starttime = new Date().getTime();</script>
+
+<!--[if IE]>
+<meta http-equiv="imagetoolbar" content="no">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<script src="/skins/mdn/Transitional/js/html5.js"></script>
+<![endif]-->
+
+	<script type="text/javascript">
+
+		var aLt = aLt || [];aLt["attach-no-description"] = 'No description'; aLt["cancel"] = 'Cancel'; aLt["close"] = 'Close'; aLt["comment-delete"] = 'Are you sure you want to delete this comment?'; aLt["contentrating-title-popup"] = 'Thanks for your feedback'; aLt["error"] = 'Error'; aLt["error-permission-denied"] = 'Permission denied'; aLt["error-permission-details"] = 'Your account does not have sufficient permissions to perform that action.'; aLt["gallery-close"] = 'close'; aLt["gallery-next"] = 'next'; aLt["gallery-prev"] = 'prev'; aLt["internal-error"] = 'Sorry, but there was an internal problem - please try again soon.'; aLt["js-label_cancel"] = 'Cancel'; aLt["js-label_save"] = 'Save'; aLt["js-tooltip_cancel"] = 'Exit Without Saving Changes'; aLt["js-tooltip_save"] = 'Save and Exit (Alt+S)'; aLt["ldap-provide-credentials"] = 'Please provide external service login credentials.'; aLt["loading"] = 'Loading...'; aLt["menu-confirm-delete"] = 'Are you sure you want to delete this file?'; aLt["menu-delete-file"] = 'Delete'; aLt["menu-edit-description"] = 'Edit description'; aLt["menu-move-file"] = 'Move'; aLt["menu-previous-versions"] = 'Previous versions'; aLt["menu-view-original"] = 'View original'; aLt["ready"] = 'Ready'; aLt["remove-tag"] = 'Remove tag'; aLt["restore-tag"] = 'Restore tag'; aLt["adding-tags"] = 'Adding Tags...'; aLt["save"] = 'Save'; aLt["submit"] = 'Submit'; aLt["wikibits-attach-another"] = 'Attach another file'; aLt["wikibits-attach-file"] = 'Attach File'; aLt["wikibits-cant-attach-editing"] = 'Sorry, you can\'t attach files while editing a page. Please close the editor first.'; aLt["wikibits-edit-section"] = 'Edit section'; aLt["wikibits-remove-file"] = 'Remove file'; aLt["advanced-search"] = 'Advanced Search'; aLt["standard-search"] = 'Standard Search';  var wfMsg = wfMsg || function (key) { return aLt[key] ? aLt[key] : 'MISSING: ' + key; };
+	//hook in menu clicking events to the document's body
+	YAHOO.util.Event.addListener(document, "click", function () { DWMenu.BodyClick(); });
+	YAHOO.util.Event.onDOMReady(function () { new clientWindow });
+
+		
+
+			YAHOO.util.Event.onDOMReady(function() {
+			tb_init("a.lightbox, area.lightbox, input.lightbox, a[rel='awesomebox']");//pass where to apply thickbox
+		});
+	
+			YAHOO.util.Event.onDOMReady(function() {
+			MTComments.HookBehavior();
+		});
+		</script>
+<link type="text/css" rel="stylesheet" href="Compositing_files/SyntaxHighlighter.css"><script type="text/javascript" src="Compositing_files/shCore.js"></script><script type="text/javascript" src="Compositing_files/shBrushJScript.js"></script><script type="text/javascript" src="Compositing_files/rgbcolor.js"></script>
+<script type="text/javascript" src="Compositing_files/nav.js"></script>
+
+<script type="text/javascript">
+
+Deki.BaseHref = 'https://developer.mozilla.org';
+Deki.PageId = 20621;
+Deki.PageTitle = 'en/Canvas tutorial/Compositing';
+Deki.PageLanguageCode = 'en';
+Deki.FollowRedirects = 1;
+Deki.PathTpl = '/skins/mdn';
+Deki.PathSkin = '/skins/mdn/Transitional';
+Deki.PathCommon = '/skins/common';
+Deki.UserName = 'Anonymous';
+Deki.Today = '6 Jan 2012';
+Deki.UserIsAnonymous = true;
+Deki.EditorConfigToken = '18e62478';
+Deki.EditorStylesToken = '351ad33a';
+Deki.PageEditable = false;
+</script>
+<script type="text/javascript">aLt["commercial-required"] = 'Gather feedback on your content with <strong>community scoring</strong> - these ratings weight results in adaptive search. Through curation analytics, ratings are used to highlight pages in need of attention. <a href="http://www.mindtouch.com/redir/mindtouch-tcs/">Learn more on enabling these capabilities with MindTouch 2010.</a>';aLt["login-required"] = 'You must be <a href="/index.php?title=Special:Userlogin&returntotitle=en%2FCanvas+tutorial%2FCompositing">logged in</a> to perform that action';</script><link href="Compositing_files/custom_css.css" rel="stylesheet" type="text/css"> 
+ 
+<script src="Compositing_files/ga.js"></script></head>
+
+<body id="docs" class="section-docs en ltr yui-skin-sam PageDW-enCanvastutorialCompositing hasJS" role="document">
+<!--[if lte IE 8]>
+<noscript><div class="global-notice">
+<p><strong>Warning:</strong> The Mozilla Developer Network website employs emerging web standards that may not be fully supported in some versions of MicroSoft Internet Explorer. You can improve your experience of this website by enabling JavaScript.</p>
+</div></noscript>
+<![endif]-->
+<noscript><div class="noscript">This application requires Javascript to be enabled.</div></noscript>
+<header id="masthead" role="banner">
+  <div class="wrap">
+  
+    <div id="branding">
+      <h1 id="logo"><a href="https://developer.mozilla.org/"><img src="Compositing_files/mdn-logo-sm.png" alt="" title="" width="62" height="71"> Mozilla Developer Network</a></h1>
+    </div>
+    
+    <a id="moz-tab" href="http://mozilla.org/">Mozilla</a>
+
+    <nav id="nav" role="menubar">
+      <ul id="nav-main">
+        <li id="nav-main-topics" class="menu"><a href="#nav-sub-topics" aria-haspopup="true" class="toggle" title="Explore other parts of MDN">Topics</a>
+          <ul id="nav-sub-topics" class="sub-menu" aria-hidden="true">
+            <li id="nav-sub-web"><a href="https://developer.mozilla.org/web">Web</a></li>
+            <li id="nav-sub-apps"><a href="https://developer.mozilla.org/apps">Apps</a></li>
+            <li id="nav-sub-mobile"><a href="https://developer.mozilla.org/mobile">Mobile</a></li>
+            <li id="nav-sub-addons"><a href="https://developer.mozilla.org/addons">Add-ons</a></li>
+            <li id="nav-sub-mozilla"><a href="https://developer.mozilla.org/mozilla">Mozilla</a></li>
+          </ul>
+        </li>
+        <li id="nav-main-docs" class="menu"><a href="https://developer.mozilla.org/docs" class="docs toggle" aria-haspopup="true" aria-labelledby="nav-main-docs">Docs</a>
+          <div id="nav-sub-docs" class="sub-menu" aria-hidden="true">
+            <ul>
+              <li>
+                <ul>
+                  <li><a href="https://developer.mozilla.org/en/HTML">HTML</a></li>
+                  <li><a href="https://developer.mozilla.org/en/DOM">DOM</a></li>
+                  <li><a href="https://developer.mozilla.org/en/Using_audio_and_video_in_Firefox">Video</a></li>
+                  <li><a href="https://developer.mozilla.org/en/Using_audio_and_video_in_Firefox">Audio</a></li>
+                  <li><a href="https://developer.mozilla.org/en/SVG">SVG</a></li>
+                  <li><a href="https://developer.mozilla.org/en/WebGL">WebGL</a></li>
+                </ul>
+              </li>
+              <li>
+                <ul>
+                  <li><a href="https://developer.mozilla.org/en/HTML/HTML5">HTML5</a></li>
+                  <li><a href="https://developer.mozilla.org/en/WebSockets">WebSockets</a></li>
+                  <li><a href="https://developer.mozilla.org/en/Offline_resources_in_Firefox">Offline Cache</a></li>
+                  <li><a href="https://developer.mozilla.org/en/DOM/Storage">Local Storage</a></li>
+                  <li><a href="https://developer.mozilla.org/en/IndexedDB">IndexedDB</a></li>
+                  <li><a href="https://developer.mozilla.org/en/Using_files_from_web_applications">File API</a></li>
+                </ul>
+              </li>
+              <li>
+                <ul>
+                  <li><a href="https://developer.mozilla.org/en/CSS">CSS</a></li>
+                  <li><a href="https://developer.mozilla.org/en/Using_gradients">Gradients</a></li>
+                  <li><a href="https://developer.mozilla.org/en/CSS/Using_CSS_transforms">Transforms</a></li>
+                  <li><a href="https://developer.mozilla.org/en/CSS/CSS_transitions">Transitions</a></li>
+                  <li><a href="https://developer.mozilla.org/en/CSS/CSS_animations">Animations</a></li>
+                  <li><a href="https://developer.mozilla.org/en/CSS/Media_queries">Media Queries</a></li>
+                </ul>
+              </li>
+              <li>
+                <ul>
+                  <li><a href="https://developer.mozilla.org/en/JavaScript">JavaScript</a></li>
+                  <li><a href="https://developer.mozilla.org/en/Ajax">Ajax</a></li>
+                  <li><a href="https://developer.mozilla.org/en/HTML/Canvas">Canvas</a></li>
+                  <li><a href="https://developer.mozilla.org/en/Using_geolocation">Geolocation</a></li>
+                  <li><a href="https://developer.mozilla.org/en/DragDrop/Drag_and_Drop">Drag &amp; Drop</a></li>
+                  <li><a href="https://developer.mozilla.org/en/Using_web_workers">Web Workers</a></li>
+                </ul>
+              </li>
+            </ul>
+            <p><a href="https://developer.mozilla.org/docs">More docs…</a></p>
+          </div>
+        </li>
+        <li id="nav-main-demos"><a href="https://developer.mozilla.org/demos" class="demos">Demos</a></li>
+        <li id="nav-main-learning"><a href="https://developer.mozilla.org/learn" class="learning">Learning</a></li>
+        <li id="nav-main-community" class="menu"><a href="#nav-sub-community" class="community toggle" aria-haspopup="true" aria-labelledby="nav-main-community">Community</a>
+          <ul id="nav-sub-community" class="sub-menu" aria-hidden="true">
+            <li><a href="https://developer.mozilla.org/events">Events</a></li>
+            <li><a href="https://developer.mozilla.org/discussions">Discussions</a></li>
+            <li><a href="https://developer.mozilla.org/promote">Promote</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+    
+    <ul class="user-state superfish">
+          <li><a href="https://developer.mozilla.org/users/login">Sign in</a></li>
+        </ul>
+    
+    <form id="site-search" method="get" action="/search">
+      <p>
+        <input role="search" placeholder="Search MDN" id="q" name="q" type="text">
+        <noscript><button type="submit">Search</button></noscript>
+      </p>
+      
+      <div id="site-search-gg"><div class="gsc-branding"><table class="gsc-branding" cellpadding="0" cellspacing="0"><tbody><tr><td class="gsc-branding-text"><div class="gsc-branding-text">powered by</div></td><td class="gsc-branding-img-noclear"><img class="gsc-branding-img-noclear" src="Compositing_files/small-logo.png"></td></tr></tbody></table></div></div>
+    </form>
+
+  </div>
+</header>
+
+
+<section id="nav-toolbar">
+<div class="wrap">
+
+<nav id="tool-menus">
+  <ul class="superfish" id="tools">
+    <li class="menu">
+      <a href="#site-tools" class="toggle">Site tools</a>
+      <ul style="display: none; visibility: hidden;" id="site-tools" class="sub-menu" role="navigation">
+         
+        <li class="site-recent">	<a href="https://developer.mozilla.org/Special:Recentchanges" title="Recent changes">Recent changes</a>
+</li>
+        <li class="site-rss">	<a href="https://developer.mozilla.org/Special:ListRss" title="RSS feeds">RSS feeds</a>
+</li>
+      	<li class="siteListusers"><a href="https://developer.mozilla.org/User:" title="Users">Users</a></li>
+              <li class="site-templates">	<a href="https://developer.mozilla.org/Template:" title="Templates">Templates</a>
+</li>
+              <li class="site-map">	<a href="https://developer.mozilla.org/Special:Sitemap" title="Sitemap">Sitemap</a>
+</li>
+        <li class="site-popular">	<a href="https://developer.mozilla.org/Special:Popularpages" title="Popular pages">Popular pages</a>
+</li>
+      	<li class="siteAbout"><a href="https://developer.mozilla.org/Special:About" title="About MDN">About MDN</a></li>
+      </ul>
+    </li>
+    <li class="menu">
+      <a href="#page-tools" class="toggle">This page</a>
+      <ul style="display: none; visibility: hidden;" id="page-tools" class="sub-menu" role="navigation">
+                                <li class="page-new"><a href="#" title="New page" class="disabled ">New sub-page</a></li>
+                    <li class="page-history"><a href="https://developer.mozilla.org/index.php?title=en/Canvas_tutorial/Compositing&amp;action=history" title="Page history">History</a></li>
+                    <li class="page-talk">	<a href="https://developer.mozilla.org/Talk:en/Canvas_tutorial/Compositing" title="Talk page">Talk page</a>
+</li>
+                                                        <li class="page-print">	<a href="#" onclick="return window.print();" title="Print page">Print page</a>
+</li>
+            <li class="page-backlinks"><a href="https://developer.mozilla.org/index.php?title=Special:Article&amp;type=backlinks&amp;pageid=20621">Pages that link here</a></li>      </ul>
+    </li>
+      <li class="menu">
+      <a href="#" class="toggle">Languages</a>
+      <ul style="display: none; visibility: hidden;"><li><a rel="internal" href="https://developer.mozilla.org/es/Canvas_tutorial/Composici%C3%B3n" title="es/Canvas_tutorial/Composición">Español</a></li><li><a rel="internal" href="https://developer.mozilla.org/fr/Tutoriel_canvas/Compositions" title="fr/Tutoriel_canvas/Compositions">Français</a></li><li><a rel="internal" href="https://developer.mozilla.org/pl/Przewodnik_po_canvas/Kompozycje" title="pl/Przewodnik_po_canvas/Kompozycje">Polski</a></li><li><a rel="internal" href="https://developer.mozilla.org/cn/Canvas_tutorial/Compositing" title="cn/Canvas_tutorial/Compositing">中文 (中国)</a></li><li><a rel="internal" href="https://developer.mozilla.org/zh_tw/Canvas_%E6%95%99%E5%AD%B8/%E5%90%88%E6%88%90" title="zh_tw/Canvas_教學/合成">中文 (台湾)</a></li><li><a rel="internal" href="https://developer.mozilla.org/ja/Canvas_tutorial/Compositing" title="ja/Canvas_tutorial/Compositing">日本語</a></li></ul>    </li>
+    </ul>
+</nav>
+
+  <nav class="crumbs" role="navigation">
+    <ol>
+      <li class="crumb-one"><a href="https://developer.mozilla.org/">MDN</a></li>
+      <li class="crumb-two"><a href="https://developer.mozilla.org/docs">Docs</a></li>
+    <li class="first"><a href="https://developer.mozilla.org/" class="deki-ns">MDN</a></li>
+<li class="second"><a href="https://developer.mozilla.org/en" class="deki-ns">MDN</a></li>
+<li><a href="https://developer.mozilla.org/en/Canvas_tutorial" class="deki-ns">Canvas tutorial</a></li>
+<li class="last"><a href="https://developer.mozilla.org/en/Canvas_tutorial/Compositing" class="deki-ns current">Compositing</a></li> 
+    </ol>
+  </nav>
+
+</div>
+</section>
+
+<section id="content">
+<div class="wrap">
+  <div id="content-main" class="full">
+
+    <div id="sessionMsg"><div class="inner"><ul></ul></div></div>
+        
+    <article class="article PageDW-enCanvastutorialCompositing" role="main">
+            
+            <div class="page-title hideforedit">
+              <h1 class="first" id="title">Compositing</h1>            
+      
+              <ul id="page-buttons">
+          <li class="page-edit"><a href="https://developer.mozilla.org/index.php?title=Special:Userlogin&amp;returntotitle=en%2FCanvas+tutorial%2FCompositing" class="disabled" title="Log in or sign up to edit this page">Edit</a></li>
+          <li class="page-watch"><a href="https://developer.mozilla.org/index.php?title=Special:Userlogin&amp;returntotitle=en%2FCanvas+tutorial%2FCompositing" class="disabled" title="Log in or sign up to add this page to your watch list">Watch</a></li>
+        </ul> 
+            </div>
+      
+    <div class="page-content boxed">
+
+     
+      <div id="article-nav" class="hideforedit">      
+              <div class="page-toc">
+          <h2>Table of contents</h2>
+          <ol style="list-style-type:none; margin-left:0px; padding-left:0px;"><li><span>1.</span> <a href="#globalCompositeOperation" rel="internal">globalCompositeOperation</a></li><li><span>2.</span> <a href="#Clipping_paths" rel="internal">Clipping paths</a><ol style="list-style-type:none; margin-left:0px; padding-left:15px;"><li><ol style="list-style-type:none; margin-left:0px; padding-left:15px;"><li><span>2.1.1.</span> <a href="#A_clip_example" rel="internal">A clip example</a></li></ol></li></ol></li></ol>        </div>
+      
+        <ul class="page-anchors">
+          <li class="anchor-tags"><a href="#page-tags" title="Jump to tags for this article">Tags</a></li>
+          <li class="anchor-files"><a href="#page-files" title="Jump to files for this article">Files</a></li>
+        </ul>
+
+              <div id="deki-page-alerts" class="disabled">
+				<div class="toggle">
+					<a href="javascript:void(0);" class="off">
+						<span>Page Notifications</span>
+						<span class="status">Off</span>
+					</a>
+				</div></div>      
+      
+      </div> 
+    
+            
+      <div id="page-top"><div id="pageToc"><div class="pageToc"><h5>Table of contents</h5><ol style="list-style-type:none; margin-left:0px; padding-left:0px;"><li><span>1.</span> <a href="#globalCompositeOperation" rel="internal">globalCompositeOperation</a></li><li><span>2.</span> <a href="#Clipping_paths" rel="internal">Clipping paths</a><ol style="list-style-type:none; margin-left:0px; padding-left:15px;"><li><ol style="list-style-type:none; margin-left:0px; padding-left:15px;"><li><span>2.1.1.</span> <a href="#A_clip_example" rel="internal">A clip example</a></li></ol></li></ol></li></ol></div></div><div class="pageText" id="pageText">
+<p>In all of our previous examples, shapes were always drawn one on top 
+of the other. This is more than adequate for most situations. This, for 
+instance, limits in what order composite shapes are built up. We can 
+however change this behaviour by setting the <code>globalCompositeOperation</code> property.</p>
+<div id="section_1"><span id="globalCompositeOperation"></span><h2 class="editable"><code>globalCompositeOperation</code></h2>
+<p>We can not only draw new shapes behind existing shapes but we can 
+also use it to mask off certain areas, clear sections from the canvas 
+(not limited to rectangles like the <code>clearRect</code> method does) and more.</p>
+<div style="border: 1px solid rgb(208, 221, 158); background: rgb(239, 248, 206) none repeat scroll 0% 50%; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial; padding-left: 10px;">
+<p><code><strong>globalCompositeOperation</strong> = type</code></p>
+</div>
+<p><code>type</code> is a string representing any one of twelve compositing operations. Each of the available types is described below.</p>
+<p><strong>Note:</strong> In all of the examples below the blue square 
+is drawn first and referred to as 'existing canvas content'. The red 
+circle is drawn second and referred to as 'new shape'.</p>
+<table style="width: 100%;"> <tbody> <tr> <td style="padding: 5px; vertical-align: top;" width="40%"> <p><strong>source-over</strong> (default)<br> This is the default setting and draws new shapes on top of the existing canvas content.</p> </td> <td style="padding: 5px; vertical-align: top;" width="10%"> <p><img class="internal" alt="Image:Canvas_composite_srcovr.png" src="Compositing_files/Canvas_composite_srcovr.png"></p> </td> <td style="padding: 5px; vertical-align: top;" width="40%"> <p><strong>destination-over</strong><br> New shapes are drawn behind the existing canvas content.</p> </td> <td style="padding: 5px; vertical-align: top;" width="10%"> <p><img class="internal" alt="Image:Canvas_composite_destovr.png" src="Compositing_files/Canvas_composite_destovr.png"></p> </td> </tr> <tr> <td style="padding: 5px; vertical-align: top;"> <p><strong>source-in</strong><br> The new shape is drawn only where both the new shape and the destination canvas overlap. Everything else is made transparent</p> </td> <td style="padding: 5px; vertical-align: top;"> <p><img class="internal" alt="Image:Canvas_composite_srcin.png" src="Compositing_files/Canvas_composite_srcin.png"></p> </td> <td style="padding: 5px; vertical-align: top;"> <p><strong>destination-in</strong><br>
+ The existing canvas content is kept where both the new shape and 
+existing canvas content overlap. Everything else is made transparent.</p> </td> <td style="padding: 5px; vertical-align: top;"> <p><img class="internal" alt="Image:Canvas_composite_destin.png" src="Compositing_files/Canvas_composite_destin.png"></p> </td> </tr> <tr> <td style="padding: 5px; vertical-align: top;"> <p><strong>source-out</strong><br> The new shape is drawn where it doesn't overlap the existing canvas content.</p> </td> <td style="padding: 5px; vertical-align: top;"> <p><img class="internal" alt="Image:Canvas_composite_srcout.png" src="Compositing_files/Canvas_composite_srcout.png"></p> </td> <td style="padding: 5px; vertical-align: top;"> <p><strong>destination-out</strong><br> The existing content is kept where it doesn't overlap the new shape.</p> </td> <td style="padding: 5px; vertical-align: top;"> <p><img class="internal" alt="Image:Canvas_composite_destout.png" src="Compositing_files/Canvas_composite_destout.png"></p> </td> </tr> <tr> <td style="padding: 5px; vertical-align: top;"> <p><strong>source-atop</strong><br> The new shape is only drawn where it overlaps the existing canvas content.</p> </td> <td style="padding: 5px; vertical-align: top;"> <p><img class="internal" alt="Image:Canvas_composite_srcatop.png" src="Compositing_files/Canvas_composite_srcatop.png"></p> </td> <td style="padding: 5px; vertical-align: top;"> <p><strong>destination-atop</strong><br> The existing canvas is only kept where it overlaps the new shape. The new shape is drawn behind the canvas content.</p> </td> <td style="padding: 5px; vertical-align: top;"> <p><img class="internal" alt="Image:Canvas_composite_destatop.png" src="Compositing_files/Canvas_composite_destatop.png"></p> </td> </tr> <tr> <td style="padding: 5px; vertical-align: top;"> <p><strong>lighter</strong><br> Where both shapes overlap the color is determined by adding color values.</p> </td> <td style="padding: 5px; vertical-align: top;"> <p><img class="internal" alt="Image:Canvas_composite_lighten.png" src="Compositing_files/Canvas_composite_lighten.png"></p> </td> <td style="padding: 5px; vertical-align: top;"> <p><strong>darker</strong> 
+<span class="unimplementedInlineTemplate" style="border: 1px solid rgb(246, 111, 111); background-color: rgb(255, 153, 204); font-size: x-small; white-space: nowrap; padding: 2px;">Unimplemented</span>
+<br> Where both shapes overlap the color is determined by subtracting color values.</p> <p>This value is supported until (Firefox 3.6 / Thunderbird 3.1 / Fennec 1.0)
+. Support has been removed from later versions (why?).</p> </td> <td style="padding: 5px; vertical-align: top;"> <p><img class="internal" alt="Image:Canvas_composite_darken.png" src="Compositing_files/Canvas_composite_darken.png"></p> </td> </tr> <tr> <td style="padding: 5px; vertical-align: top;"> <p><strong>xor</strong><br> Shapes are made transparent where both overlap and drawn normal everywhere else.</p> </td> <td style="padding: 5px; vertical-align: top;"> <p><img class="internal" alt="Image:Canvas_composite_xor.png" src="Compositing_files/Canvas_composite_xor.png"></p> </td> <td style="padding: 5px; vertical-align: top;"> <p><strong>copy</strong><br> Only draws the new shape and removes everything else.</p> </td> <td style="padding: 5px; vertical-align: top;"> <p><img class="internal" alt="Image:Canvas_composite_copy.png" src="Compositing_files/Canvas_composite_copy.png"></p> </td> </tr> </tbody>
+</table>
+<p><strong>Note:</strong> Currently the <code>copy</code> setting doesn't do anything in the Gecko 1.8 based browsers (Firefox 1.5 betas, etc).</p>
+<p><a title="samples/canvas-tutorial/6_1_canvas_composite.html" class="external" rel="internal" href="https://developer.mozilla.org/samples/canvas-tutorial/6_1_canvas_composite.html">View all the examples</a></p>
+</div><div id="section_2"><span id="Clipping_paths"></span><h2 class="editable">Clipping paths</h2>
+<p><img class="internal" alt="" src="Compositing_files/Canvas_clipping_path.png" align="right">A
+ clipping path is like a normal canvas shape but it acts as a mask to 
+hide unwanted parts of shapes. This is visualized in the image on the 
+right. The red star shape is our clipping path. Everything that falls 
+outside of this path won't get drawn on the canvas.</p>
+<p>If we compare clipping paths to the <code>globalCompositeOperation</code> property we've seen above; settings that achieve more or less the same effect are <code>source-in</code> and <code>source-atop</code>.
+ The most important differences between the two are that clipping paths 
+are never actually drawn to the canvas and the clipping path is never 
+affected by adding new shapes. This makes clipping paths ideal for 
+drawing multiple shapes in a restricted area.</p>
+<p>In the chapter about <a title="en/Canvas_tutorial/Drawing_shapes#Drawing_paths" rel="internal" href="https://developer.mozilla.org/en/Canvas_tutorial/Drawing_shapes#Drawing_paths">Drawing shapes</a> I only mentioned the <code>stroke</code> and <code>fill</code> methods, but there's a third method we can use with paths, called <code>clip</code>.</p>
+<div style="border: 1px solid rgb(208, 221, 158); background: rgb(239, 248, 206) none repeat scroll 0% 50%; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial; padding-left: 10px;">
+<p><code><strong>clip</strong>()</code></p>
+</div>
+<p>We use the <code>clip</code> method to create a new clipping path. By
+ default the canvas element has a clipping path that's the exact same 
+size as the canvas itself (i.e. no clipping occurs).</p>
+<div id="section_3"><span id="A_clip_example"></span><h4 class="editable">A <code>clip</code> example</h4>
+<p><img alt="" class="internal" src="Compositing_files/Canvas_clip.png" align="right">In this example I'll be using a circular clipping path to restrict the drawing of a set of random stars to a particular region.</p>
+<p>In the first few lines of code I draw a black rectangle the size of 
+the canvas as a backdrop and translate the origin to the center. Below 
+this I create the circular clipping path by drawing an arc. By calling 
+the <code>clip</code> method the clipping path is created. Clipping 
+paths are also part of the canvas save state. If we wanted to keep the 
+original clipping path we could have saved the canvas state before 
+creating the new one.</p>
+<p>Everything that's drawn after creating the clipping path will only 
+appear inside that path. You can see this clearly in the linear gradient
+ that's drawn next. After this a set of 50 randomly positioned and 
+scaled stars is drawn (I'm using a custom function for this). Again the 
+stars only appear inside the defined clipping path.</p>
+<p><a class="external" title="samples/canvas-tutorial/6_2_canvas_clipping.html" rel="internal" href="https://developer.mozilla.org/samples/canvas-tutorial/6_2_canvas_clipping.html">View this example</a></p>
+
+          <div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;">view plain</a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;">print</a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;">?</a></div></div><ol class="dp-c" start="1"><li class="alt"><span><span class="keyword">function</span><span>&nbsp;draw()&nbsp;{&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;<span class="keyword">var</span><span>&nbsp;ctx&nbsp;=&nbsp;document.getElementById(</span><span class="string">'canvas'</span><span>).getContext(</span><span class="string">'2d'</span><span>);&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;ctx.fillRect(0,0,150,150);&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;ctx.translate(75,75);&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;<span class="comment">//&nbsp;Create&nbsp;a&nbsp;circular&nbsp;clipping&nbsp;path</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;ctx.beginPath();&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;ctx.arc(0,0,60,0,Math.PI*2,<span class="keyword">true</span><span>);&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;ctx.clip();&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;<span class="comment">//&nbsp;draw&nbsp;background</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;<span class="keyword">var</span><span>&nbsp;lingrad&nbsp;=&nbsp;ctx.createLinearGradient(0,-75,0,75);&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;lingrad.addColorStop(0,&nbsp;<span class="string">'#232256'</span><span>);&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;lingrad.addColorStop(1,&nbsp;<span class="string">'#143778'</span><span>);&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;ctx.fillStyle&nbsp;=&nbsp;lingrad;&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;ctx.fillRect(-75,-75,150,150);&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;<span class="comment">//&nbsp;draw&nbsp;stars</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;<span class="keyword">for</span><span>&nbsp;(</span><span class="keyword">var</span><span>&nbsp;j=1;j&lt;50;j++){&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;ctx.save();&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;ctx.fillStyle&nbsp;=&nbsp;<span class="string">'#fff'</span><span>;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;ctx.translate(75-Math.floor(Math.random()*150),&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;75-Math.floor(Math.random()*150));&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;drawStar(ctx,Math.floor(Math.random()*4)+2);&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;ctx.restore();&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;</span></li><li class="alt"><span>}&nbsp;&nbsp;</span></li><li class=""><span><span class="keyword">function</span><span>&nbsp;drawStar(ctx,r){&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;ctx.save();&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;ctx.beginPath()&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;ctx.moveTo(r,0);&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;<span class="keyword">for</span><span>&nbsp;(</span><span class="keyword">var</span><span>&nbsp;i=0;i&lt;9;i++){&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;ctx.rotate(Math.PI/5);&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span><span>(i%2&nbsp;==&nbsp;0)&nbsp;{&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ctx.lineTo((r/0.525731)*0.200811,0);&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<span class="keyword">else</span><span>&nbsp;{&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ctx.lineTo(r,0);&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;ctx.closePath();&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;ctx.fill();&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;ctx.restore();&nbsp;&nbsp;</span></li><li class="alt"><span>}&nbsp;&nbsp;</span></li></ol></div><pre style="display: none;" name="code" class="js">function draw() {
+  var ctx = document.getElementById('canvas').getContext('2d');
+  ctx.fillRect(0,0,150,150);
+  ctx.translate(75,75);
+
+  // Create a circular clipping path
+  ctx.beginPath();
+  ctx.arc(0,0,60,0,Math.PI*2,true);
+  ctx.clip();
+
+  // draw background
+  var lingrad = ctx.createLinearGradient(0,-75,0,75);
+  lingrad.addColorStop(0, '#232256');
+  lingrad.addColorStop(1, '#143778');
+  
+  ctx.fillStyle = lingrad;
+  ctx.fillRect(-75,-75,150,150);
+
+  // draw stars
+  for (var j=1;j&lt;50;j++){
+    ctx.save();
+    ctx.fillStyle = '#fff';
+    ctx.translate(75-Math.floor(Math.random()*150),
+                  75-Math.floor(Math.random()*150));
+    drawStar(ctx,Math.floor(Math.random()*4)+2);
+    ctx.restore();
+  }
+  
+}
+function drawStar(ctx,r){
+  ctx.save();
+  ctx.beginPath()
+  ctx.moveTo(r,0);
+  for (var i=0;i&lt;9;i++){
+    ctx.rotate(Math.PI/5);
+    if(i%2 == 0) {
+      ctx.lineTo((r/0.525731)*0.200811,0);
+    } else {
+      ctx.lineTo(r,0);
+    }
+  }
+  ctx.closePath();
+  ctx.fill();
+  ctx.restore();
+}</pre>
+        
+<p>
+</p><div class="prevnext"><p align="right"><span style="float: left;"><a rel="custom" href="https://developer.mozilla.org/en/Canvas_tutorial%3ATransformations">« Previous</a></span><a rel="custom" href="https://developer.mozilla.org/en/Canvas_tutorial%3ABasic_animations">Next »</a></p></div>
+<p></p>
+<p></p></div></div></div></div>
+            <section class="page-meta">
+                  <section id="page-tags">
+            <h2>Tags <span class="sub">(3)</span></h2>
+              <a href="https://developer.mozilla.org/index.php?title=Special:Tags&amp;pageId=20621" class="disabled" onclick="return false;" id="deki-page-tags-toggleview">Edit tags</a>              <div id="deki-page-tags"><ul class="tags"><li><a href="https://developer.mozilla.org/Special:Tags?tag=Canvas+tutorial" title="Canvas tutorial" tagid="1300" class="text">Canvas tutorial</a></li><li><a href="https://developer.mozilla.org/Special:Tags?tag=HTML:Canvas" title="HTML:Canvas" tagid="45" class="text">HTML:Canvas</a></li><li><a href="https://developer.mozilla.org/Special:Tags?tag=Tutorials" title="Tutorials" tagid="93" class="text">Tutorials</a></li></ul></div>          </section>
+        
+                  <section id="page-files">
+            <h2>Attachments <span class="sub">(0)</span></h2>
+            <div id="pageFiles"><div class="nofiles">&nbsp;</div></div>            <div id="deki-image-gallery-lite"><table class="table empty" width="100%" border="0" cellpadding="0" cellspacing="0"><colgroup><col width="33%"><col width="33%"><col width="33%"></colgroup><tbody><tr class="bg1"><th class="col1" colspan="3">Images 0</th></tr><tr class="bg2"><td class="col1 empty" colspan="3">No images to display in the gallery.</td></tr></tbody></table></div>            <p class="add"><a title="Attach file" class="disabled ">Attach file</a></p>
+          </section>
+        
+                        
+        </section>
+        </div>
+
+    </article>
+
+    <p class="last-mod hideforedit">
+      Page last modified <a href="https://developer.mozilla.org/index.php?title=en/Canvas_tutorial/Compositing&amp;action=history" title="19:33, 23 May 2011">19:33, 23 May 2011</a> by <a href="https://developer.mozilla.org/User:kangax" class="link-user" rel="internal">kangax</a>    </p>
+
+  </div><!-- /#content-main -->
+
+</div><!-- /.wrap -->
+</section><!-- /#content -->
+
+
+
+<footer id="site-info" role="contentinfo">
+<div class="wrap">
+  <div id="legal">
+    <img src="Compositing_files/mdn-logo-tiny.png" alt="" width="42" height="48">
+    <p id="copyright">© 2012 Mozilla Developer Network</p>
+    <p>Content is available under <a href="https://developer.mozilla.org/Project:Copyrights">these licenses</a> • <a href="https://developer.mozilla.org/Project:en/About">About MDN</a> • <a href="http://www.mozilla.org/about/policies/privacy-policy.html">Privacy Policy</a> • <a href="https://developer.mozilla.org/Project:en/Using_the_Mozilla_Developer_Center">Help</a></p>
+  </div>
+  <ul class="user-state superfish">
+      <li><a href="https://developer.mozilla.org/users/login">Sign in</a></li>
+    </ul>
+</div>
+</footer>
+
+
+			
+<div class="ui-msg-wrap" id="MTMessage" style="display: none;">
+	<div class="ui-msg ui-errormsg" id="MTMessageStyle">
+		<div class="ui-msg-opt">
+			<ul>
+				<li><a href="#" class="dismiss" onclick="return MTMessage.Hide();">dismiss message</a></li>
+				<li><a href="#" class="details" id="MTMessageDetailsLink" onclick="return MTMessage.ShowDetails(this);">view details</a></li>
+			</ul>
+			<div class="ui-msg-autoclose">
+				<span id="MTMessageUnpaused" style="display: inline;">Message will close by itself in <span id="MTMessageTimer"></span> seconds</span>
+				<span id="MTMessagePaused" style="display: none;">Message timer has been stopped</span>
+			</div>
+		</div>
+		<div class="ui-msg-header" id="MTMessageHeader"></div>
+		<div class="ui-msg-desc" id="MTMessageDesc"></div>
+		<div class="ui-msg-desc" id="MTMessageDetails" style="display: none;">
+			<p>Viewing Details:</p>
+		</div>
+	</div>
+</div><script type="text/javascript">$(function() {var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");$.getScript(gaJsHost + "google-analytics.com/ga.js", function() {try {var pageTracker = _gat._getTracker("UA-68075-16");pageTracker._setDomainName(".mindtouch.com");pageTracker._trackPageview();} catch(e) {}});});</script>
+<!-- Served by pm-dekiwiki03.mozilla.org in 0.70 secs. -->
+<!--
+	Verb      Path                                              Time(ms)       API Stats
+	GET       /deki/site/settings                                   7.73       request-time-ms=4; mysql-queries=2; mysql-time-ms=2; cache-ratio=0.00; cache-hit=0; cache-miss=-1; cache-del=0; cache-ins=1;
+	GET       /deki/users/=Anonymous                                8.86       request-time-ms=6; mysql-queries=4; mysql-time-ms=4; cache-ratio=-0.67; cache-hit=2; cache-miss=-5; cache-del=0; cache-ins=5;
+	GET       /deki/license                                         9.28       request-time-ms=4; mysql-queries=2; mysql-time-ms=2; cache-ratio=-0.50; cache-hit=1; cache-miss=-3; cache-del=0; cache-ins=3;
+	GET       /deki/pages/20621/contents                           88.65       request-time-ms=85; mysql-queries=27; mysql-time-ms=46; cache-ratio=3.91; cache-hit=43; cache-miss=-32; cache-del=0; cache-ins=32;
+	GET       /deki/pages/20621                                    42.94       request-time-ms=39; mysql-queries=21; mysql-time-ms=28; cache-ratio=25.00; cache-hit=25; cache-miss=-24; cache-del=0; cache-ins=24;
+	GET       /deki/pages/20621/info                                6.87       request-time-ms=5; mysql-queries=3; mysql-time-ms=3; cache-ratio=-0.67; cache-hit=2; cache-miss=-5; cache-del=0; cache-ins=5;
+	GET       /deki/pages/20621/tags                                9.03       request-time-ms=7; mysql-queries=5; mysql-time-ms=5; cache-ratio=-0.75; cache-hit=3; cache-miss=-7; cache-del=0; cache-ins=7;
+	GET       /deki/site/properties                                11.12       request-time-ms=8; mysql-queries=4; mysql-time-ms=5; cache-ratio=-0.20; cache-hit=1; cache-miss=-6; cache-del=0; cache-ins=6;
+	GET       /deki/site/properties/urn%253Aui.deki.mindtouch.com%2523html.mdn.Transitional     7.42       request-time-ms=5; mysql-queries=3; mysql-time-ms=4; cache-ratio=-0.50; cache-hit=1; cache-miss=-3; cache-del=0; cache-ins=3;
+	GET       /deki/site/nav/=en%252FCanvas%2Btutorial%252FCompositing/full   438.88       request-time-ms=437; mysql-queries=6; mysql-time-ms=434; cache-ratio=-6.00; cache-hit=6; cache-miss=-7; cache-del=0; cache-ins=7;
+	GET       /deki/pages/20621/tags                               11.35       request-time-ms=9; mysql-queries=5; mysql-time-ms=7; cache-ratio=-0.75; cache-hit=3; cache-miss=-7; cache-del=0; cache-ins=7;
+	                                                             =======
+	                                                     Total:   642.13      
+	                                                     Ideal:   630.78      
+-->
+ 
+<div id="popupMessage"></div> <div id="popupMask"></div>
+<div id="menuFiller"></div>
+<div id="bodyHeight"></div>
+
+<script src="Compositing_files/jsapi"></script>
+<script src="Compositing_files/javascript.js"></script><script src="Compositing_files/a" type="text/javascript"></script><script src="Compositing_files/defaulten.js" type="text/javascript"></script>
+
+ 
+<script type="text/javascript">
+//<![CDATA[
+var _tag=new WebTrends();
+_tag.dcsGetId();
+// Add custom parameters here.
+//_tag.DCSext.param_name=param_value;
+_tag.dcsCollect();
+//]]>>
+</script>
+<noscript>
+<div><img alt="DCSIMG" id="DCSIMG" width="1" height="1" src="https://statse.webtrendslive.com/dcs8yrjuavz5bdaun34r2o8bi_8o8x/njs.gif?dcsuri=/nojavascript&amp;WT.js=No&amp;WT.tv=8.6.2"/></div>
+</noscript>
+<!-- END OF SmartSource Data Collector TAG -->
+
+<script type="text/javascript">/*<![CDATA[*/$(function(){dp.SyntaxHighlighter.HighlightAll('code');});/*]]>*/</script> 
+
+
+</body></html>

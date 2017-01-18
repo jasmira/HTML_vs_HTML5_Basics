@@ -1,0 +1,108 @@
+<!doctype html>
+<html>
+
+
+<head>
+
+<style type="text/css"> 
+
+.newspaper
+{
+-moz-column-count:3; 
+-webkit-column-count:3; 
+
+column-count:3;
+
+
+-moz-column-gap:40px;
+
+-webkit-column-gap:40px; 
+
+column-gap:40px;
+
+
+-moz-column-rule:4px outset #ff00ff;
+
+-webkit-column-rule:4px outset #ff00ff; 
+
+column-rule:4px outset #ff00ff;
+
+}
+</style>
+
+</head>
+
+<body>
+
+
+<p>
+<b>Note:</b> Internet Explorer does not support the column-rule property.</p>
+
+
+<div class="newspaper">
+While most computer screens are wider than tall, most websites are the exact opposite: longer than wide. In the economy of screen-estate, vertical space is expensive. If you were a piece of content, you would want to be above the fold, right? Horizontal space, on the other hand, is quite cheap; we often don’t even know what to do with it.
+
+At the very common 1024×768 screen resolution, most fixed-layout websites don’t use all available space to the left and right of their content. Flexible layouts make a better use of horizontal space, but struggle to maintain usable line-lengths. Usability experts have told us that there are just so many words you should put on a line. Between 8 and 12 words seems to be the ideal line length. Print media, especially newspapers, don’t hesitate to use even shorter lines. Why? Because they can, by laying out text across several columns.
+
+As a web designer, you can arrange a text so it flows into several well-balanced columns. Or at least you can try. But as you know, the web is not a medium that provides you absolute control over the final display of information. Your nicely crafted markup may turn out badly if your visitors, for instance, use a different font size or turn images off. Similarly, when you switch from static HTML pages to database-driven content, you lose whatever small ability you had to structure your text. Your markup, accordingly, needs to accommodate content of unknown size.
+
+Of course, this problem is not new. Quite a few people have considered the problem, including the members of the W3C.
+
+The CSS3 multi-column module
+The W3C multi-column module is a CSS level-three working draft, proposed by the W3C to extend the current CSS box model. The module’s intent is to allow content to flow into multiple columns inside an element. It offers new CSS properties that let the designers specify in how many columns an element should be rendered. The browser takes care of formatting the text so that the columns are balanced.
+
+
+
+The proposed new CSS properties are:
+
+‘column-count’, to determine the number of columns into which the content of the element will flow.
+‘column-width’, to describe the optimal width of each column.
+‘column-gap’, to set the padding between columns.
+‘column-rule’, to define a border between columns.
+You can learn more about these, and some other new properties in the W3C working draft.
+
+Multi-column implementations
+While the draft was published in 2001, it is still far from being a final recommendation, let alone implemented. Or is it?
+
+IMPLEMENTATIONS IN THE BROWSER
+The developers working on Gecko 1.8 (Mozilla & Co.) announced the first native implementation of the module in April this year, and the recent release of the Firefox 1.5 beta (based on Gecko 1.8) does indeed support parts of the CSS3 Multi-Column module.
+
+We can only hope that more browser developers will follow.
+
+SCRIPTING IMPLEMENTATIONS
+Other ingenious web developers have silently worked their way around the limitations of the CSS box model for quite some time. The International Herald Tribune, for instance, is using a JavaScript-driven multi-column layout for its news articles. Michael van Ouwerkerk, back in 2002, wrote a JavaScript that splits the content of an element and rearranges it into several columns. (Doubtless others have used similar approaches.)
+
+One can certainly do wonderful things with JavaScript (and the document object model), and reworking markup to achieve a multi-column layout happens to be one of them.
+
+With this in mind, let’s take a closer look at those new CSS3 properties from the W3C specification:
+
+Column-count: That’s how many times a JavaScript needs to split content into left floating elements.
+Column-width: That’s the width of each newly created element.
+Column-gap: That’s a left (or right) padding for these elements.
+Column-rule: That’s a left (or right) border.
+Since such JavaScript would process the page after it is rendered, every factor that used to be a problem, font-size, images on/off, is already taken care of. Also, if JavaScript is not available, the layout would not be altered (in other words, it would degrade nicely).
+
+An interim measure for experimentation
+Since it can be done, and since I wouldn’t be writing this article if I had nothing to show for it, here it is: a (mostly) cross-browser JavaScript implementation of the CSS3 multi-column module. (View example.)
+
+The implementation is an unobtrusive, stand-alone piece of code that acts as a JavaScript parser for this CSS3 extension. You don’t need any knowledge of JavaScript to use it, just upload the file to your site and link it to your page:
+
+<script type="text/JavaScript" src="css3-multi-column.js"></script>
+You can then start using the CSS3 properties in your stylesheets as you would do for any other CSS.
+
+Cautions
+There are some limitations though that you need to understand. First, the browser-based CSS parser is designed to ignore properties that it does not support. To circumvent this, this implementation relies on a relatively simple parser written in JavaScript. This parser cannot handle complex constructions, like cascading rules spread across different selectors. Keep it simple. This following styles, for example, would be acceptable:
+
+.article {
+  column-count: 2;
+  column-gap: 20px;
+}
+Secondly, the JavaScript cuts and moves content from one column to another. There are naturally a number of elements that cannot or should not be divided up: images for instance, but also tables, headings, etc. The algorithm tries to accommodate these content types, but can break or yield unexpected results in some circumstances. You are welcome to report any problem with the rendered layout and we’ll try to improve it as we go.
+
+Browsers
+The script has been tested in IE6, Firefox 1.0.4, Netscape 7.1, Safari 1.2 and 2.0, and Opera 8 (though the Opera tests indicate a tendency to crash).
+ </div>
+
+</body>
+</html>
+

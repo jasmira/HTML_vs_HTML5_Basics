@@ -1,0 +1,25 @@
+Arial/Helvetica
+• Times New Roman/Times
+• Courier New/Courier
+• Verdana
+• Georgia
+• Comic Sans MS
+• Trebuchet MS
+• Arial Black
+• Impact
+• Palatino
+• Garamond
+• Bookman
+• Avant Garde
+____________________
+
+font-size:
+Xx-small (approximately 7.5 pt)
+• X-small (approximately 9 pt)
+• Small (approximately 10 pt)
+• Medium (approximately 12 pt)
+• Large (approximately 14 pt)
+• X-large (approximately 18 pt)
+• Xx-large (approximately 24 pt)
+• Smaller
+• Large

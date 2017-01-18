@@ -1,0 +1,29 @@
+<html>
+ <head>
+  <script type="application/javascript">
+function draw()
+{
+
+ var ctx = document.getElementById('c1').getContext('2d');
+
+    // draw rectangle
+    ctx.fillStyle = "#09f";
+    ctx.fillRect(15,15,70,70);
+
+ctx.globalCompositeOperation = 'source-over';
+    
+    // draw circle
+    ctx.fillStyle = "#f30";
+    ctx.beginPath();
+    ctx.arc(75,75,35,0,Math.PI*2,true);
+    ctx.fill();
+
+
+}   
+  </script>
+ </head>
+ <body>
+   <canvas id="c1" width="150" height="150"></canvas>
+<button type="button" onclick="draw()">Draw</button>
+ </body>
+</html>

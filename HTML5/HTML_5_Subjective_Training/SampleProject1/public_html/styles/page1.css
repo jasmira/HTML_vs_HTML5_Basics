@@ -1,0 +1,41 @@
+#registeredSign{
+    float: right;
+}
+
+body{
+    background-image: url('../images/background.gif');
+    color: white;
+}
+header {
+    text-align: center;
+    height: 200px;
+    border: solid 1px white;
+    border-radius: 10px;
+}
+
+header img{
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    left: 5px;
+    top: 0px;
+}
+
+article{
+    margin-top: 150px;
+}
+
+article img{
+    height: 100px;
+    width: 100px;
+    float: left;
+}
+
+article img:hover{
+    transform: rotate(360deg);
+    transition: 2s;
+}
+
+a:visited{
+    color: white;
+}

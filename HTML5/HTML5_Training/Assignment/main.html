@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> Products </title>
+		<link href="css/style.css" rel="stylesheet" type="text/css" />
+	</head>
+	<body>
+	<div id="container" class="main">
+        <header>
+		<!-- HEADER SECTION STARTS!-->
+		<div id="header">
+			<div class="logo"> 
+				<img src="images/index.jpg" width="230" height="60" alt="Flopkart Logo"/>
+			</div>
+			<div class="menu">
+				<ul class="primary-menu">
+					<li><a href="#">Home</a></li>
+					<li><a href="#">About Us</a></li>
+					<li><a href="#">Contact Us</a></li>
+				</ul>	
+			</div>
+		</div>
+		<!-- HEADER SECTION ENDS!-->
+		</header>
+		
+		
+		<!-- CONTENT SECTION STARTS!-->
+		<div id="content">
+            <div class="content-menu">
+				<ul class="primary-menu">
+					<li><img src="images/5102f83c794674ac9d2aa22d8a135cac.png" width="150" height="60" alt="Acoustic"/>
+                        <br/>
+                        <p>Acoustic Guitar</p>
+                        <br/>
+                        <input type="button" value="Add To Cart" onClick="addItems('Acoustic')"></li>
+					<li><img src="images/51393c8a008e4b2a8e1625df7126bded.png" width="150" height="60" alt="Stratocaster"/>
+                        <br/>
+                        <p>Stratocaster</p>
+                        <br/>
+                        <input type="button" value="Add To Cart" onClick="addItems('Stratocaster')"></li>
+					<li><img src="images/fender-shedevil.jpg" width="150" height="60" alt="Jazz Bass"/>
+                        <br/>
+                        <p>Jazz Bassr</p>
+                        <br/>
+                        <input type="button" value="Add To Cart" onClick="addItems('Jazz')"></li>
+                    <li><img src="images/fender-guitars-0119102759-0.png" width="150" height="60" alt="Squire"/>
+                        <br/>
+                        <p>Squire</p>
+                        <br/>
+                        <input type="button" value="Add To Cart" onClick="addItems('Squire')"></li>
+				</ul>	
+			</div>
+            <div class="cart-menu">
+                <input type="button" value="View Cart" onClick="showItems()">  
+            </div>
+        </div>
+        
+            
+		</div>
+		<!-- CONTENT SECTION ENDS!-->
+		
+		
+		
+		<!-- FOOTER SECTION STARTS!-->
+		<div id="footer">
+		    <p>Copyright © Jasmira Fernandes, December 2014</p>
+            <p>Contact information: <a href="mailto:someone@example.com">
+            jasmira_fernandes@persistent.co.in</a>.</p>
+		</div>
+		<!-- FOOTER SECTION ENDS!-->
+	
+    <script>
+        var i=1;
+        
+        function addItems(items) { 
+            localStorage.setItem("item"+i, items);
+            i++;
+           
+        } 
+        
+        function showItems(){
+            var name = new Array();
+            alert("The Items in your cart are: ");
+            
+            for (var i = 0; i <= localStorage.length - 1; i++) { // i < 100 works perfectly
+                key = localStorage.key(i);
+                val = localStorage.getItem(key); 
+                //value = val.split(" "); //splitting string inside array to get name
+                alert(val);
+                //name[i] = value[i]; // getting name from split string
+                //alert(value);
+                }
+        }
+    </script>
+	
+	
+	</body>
+</html>

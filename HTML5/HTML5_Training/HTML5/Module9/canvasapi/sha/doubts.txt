@@ -1,0 +1,3 @@
+DOUBTS
+  lingrad.addColorStop(1, '#143778');
+image will taint the canvas

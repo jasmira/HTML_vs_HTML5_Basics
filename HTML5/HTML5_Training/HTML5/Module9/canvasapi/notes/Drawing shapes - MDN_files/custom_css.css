@@ -1,0 +1,156 @@
+.method {
+	margin-top: 1em; margin-bottom: 2em; margin-left: 10px;
+}
+.method > .name {
+	font-size: 13pt; margin-bottom: 0.2em; display: block;
+}
+.method > .name > .param::after {
+	padding-right: 0.5em; content: ",";
+}
+.method > .name > :last-of-type.param::after {
+	content: "";
+}
+.method > .name > .param > .name::after {
+	font-weight: normal; content: " as ";
+}
+.method > .name > :not(.required).param {
+	font-style: italic;
+}
+.method > .name > :not(.required).param::before {
+	content: "[";
+}
+.method > .name > :not(.required).param::after {
+	content: "]";
+}
+.method > .description {
+	color: rgb(68, 68, 68); font-size: 10pt; font-style: italic; margin-bottom: 7px; display: block;
+}
+.method > .name > .returns::before {
+	font-style: italic; font-weight: normal; content: " returns ";
+}
+.method > .name > .returns {
+	font-weight: bold;
+}
+.method > .params {
+	color: rgb(85, 85, 85); display: block;
+}
+.method > .params > .param {
+	margin-bottom: 5px; display: block;
+}
+.method > .params > .param > .name {
+	font-weight: bold; margin-right: 0.5em; display: inline-block; min-width: 80px;
+}
+.method > .params > .param > .description {
+	width: 300px; margin-right: 30px; vertical-align: top; display: inline-block;
+}
+.method > .params > .param > .type {
+	width: 150px; font-weight: bold; vertical-align: top; display: inline-block;
+}
+.method > .params > .param > .type::before {
+	color: rgb(136, 136, 136); font-weight: normal; content: "Type ";
+}
+.method > .params > .param > .default {
+	width: 150px; font-weight: bold; vertical-align: top; display: inline-block;
+}
+.method > .params > .param > .default::before {
+	color: rgb(136, 136, 136); font-weight: normal; content: "Default ";
+}
+.geckoVersionNote {
+	background: rgb(224, 224, 255); border-left-color: rgb(0, 0, 136); border-left-width: 5px; border-left-style: solid;
+}
+.geckoVersionNote p {
+	border: 0px currentColor; padding-left: 4px;
+}
+.geckoVersionNoteNew {
+	background: rgb(255, 255, 204); padding: 3em 3.5em 0.5em 0.7em; overflow: hidden; display: block; position: relative;
+}
+.geckoVersionNoteNew p {
+	margin: 0px 0px 1em; -ms-transform: translateX(2.5em) translateY(-2em); -webkit-transform: translateX(2.5em) translateY(-2em); -moz-transform: translateX(2.5em) translateY(-2em); -o-transform: translateX(2.5em) translateY(-2em); transform: translateX(2.5em) translateY(-2em);
+}
+.geckoVersionHeading {
+	background: rgb(0, 0, 136); font: 16px/1.7 Verdana, Tahoma, sans-serif; height: 42px; color: rgb(255, 255, 255); margin-top: 0px; margin-bottom: 4px; margin-left: 0px; font-size-adjust: none; font-stretch: normal;
+}
+.geckoVersionHeadingNew {
+	background: rgb(51, 102, 153); font: 16px Verdana, Tahoma, sans-serif; margin: 0px; padding: 0.7em; -ms-transform-origin: 1.8em 0.5em; left: 0px; top: 0px; width: 1000%; color: rgb(255, 255, 255); position: absolute; font-size-adjust: none; font-stretch: normal; -ms-transform: rotate(90deg) translateX(20px); -webkit-transform: rotate(90deg) translateX(20px); -moz-transform: rotate(90deg) translateX(20px); -o-transform: rotate(90deg) translateX(20px); transform: rotate(90deg) translateX(20px); -webkit-transform-origin: 1.8em .5em; -moz-transform-origin: 1.8em .5em; -o-transform-origin: 1.8em .5em; transform-origin: 1.8em .5em;
+}
+.vtab {
+	margin: auto; width: 100%;
+}
+.vtab > ul > li {
+	border-width: 1px medium 1px 1px; border-style: solid none solid solid; border-color: rgb(221, 221, 221) currentColor rgb(221, 221, 221) rgb(221, 221, 221); margin: auto; width: 100px; height: 30px; text-align: left; padding-top: 8px; padding-bottom: 3px; padding-left: 6px; font-size: 13px; font-weight: bold; display: block; list-style-type: none; filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50); position: relative; cursor: pointer; opacity: 0.5; background-image: none;
+}
+.vtab > ul > li.selected {
+	border-width: 1px medium 1px 1px; border-style: solid none solid solid; border-color: rgb(221, 221, 221) currentColor rgb(221, 221, 221) rgb(221, 221, 221); filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100); position: relative; z-index: 10; cursor: pointer; opacity: 1; background-color: rgb(241, 246, 248) !important;
+}
+.vtab > ul {
+	margin: auto 0px; padding: 0px; top: 30px; width: 100px; text-align: left; float: left; display: block; position: relative;
+}
+.vtab > div {
+	padding: 12px; border: 1px solid rgb(221, 221, 221); margin-left: 106px; position: relative; z-index: 9; min-height: 300px; background-color: rgb(241, 246, 248);
+}
+.sidebar-box {
+	background: url("img/toc-bg.png") no-repeat 0px 0px rgb(241, 246, 248); font: 12px/normal Verdana, Tahoma, sans-serif; padding: 12px; margin-bottom: 2.5em; margin-left: 16px; border-right-color: rgb(236, 241, 243); border-right-width: 1px; border-right-style: solid; font-size-adjust: none; font-stretch: normal;
+}
+.sidebar-box h2 {
+	font-family: inherit; font-size: 150%; font-weight: bold; margin-bottom: 0.5em;
+}
+.sidebar-box h3 {
+	font-family: inherit; font-size: 110%; font-weight: bold; margin-bottom: 0.5em;
+}
+.sidebar-box h5 {
+	font-family: inherit; font-size: 90%; font-weight: bold; margin-bottom: 0.5em;
+}
+.sidebar-box > ul {
+	margin: auto 0px; padding: 0px; text-align: left; float: left; display: block; position: relative;
+}
+.sidebar-box ul > li {
+	list-style-type: none;
+}
+.tab-content-box {
+	background: rgb(255, 255, 255); font: 12px/normal Verdana, Tahoma, sans-serif; padding: 12px; margin-left: 16px; border-right-color: rgb(236, 241, 243); border-right-width: 1px; border-right-style: solid; font-size-adjust: none; font-stretch: normal;
+}
+.tab-content-box h2 {
+	font-family: inherit; font-size: 150%; font-weight: bold; margin-bottom: 0.5em;
+}
+.tab-content-box h3 {
+	font-family: inherit; font-size: 110%; font-weight: bold; margin-bottom: 0.5em;
+}
+.tab-content-box h5 {
+	font-family: inherit; font-size: 90%; font-weight: bold; margin-bottom: 0.5em;
+}
+#menuFiller {
+	display: block;
+}
+.threecolumns {
+	-moz-column-count: 3; -webkit-column-count: 3; column-count: 3;
+}
+.htab {
+	margin: auto; width: auto; display: inline-block;
+}
+.htab > ul > li {
+	border-width: 1px 1px medium; border-style: solid solid none; border-color: rgb(221, 221, 221) rgb(221, 221, 221) currentColor; margin: auto; padding: 5px 6px 3px; width: 150px; height: 30px; text-align: left; font-size: 13px; font-weight: bold; display: inline; list-style-type: none; filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50); position: relative; cursor: pointer; opacity: 0.5; background-image: none;
+}
+.htab > ul > li.selected {
+	border-width: 1px 1px medium; border-style: solid solid none; border-color: rgb(221, 221, 221) rgb(221, 221, 221) currentColor; filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100); position: relative; z-index: 10; cursor: pointer; opacity: 1; background-color: rgb(241, 246, 248) !important;
+}
+.htab > ul {
+	margin: 0px auto; padding: 0px; top: 1px; width: 150px; text-align: left; display: inline; position: relative;
+}
+.htab > div {
+	padding: 12px; border: 1px solid rgb(221, 221, 221); margin-top: 0px; position: relative; z-index: 9; word-wrap: break-word; background-color: rgb(241, 246, 248);
+}
+table.compat-table {
+	border: 1px solid rgb(187, 187, 187); border-collapse: collapse;
+}
+table.compat-table td {
+	background: rgb(255, 255, 255); padding: 5px; border: 1px solid rgb(204, 204, 204); text-align: left; vertical-align: top; word-wrap: break-word;
+}
+table.compat-table td.header {
+	background: rgb(238, 238, 238); padding: 0px 5px; border: 1px solid rgb(187, 187, 187); text-align: left; font-weight: bold;
+}
+table.compat-table th {
+	background: rgb(238, 238, 238); padding: 0px 5px; border: 1px solid rgb(187, 187, 187); text-align: left; font-weight: bold;
+}
+.archivedContentBlock {
+	margin: 0px; background-color: rgb(255, 221, 221);
+}

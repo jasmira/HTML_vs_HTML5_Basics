@@ -1,0 +1,11 @@
+Ruby (also spelt rubi) characters are small, annotative glosses that can be placed above or to the right of a Chinese character when writing logographic languages such as Chinese or Japanese to show the pronunciation. Ruby annotations, are usually used as a pronunciation guide for relatively obscure characters.
+ 
+The <ruby> tag was introduced in HTML 5
+
+
+The <rt> tag defines an explanation or pronunciation of characters (for East Asian typography
+
+
+rp tag
+:
+The <rp> tag is used in ruby annotations, to define what to show if a browser does not support the ruby element.

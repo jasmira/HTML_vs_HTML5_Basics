@@ -1,0 +1,26 @@
+<html>
+<head><title>
+
+</title></head>
+<body>
+<div id="result"> </div>
+Hello
+ <script type="text/javascript">
+     var mygetrequest = new XMLHttpRequest();
+alert("hello");
+
+     mygetrequest.onreadystatechange = function () {
+
+alert(mygetrequest.readyState);
+alert(mygetrequest.status);
+alert("hello");
+}
+
+     mygetrequest.open("GET", "ddm.json", true)
+     mygetrequest.send(null)
+alert("bye");
+alert(mygetrequest.responseText);
+ </script>
+
+</body>
+</html>

@@ -1,0 +1,6 @@
+attribute selectors
+E[att^="string"] {property: value;} where E is a selector
+
+p[title^="ho"] {background: green;} 
+
+<p title="home"> This paragraph should have a green background. </p> <p title="contact"> The attribute selector doesn't match this paragraph. </p> <p title="house"> This paragraph should have a green background. </p> <p> The attribute selector doesn't match this paragraph. </p> <p title="hot"> This paragraph should have a green background. </p>

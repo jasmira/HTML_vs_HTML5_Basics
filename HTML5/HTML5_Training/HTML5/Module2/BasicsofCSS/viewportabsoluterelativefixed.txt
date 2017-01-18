@@ -1,0 +1,14 @@
+In a continuous output medium, such as a computer monitor, a browser displays a web document in a viewport—a rectangular window through which we can view a part of the document. In a paged medium, such as printed paper, each page can be seen as a viewport whose dimensions are the same as the page box (the printable part of the page, excluding any page margins).
+
+
+Fixed positioning is a subcategory of absolute positioning. An element whose position property is set to fixed always has the viewport as its containing block. For continuous media, such as a computer screen, a fixed element won’t move when the document is scrolled. For paged media, a fixed element will be repeated on every page.
+
+An element whose position property has the value absolute is said to be absolutely positioned, and is completely removed from the document flow: it doesn’t affect subsequent elements at all. It’s positioned with respect to its containing block, and it establishes a new containing block for normal flow children, and for descendants whose position property is set to absolute.
+
+The top, right, bottom, left, width, and height properties determine the position and dimensions of an absolutely positioned element.
+
+Both the position and the dimensions can be expressed using all four of the positional properties (top, right, bottom, left).1 Alternatively, you can specify the position of one corner of the box using top or bottom in combination with left or right, and you can specify the dimensions using width and (optionally) height.
+
+An absolutely positioned element will overlap other content unless we make room for it in some way; for instance, by setting margins or padding on other elements. When several absolutely positioned elements occupy the same location, they’ll be stacked according to a stacking context.
+
+Absolute positioning also makes it possible to place an element partly or entirely outside the viewport. This technique, which is known as the off-left technique, is sometimes used intentionally to hide content from visual user agents while keeping it visible for those using assistive technologies such as screen readers.2

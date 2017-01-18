@@ -1,0 +1,34 @@
+body{
+	background-image: url('../images/pic.jpg');
+	backgroud-repeat: no-repeat;
+	background-size: cover;
+}
+
+section{
+	margin: auto;
+	text-align: center;
+}
+
+h1{
+	text-shadow: 2px 2px 5px red;
+}
+
+.pageLayout{
+	margin: auto;
+	border: 1px solid;
+	width: 300px;
+	background-color:#F0F8FF;
+	padding: 18px;
+	border-radius: 20px;	
+	box-shadow: 10px 10px 15px red;
+}
+
+.pageLayout label, .pageLayout input{
+	float: left;
+	margin-bottom: 10px;
+	width: 120px;
+}
+
+br{
+	clear: left;
+}

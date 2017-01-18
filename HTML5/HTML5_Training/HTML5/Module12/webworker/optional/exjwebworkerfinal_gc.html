@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+
+</head>
+<body>
+<button id="b1" onclick="sayHI()">Say HI</button>
+<button onclick="unknownCmd()">Send unknown command</button>
+<button onclick="stop()">Stop worker</button>
+<output id="result"></output>
+<script languag="javascript">
+ var w = new Worker('exgreetings.js');
+  function sayHI() {
+    w.postMessage("Hi to ALL ");
+  }
+  function stop() {
+    w.postMessage("BYe It was nice being with you all!!!");
+  }
+  function unknownCmd() {
+    w.postMessage("Comments from UNKNOWN");
+  }
+ 
+  w.addEventListener('message', function(e) {
+
+var x= e.data;
+    document.getElementById('result').textContent = x;
+  }, false);
+</script>
+</body>
+</html>

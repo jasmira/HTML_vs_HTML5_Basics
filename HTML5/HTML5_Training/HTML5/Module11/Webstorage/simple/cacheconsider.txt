@@ -1,0 +1,3 @@
+.appcache
+
+Mimetype : text/cache-manifest

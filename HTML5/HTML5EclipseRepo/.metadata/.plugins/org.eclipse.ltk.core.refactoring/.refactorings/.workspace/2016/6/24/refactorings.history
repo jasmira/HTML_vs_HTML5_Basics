@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;SampleHtml5Project1&apos; to &apos;SampleProject1_IntroToHTML&apos;" description="Rename resource &apos;SampleHtml5Project1&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/SampleHtml5Project1" name="SampleProject1_IntroToHTML" stamp="1465537219000" updateReferences="true"/>
+</session>

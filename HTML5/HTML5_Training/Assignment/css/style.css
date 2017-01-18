@@ -1,0 +1,174 @@
+body{
+margin: 0px;
+padding: 0px;
+font-family: Verdana;
+font-size: 12px;
+color: #48AB46;
+/*color: red;*/
+}
+
+/*
+.main{
+border: 1px solid red;
+height: 200px;
+}
+*/
+
+#container{
+width: 800px;
+margin: 0px auto;
+/*border: 1px solid red;*/
+}
+
+
+/* HEADER STYLING STARTS */
+#header{
+/*height: 70px;*/
+padding-top: 5px;
+background: #eeeeee;
+border-top: 5px solid #000000;
+border-bottom:1px solid #cccccc;
+}
+
+
+
+#header .logo{
+padding: 10px;
+}
+
+#header .menu{
+margin: -44px 36px 5px 256px;
+}
+
+#header .menu ul.primary-menu{
+margin: 0px;
+padding: 0px;
+list-style: none;
+height: 30px;
+background: #cccccc;
+}
+
+#header .menu ul.primary-menu li{
+float: left;
+text-align: center;
+/*border: 1px solid red;*/
+}
+
+#header .menu ul.primary-menu li a{
+display: block;
+color: #000000;
+padding: 5px 0;
+width: 100px;
+text-decoration: none;
+}
+
+#header .menu ul.primary-menu li a:hover{
+color: #ffffff;
+background: #000000;
+}
+
+#header .banner{
+background: #E8B97D;
+height:250px;
+clear: both;
+}
+/* HEADER STYLING ENDS */
+
+
+
+/* CONTENT STYLING STARTS */
+
+#content {
+clear: both;
+/*display: table-cell;*/
+}
+
+#content .left-content{
+width: 180px;
+float: left;
+/*height: 400px;
+background: orange;*/
+}
+
+#content {
+width: 800px;
+/*float: left;*/
+/*height: 400px;
+background: orange;*/
+}
+
+#content .left-content ul li a{
+color: #000000;
+text-decoration: none;
+}
+
+#content .left-content ul li a:hover{
+color: #000000;
+background: pink;
+text-decoration: underline;
+}
+
+#content .right-content{
+width: 550px;
+/*height: 400px;*/
+background: pink;
+float: right;
+padding: 0 0 0 10px;
+border-left: 1px solid #cccccc;
+}
+
+#registration-form label{
+font-weight: bold;
+}
+
+#registration-form label span{
+color: #ff0000;
+}
+
+#registration-form input, #registration-form textarea{
+border: 1px solid #cccccc;
+padding: 2px 3px;
+}
+
+#registration-form  input:focus, #registration-form textarea:focus{
+border: 1px solid #8498AE;
+background: grey;
+}
+
+#registration-form  input.button{
+border: 1px solid #000000;
+background: #000000;
+font-weight: bold;
+color: #ffffff;
+}
+
+/*#product-list  th, td{
+background-color: white;
+border-color: black;
+}*/
+
+#content .content-menu{
+margin: -44px 36px 5px 256px;
+}
+
+#content .cart-menu{
+    float: right;
+    margin: -246px -76px 5px 256px;
+}
+
+
+#content .content-menu ul.primary-menu{
+margin: 0px;
+padding: 0px;
+list-style: none;
+height: 30px;
+background: #cccccc;
+}
+
+#content .content-menu ul.primary-menu li{
+float: left;
+text-align: center;
+padding: 50px;
+/*border: 1px solid red;*/
+}
+

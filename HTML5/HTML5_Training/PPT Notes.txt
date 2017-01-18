@@ -1,0 +1,309 @@
+HTML5 is the latest and most enhanced version of HTML.
+Technically, HTML is not a programming language, but rather a markup language.
+HTML5 is a standard for structuring and presenting content on the World Wide Web.
+HTML5 is a cooperation between the World Wide Web Consortium (W3C) and the Web Hypertext Application Technology Working Group (WHATWG).
+Browser Support: The latest versions of Apple Safari, Google Chrome, Mozilla Firefox, and Opera all support many HTML5 features, and Internet Explorer above 9 version have support features of HTML5
+html5test.com to test the features support by current browser
+
+New Features added:
+    New Semantic Elements: These are like <header>, <footer>, and <section>.
+    Forms 2.0: Improvements to HTML web forms where new attributes have been introduced for <input> tag.
+    Persistent Local Storage: To achieve without resorting to third-party plugins.
+    Audio & Video: You can embed audio or video on your web pages without resorting to third-party plugins.
+    Geolocation: Now visitors can choose to share their physical location with your web application.
+    Canvas: This supports a two-dimensional drawing surface that you can program with JavaScript.
+    Drag and drop: Drag and drop the items from one location to another location on a the same webpage.
+    Microdata: This lets you create your own vocabularies beyond HTML5 and extend your web pages with custom semantics.
+    WebSocket : A a next-generation bidirectional communication technology for web applications.
+    Server-Sent Events: HTML5 introduces events which flow from web server to the web browsers and they are called Server-Sent Events (SSE).
+
+Backward Compatibility:
+    New features have fallbacks to old features, which needs to be detected using some lines of javascript code.
+
+Syntax:
+    HTML5 gives lot of flexibility compared to XHTML
+        Uppercase tag names.
+        Quotes are optional for attributes.
+        Attribute values are optional.
+        Closing empty elements are optional.
+DOCTYPE:
+    HTML5 uses simple syntax for doctype
+    <!DOCTYPE html>
+CHARACTER ENCODING:
+    <meta charset="UTF-8">
+<script> tag:
+    html5 simplfies to script tag also, no need to define the type.
+    <script src="script.js"></script>
+<link> tag:
+    <link rel="stylesheet" href="stylefile.css">
+
+HTML5 Elements:
+    HTML5 elements are marked using start and end tag.
+    example, <p>....</p>
+    the tag names are case insensitve, they can written in uppercase, lowercase and even mixed, but best practice is to use lowercase.
+
+HTML5 Attributes.
+    Elements may have some attributes which define certain properties of the element.
+    Some attributes are global which can be used on any element (ex: class, id) while some are element specific (Ex: min, max etc.)
+    They are defined as follows,
+        <div class="className">...</div>
+    these are also case insensitive, but best practice is lowercase.
+
+HTML5 Semantic Elements:
+They are mostly introduce for better structuring.
+    section: This tag represents a generic document or application section. It can be used together with h1-h6 to indicate the document structure.
+    article: This tag represents an independent piece of content of a document, such as a blog entry or newspaper article.
+    aside: This tag represents a piece of content that is only slightly related to the rest of the page.
+    header: This tag represents the header of a section.
+    footer: This tag represents a footer for a section and can contain information about the author, copyright information, et cetera.
+    nav: This tag represents a section of the document intended for navigation.
+    dialog: This tag can be used to mark up a conversation.
+    figure: This tag can be used to associate a caption together with some embedded content, such as a graphic or video.
+
+HTML5 Attributes:
+    Below are list of the attributes which can be used on any tag (global attributes).
+        Attribute	Options	Function
+        accesskey	User Defined	Specifies a keyboard shortcut to access an element.
+        align	right, left, center	Horizontally aligns tags
+        background	URL	Places an background image behind an element
+        bgcolor	numeric, hexidecimal, RGB values	Places a background color behind an element
+        class	User Defined	Classifies an element for use with Cascading Style Sheets.
+        contenteditable	true, false	Specifies if the user can edit the element's content or not.
+        contextmenu	Menu id	Specifies the context menu for an element.
+        data-XXXX	User Defined	Custom attributes. Authors of a HTML document can define their own attributes. Must start with "data-".
+        draggable	true,false, auto	Specifies whether or not a user is allowed to drag an element.
+        height	Numeric Value	Specifies the height of tables, images, or table cells.
+        hidden	hidden	Specifies whether element should be visible or not.
+        id	User Defined	Names an element for use with Cascading Style Sheets.
+        item	List of elements	Used to group elements.
+        itemprop	List of items	Used to group items.
+        spellcheck	true, false	Specifies if the element must have it's spelling or grammar checked.
+        style	CSS Style sheet	Specifies an inline style for an element.
+        subject	User define id	Specifies the element's corresponding item.
+        tabindex	Tab number	Specifies the tab order of an element.
+        title	User Defined	"Pop-up" title for your elements.
+        valign	top, middle, bottom	Vertically aligns tags within an HTML element.
+        width	Numeric Value	Specifies the width of tables, images, or table cells.
+        
+HTML5 Web Forms 2.0
+    It is the extension for the form features of HTML4.
+    irradicate the use of extensive scripting and styling that was required in HTML4.
+    The new values for attribute type introduced in HTML5 are as follows
+    Type	Description
+    datetime        A date and time (year, month, day, hour, minute, second, fractions of a second) encoded according to ISO 8601 with the time zone 
+                    set to UTC.
+    datetime-local	A date and time (year, month, day, hour, minute, second, fractions of a second) encoded according to ISO 8601, with no time zone 
+                    information.
+    date	        A date (year, month, day) encoded according to ISO 8601.
+    month	        A date consisting of a year and a month encoded according to ISO 8601.
+    week	        A date consisting of a year and a week number encoded according to ISO 8601.
+    time	        A time (hour, minute, seconds, fractional seconds) encoded according to ISO 8601.
+    number	        This accepts only numerical value. The step attribute specifies the precision, defaulting to 1.
+    range	        The range type is used for input fields that should contain a value from a range of numbers.
+    email	        This accepts only email value. This type is used for input fields that should contain an e-mail address. If you try to submit a 
+                    simple text, it forces to enter only email address in email@example.com format.
+    url	            This accepts only URL value. This type is used for input fields that should contain a URL address. If you try to submit a simple 
+                    text, it forces to enter only URL address either in http://www.example.com format or in http://example.com format.
+
+
+
+<output> element
+    Html5 introduced new element <output> to represent the result of different types of outputs, specially the once done using script.
+
+New Attribute associated with the elements of web form 2.0
+
+Placeholder attribute
+    New attribute introduced in html5.
+    When applied to <input> and <textarea>, provides hints to the users what to type.
+
+Autofocus attribute
+    This is new attribute introduced in html5, which focus to the specific element when the document is loaded.
+
+Required Attribute
+    New features validates the element if it is empty at the time of form submission.
+
+
+Audio / Video Element
+    HTML5 intorduces two new features that is <audio> and <video> tags whitout the use of flash.
+    <video>
+        video tag has two main atrributes
+            src - which defines the source of the video file.
+            controls - defines the controls over the video so user can play or pause the video.
+            <video src="foo.mp4"  width="300" height="200" controls>
+                Your browser does not support the <video> element.   
+            </video>
+        html5 doesnot define whcih video format to be supported by browser but the msoot commonly used formats are .ogg and .mp4.
+        For multiple browsers u can deine the <source> tag inside the <video> tag and src of all the formats, the browser will play whichever format it suports.
+        <source src="/html5/foo.ogg" type="video/ogg" />
+    
+    Video Atrributes:
+    Attribute	 Description
+    autoplay	 This boolean attribute if specified, the video will automatically begin to play back as soon as it can do so without stopping to 
+                 finish loading the data.
+    autobuffer	 This boolean attribute if specified, the video will automatically begin buffering even if it's not set to automatically play.
+    controls	 If this attribute is present, it will allow the user to control video playback, including volume, seeking, and pause/resume playback.
+    height	     This attribut specifies the height of the video's display area, in CSS pixels.
+    loop	     This boolean attribute if specified, will allow video automatically seek back to the start after reaching at the end.
+    preload	     This attribute specifies that the video will be loaded at page load, and ready to run. Ignored if autoplay is present.
+    poster	     This is a URL of an image to show until the user plays or seeks.
+    src	         The URL of the video to embed. This is optional; you may instead use the <source> element within the video block to specify the video 
+                 to embed
+    width	     This attribut specifies the width of the video's display area, in CSS pixels.
+    
+    <audio>
+        Html5 supports <audio> tag whihc embeds sound content into the html.
+        <audio src="foo.wav" controls autoplay>
+            Your browser does not support the <audio> element.   
+        </audio>
+        Same as for video, html5 does not define which audio format to be suported by the browser, but the common formats are ogg, mp3 and wav
+        The <source> tag can also be used to specify the audio source, we can use multiple source tags and the browser detects and plays whichever it supports.
+    
+    Audio Attributes:
+    Attribute	Description
+    autoplay	This boolean attribute if specified, the audio will automatically begin to play back as soon as it can do so without stopping to finish loading the data.
+    autobuffer	This boolean attribute if specified, the audio will automatically begin buffering even if it's not set to automatically play.
+    controls	If this attribute is present, it will allow the user to control audio playback, including volume, seeking, and pause/resume playback.
+    loop	This boolean attribute if specified, will allow audio automatically seek back to the start after reaching at the end.
+    preload	This attribute specifies that the audio will be loaded at page load, and ready to run. Ignored if autoplay is present.
+    src	The URL of the audio to embed. This is optional; you may instead use the <source> element within the video block to specify the video to embed
+    
+    Handling Media Events:
+    Below are list of the attributes of audio and video tag which can be used to control the media content.
+    Event	Description
+    abort	This event is generated when playback is aborted.
+    canplay	This event is generated when enough data is available that the media can be played.
+    ended	This event is generated when playback completes.
+    error	This event is generated when an error occurs.
+    loadeddata	This event is generated when the first frame of the media has finished loading.
+    loadstart	This event is generated when loading of the media begins.
+    pause	This event is generated when playback is paused.
+    play	This event is generated when playback starts or resumes.
+    progress	This event is generated periodically to inform the progress of the downloading the media.
+    ratechange	This event is generated when the playback speed changes.
+    seeked	This event is generated when a seek operation completes.
+    seeking	This event is generated when a seek operation begins.
+    suspend	This event is generated when loading of the media is suspended.
+    volumechange	This event is generated when the audio volume changes.
+    waiting	This event is generated when the requested operation (such as playback) is delayed pending the completion of another operation (such as a seek).
+    
+
+GEOLOCATION
+    HTML5 Geolocation API allows you to share your location with the website. The javascript is than used to capture the latitude and longitude and 
+    send it to backend server.
+    This can be used for finding location and display the location specific advertisements on the site.
+    Geolocation API is supported by most of the browsers and mobile devices, and it works with the global navigator object.
+    var geolocation = navigator.geolocation;
+    
+    geolocation methods
+    geolocation object provides the folowing methods
+    getCurrentPosition()	     
+        This method retrieves the current geographic location of the user.
+        syntax:
+            getCurrentPosition(showLocation, ErrorHandler, options);
+        Parameters:
+            showLocation : This specifies the callback method that retrieves the location information. This method is called asynchronously with an 
+                object corresponding to the Position object which stores the returned location information.
+            ErrorHandler : This optional paramter specifies the callback method that is invoked when an error occurs in processing the asynchronous 
+                call. This method is called with the PositionError object that stores the returned error information.
+            options : This optional paramter specifies a set of options for retrieving the location information. You can specify (a) Accuracy of the 
+                returned location information (b) Timeout for retrieving the location information and (c) Use of cached location information .
+    watchPosition()	             
+        This method retrieves periodic updates about the current geographic location of the device.
+        Syntax:
+            watchPosition(showLocation, ErrorHandler, options);
+        Parameters:
+            Same as getCurrentPosition();
+        Return:
+            Unique transaction id;
+    clearWatch()                 
+        This method cancels an ongoing watchPosition call.
+        Syntax:
+            clearWatch(watchId);
+        Parameters:
+            watchId : This specifies the unique ID of the watchPosition call to cancel. The ID is returned by the watchPosition call.
+    
+    
+    The geolocation call is made asynchronously with a position object which stores the location information.
+    following are the properties of the position object.
+    Property	Type	Description
+    coords	objects	
+    Specifies the geographic location of the device. The location is expressed as a set of geographic coordinates together with information about 
+    heading and speed.
+    coords.latitude	Number	
+    Specifies the latitude estimate in decimal degrees. The value range is [-90.00, +90.00].
+    coords.longitude	Number	
+    Specifies the longitude estimate in decimal degrees. The value range is [-180.00, +180.00].
+    coords.altitude	Number	
+    [Optional] Specifies the altitude estimate in meters above the WGS 84 ellipsoid.
+    coords.accuracy	Number	
+    [Optional] Specifies the accuracy of the latitude and longitude estimates in meters.
+    coords.altitudeAccuracy	Number	
+    [Optional] Specifies the accuracy of the altitude estimate in meters.
+    coords.heading	Number	
+    [Optional] Specifies the device's current direction of movement in degrees counting clockwise relative to true north.
+    coords.speed	Number	
+    [Optional] Specifies the device's current ground speed in meters per second.
+    timestamp	date	
+    Specifies the time when the location information was retrieved and the Position object created.
+    
+    Handling Errors:
+    both the geolocation methods user error handling call backs whic gives theh positionerror object it has two properties.
+    code: Contains a numeric code for the error.
+    message: Contains a human-readable description of the error.
+    
+    followng are the list of error codes returned by the positionerror object
+    Code	Constant	Description
+    0	UNKNOWN_ERROR	
+    The method failed to retrieve the location of the device due to an unknown error.
+    1	PERMISSION_DENIED	
+    The method failed to retrieve the location of the device because the application does not have permission to use the Location Service.
+    2	POSITION_UNAVAILABLE	
+    The location of the device could not be determined.
+    3	TIMEOUT	
+    The method was unable to retrieve the location information within the specified maximum timeout interval.
+    
+    
+    Position Options:
+    The third argument in the method is the positionoptions which specifies the set of options used to retreive the position.
+    following are the options,
+    enableHighAccuracy: Specifies whether the widget wants to receive the most accurate location estimate possible. By default this is false.
+    timeout: The timeout property is the number of milliseconds your web application is willing to wait for a position.
+    maximumAge: Specifies the expiry time in milliseconds for cached location information.
+    
+WEBSTORAGE
+    HTML5 introduces two new storage mechanism sessionStorage and localStorage to overcome the http session cookies draws.
+        Cookies are included with every HTTP request, thereby slowing down your web application by transmitting the same data.
+        Cookies are included with every HTTP request, thereby sending data unencrypted over the internet.
+        Cookies are limited to about 4 KB of data . Not enough to store required data.
+    
+    SESSION STORAGE:
+        sessionStorage can be used to store data of a website, which can be accesed by any page in the site opened in that window session. 
+        sessionStorage data is deleted once the window session is closed.
+    
+    LOCAL STORAGE:
+        localStorage can be sued to store data of a site, which can be accessed without any time limit and from any page of that site anytime.
+        localStorage data has to be ecplicitly deleted. either by browser clear cache or through code.
+    
+    DELETE WEBSTORAGE:
+        sessionStorage data is deleted once the window is closed or session closed.
+        to clear the localStorage data you need to call localStorage.remove('key'); to clear the entire localStorage you need to fire 
+        localStorage.clear();
+        
+
+WEBWORKERS
+    Webworker is  new feature introduced in html5 which can perform all the computationally expensive task without interrupting the user interface and can run on seperate thread.
+    webworkers are usually backgrounds scripts and heavy weight so they are not to be used on large numbers.
+    the script inside the webworker cannot acces the web page window object (window.document)
+    
+    webworker is intialised with the url of the javascript file in which the code has to be executed.
+    syntax:
+        var worker = new Worker('bigLoop.js');
+    once the WW is spawned the communication between the WW and the page is done using the method postMessage() and it can take its arguements as string or as JSON object.
+    message pased by WW is accesed on the main page by using onmessage() event.
+    
+    A webworker doesnot stop by itself but has to stopped by firing the terminate() method.
+    syntax:
+        worker.terminate();
+    
+
+        

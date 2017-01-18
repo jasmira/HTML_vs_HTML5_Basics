@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+<title>Bezier curve</title>
+</head>
+<body>
+
+<script language="javascript">
+function draw() {
+  var ctx = document.getElementById('c1').getContext('2d');
+  var lineCap = ['butt','round','square'];
+  var color = ['green','blue','yellow'];
+
+  // Draw guides
+  ctx.strokeStyle = '#09f';
+  ctx.beginPath();
+  ctx.moveTo(10,10);
+  ctx.lineTo(140,10);
+  ctx.moveTo(10,140);
+  ctx.lineTo(140,140);
+  ctx.stroke();
+
+  // Draw lines
+  ctx.strokeStyle = 'green';
+  for (var i=0;i<lineCap.length;i++){
+  ctx.strokeStyle = color[i];
+
+    ctx.lineWidth = 15;
+    ctx.lineCap = lineCap[i];
+    ctx.beginPath();
+    ctx.moveTo(25+i*50,10);
+    ctx.lineTo(25+i*50,140);
+    ctx.stroke();
+  }
+}
+
+</script>
+<canvas id="c1" height="500" width="500">
+</canvas>
+<br/>
+
+<button type="button" onclick="draw()">Draw</button>
+<br/>
+
+</body>
+</html>

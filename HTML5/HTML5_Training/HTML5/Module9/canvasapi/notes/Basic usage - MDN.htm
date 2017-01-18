@@ -1,0 +1,628 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0060)https://developer.mozilla.org/en/Canvas_tutorial/Basic_usage -->
+<!DOCTYPE html><HTML dir="ltr" id="developer-mozilla-org" 
+lang="en"><HEAD><TITLE>Basic usage - MDN</TITLE>
+<META charset="utf-8">
+<META name="viewport" content="initial-scale=1.0, width=device-width">
+<META name="MSSmartTagsPreventParsing" content="true">
+<META name="Copyright" content="Copyright (c) 2005-2012 Mozilla.">
+<META name="Rating" content="General"><LINK rel="home" href="/"><LINK rel="copyright" 
+href="#copyright">
+<META name="robots" content="index,follow"><LINK rel="shortcut icon" href="/favicon.ico">
+<LINK title="What's new feed" rel="alternate" type="application/rss+xml" href="/index.php?title=Special:Recentchanges&amp;feed=rss">
+<LINK title="Page and subpages changes feed" rel="alternate" type="application/rss+xml" 
+href="/index.php?title=Special:Article&amp;type=feed&amp;feedtype=subpagechanges&amp;pageid=20277">
+<LINK title="Page changes feed" rel="alternate" type="application/rss+xml" href="/index.php?title=Special:Article&amp;type=feed&amp;pageid=20277">
+<META name="GENERATOR" content="MSHTML 9.00.8112.16440"><LINK title="MDN Search" 
+rel="search" type="application/opensearchdescription+xml" href="/deki/gui/opensearch.php?type=description">
+<LINK rel="stylesheet" type="text/css" href="Basic%20usage%20-%20MDN_files/css.css" 
+media="screen"> <!--[if IE 7]><style type="text/css">@import "/skins/common/_ie7.css";</style><![endif]--><!--[if IE 6]><style type="text/css">@import "/skins/common/_ie.css";</style><![endif]--><LINK 
+rel="stylesheet" type="text/css" href="Basic%20usage%20-%20MDN_files/print.css" 
+media="print"><LINK rel="stylesheet" type="text/css" href="Basic%20usage%20-%20MDN_files/css(1).css" 
+media="screen,projection"><!--[if lte IE 7]><link rel="stylesheet" type="text/css" media="all" href="/skins/mdn/Transitional/ie7.css"><![endif]--><!--[if lte IE 6]><link rel="stylesheet" type="text/css" media="all" href="/skins/mdn/Transitional/ie6.css"><![endif]-->
+<LINK rel="stylesheet" type="text/css" href="Basic%20usage%20-%20MDN_files/print(1).css" 
+media="print">
+<SCRIPT type="text/javascript">CKEDITOR_BASEPATH = "/deki/plugins/page_editor_ckeditor/ckeditor/";</SCRIPT>
+
+<SCRIPT type="text/javascript" src="Basic%20usage%20-%20MDN_files/js.js"></SCRIPT>
+
+<SCRIPT type="text/javascript">var _starttime = new Date().getTime();</SCRIPT>
+<!--[if IE]>
+<META content="no" http-equiv="imagetoolbar">
+<META content="IE=Edge" http-equiv="X-UA-Compatible">
+<SCRIPT src="Basic%20usage%20-%20MDN_files/html5.js"></SCRIPT>
+<![endif]-->
+<SCRIPT type="text/javascript">
+
+		var aLt = aLt || [];aLt["attach-no-description"] = 'No description'; aLt["cancel"] = 'Cancel'; aLt["close"] = 'Close'; aLt["comment-delete"] = 'Are you sure you want to delete this comment?'; aLt["contentrating-title-popup"] = 'Thanks for your feedback'; aLt["error"] = 'Error'; aLt["error-permission-denied"] = 'Permission denied'; aLt["error-permission-details"] = 'Your account does not have sufficient permissions to perform that action.'; aLt["gallery-close"] = 'close'; aLt["gallery-next"] = 'next'; aLt["gallery-prev"] = 'prev'; aLt["internal-error"] = 'Sorry, but there was an internal problem - please try again soon.'; aLt["js-label_cancel"] = 'Cancel'; aLt["js-label_save"] = 'Save'; aLt["js-tooltip_cancel"] = 'Exit Without Saving Changes'; aLt["js-tooltip_save"] = 'Save and Exit (Alt+S)'; aLt["ldap-provide-credentials"] = 'Please provide external service login credentials.'; aLt["loading"] = 'Loading...'; aLt["menu-confirm-delete"] = 'Are you sure you want to delete this file?'; aLt["menu-delete-file"] = 'Delete'; aLt["menu-edit-description"] = 'Edit description'; aLt["menu-move-file"] = 'Move'; aLt["menu-previous-versions"] = 'Previous versions'; aLt["menu-view-original"] = 'View original'; aLt["ready"] = 'Ready'; aLt["remove-tag"] = 'Remove tag'; aLt["restore-tag"] = 'Restore tag'; aLt["adding-tags"] = 'Adding Tags...'; aLt["save"] = 'Save'; aLt["submit"] = 'Submit'; aLt["wikibits-attach-another"] = 'Attach another file'; aLt["wikibits-attach-file"] = 'Attach File'; aLt["wikibits-cant-attach-editing"] = 'Sorry, you can\'t attach files while editing a page. Please close the editor first.'; aLt["wikibits-edit-section"] = 'Edit section'; aLt["wikibits-remove-file"] = 'Remove file'; aLt["advanced-search"] = 'Advanced Search'; aLt["standard-search"] = 'Standard Search';  var wfMsg = wfMsg || function (key) { return aLt[key] ? aLt[key] : 'MISSING: ' + key; };
+	//hook in menu clicking events to the document's body
+	YAHOO.util.Event.addListener(document, "click", function () { DWMenu.BodyClick(); });
+	YAHOO.util.Event.onDOMReady(function () { new clientWindow });
+
+		
+
+			YAHOO.util.Event.onDOMReady(function() {
+			tb_init("a.lightbox, area.lightbox, input.lightbox, a[rel='awesomebox']");//pass where to apply thickbox
+		});
+	
+			YAHOO.util.Event.onDOMReady(function() {
+			MTComments.HookBehavior();
+		});
+		</SCRIPT>
+<LINK rel="stylesheet" type="text/css" href="Basic%20usage%20-%20MDN_files/SyntaxHighlighter.css">
+<SCRIPT type="text/javascript" src="Basic%20usage%20-%20MDN_files/shCore.js"></SCRIPT>
+
+<SCRIPT type="text/javascript" src="Basic%20usage%20-%20MDN_files/shBrushXml.js"></SCRIPT>
+
+<SCRIPT type="text/javascript" src="Basic%20usage%20-%20MDN_files/shBrushJScript.js"></SCRIPT>
+
+<SCRIPT type="text/javascript" src="Basic%20usage%20-%20MDN_files/rgbcolor.js"></SCRIPT>
+
+<SCRIPT type="text/javascript" src="Basic%20usage%20-%20MDN_files/nav.js"></SCRIPT>
+
+<SCRIPT type="text/javascript">
+
+Deki.BaseHref = 'https://developer.mozilla.org';
+Deki.PageId = 20277;
+Deki.PageTitle = 'en/Canvas tutorial/Basic usage';
+Deki.PageLanguageCode = 'en';
+Deki.FollowRedirects = 1;
+Deki.PathTpl = '/skins/mdn';
+Deki.PathSkin = '/skins/mdn/Transitional';
+Deki.PathCommon = '/skins/common';
+Deki.UserName = 'Anonymous';
+Deki.Today = '29 Jan 2012';
+Deki.UserIsAnonymous = true;
+Deki.EditorConfigToken = '23205afd';
+Deki.EditorStylesToken = '320cac65';
+Deki.PageEditable = false;
+</SCRIPT>
+
+<SCRIPT type="text/javascript">aLt["commercial-required"] = 'Gather feedback on your content with <strong>community scoring</strong> - these ratings weight results in adaptive search. Through curation analytics, ratings are used to highlight pages in need of attention. <a href="http://www.mindtouch.com/redir/mindtouch-tcs/">Learn more on enabling these capabilities with MindTouch 2010.</a>';aLt["login-required"] = 'You must be <a href="/index.php?title=Special:Userlogin&returntotitle=en%2FCanvas+tutorial%2FBasic+usage">logged in</a> to perform that action';</SCRIPT>
+<LINK rel="stylesheet" type="text/css" href="Basic%20usage%20-%20MDN_files/custom_css.css"></HEAD>
+<BODY id="docs" class="section-docs en ltr yui-skin-sam PageDW-enCanvastutorialBasicusage" 
+role="document"><!--[if lte IE 8]>
+<noscript><div class="global-notice">
+<p><strong>Warning:</strong> The Mozilla Developer Network website employs emerging web standards that may not be fully supported in some versions of MicroSoft Internet Explorer. You can improve your experience of this website by enabling JavaScript.</p>
+</div></noscript>
+<![endif]--><NOSCRIPT>&lt;div class="noscript"&gt;This application requires 
+Javascript to be enabled.&lt;/div&gt;</NOSCRIPT><HEADER id="masthead" role="banner">
+<DIV class="wrap">
+<DIV id="branding">
+<H1 id="logo"><A href="https://developer.mozilla.org/"><IMG title="" alt="" src="Basic%20usage%20-%20MDN_files/mdn-logo-sm.png" 
+width="62" height="71"> Mozilla Developer Network</A></H1></DIV><A id="moz-tab" 
+href="http://mozilla.org/">Mozilla</A><NAV id="nav" role="menubar">
+<UL id="nav-main">
+  <LI id="nav-main-topics" class="menu"><A aria-haspopup="true" class="toggle" 
+  title="Explore other parts of MDN" href="https://developer.mozilla.org/en/Canvas_tutorial/Basic_usage#nav-sub-topics">Topics</A>
+  <UL aria-hidden="true" id="nav-sub-topics" class="sub-menu">
+    <LI id="nav-sub-web"><A 
+href="https://developer.mozilla.org/web">Web</A></LI>
+    <LI id="nav-sub-apps"><A 
+    href="https://developer.mozilla.org/apps">Apps</A></LI>
+    <LI id="nav-sub-mobile"><A 
+    href="https://developer.mozilla.org/mobile">Mobile</A></LI>
+    <LI id="nav-sub-addons"><A 
+    href="https://developer.mozilla.org/addons">Add-ons</A></LI>
+    <LI id="nav-sub-mozilla"><A 
+    href="https://developer.mozilla.org/mozilla">Mozilla</A></LI></UL></LI>
+  <LI id="nav-main-docs" class="menu"><A aria-haspopup="true" class="docs toggle" 
+  aria-labelledby="nav-main-docs" 
+  href="https://developer.mozilla.org/docs">Docs</A>
+  <DIV aria-hidden="true" id="nav-sub-docs" class="sub-menu">
+  <UL>
+    <LI>
+    <UL>
+      <LI><A href="https://developer.mozilla.org/en/HTML">HTML</A></LI>
+      <LI><A href="https://developer.mozilla.org/en/DOM">DOM</A></LI>
+      <LI><A href="https://developer.mozilla.org/en/Using_audio_and_video_in_Firefox">Video</A></LI>
+      <LI><A href="https://developer.mozilla.org/en/Using_audio_and_video_in_Firefox">Audio</A></LI>
+      <LI><A href="https://developer.mozilla.org/en/SVG">SVG</A></LI>
+      <LI><A 
+href="https://developer.mozilla.org/en/WebGL">WebGL</A></LI></UL></LI>
+    <LI>
+    <UL>
+      <LI><A href="https://developer.mozilla.org/en/HTML/HTML5">HTML5</A></LI>
+      <LI><A 
+      href="https://developer.mozilla.org/en/WebSockets">WebSockets</A></LI>
+      <LI><A href="https://developer.mozilla.org/en/Offline_resources_in_Firefox">Offline 
+      Cache</A></LI>
+      <LI><A href="https://developer.mozilla.org/en/DOM/Storage">Local 
+      Storage</A></LI>
+      <LI><A 
+href="https://developer.mozilla.org/en/IndexedDB">IndexedDB</A></LI>
+      <LI><A href="https://developer.mozilla.org/en/Using_files_from_web_applications">File 
+      API</A></LI></UL></LI>
+    <LI>
+    <UL>
+      <LI><A href="https://developer.mozilla.org/en/CSS">CSS</A></LI>
+      <LI><A 
+      href="https://developer.mozilla.org/en/Using_gradients">Gradients</A></LI>
+      <LI><A 
+      href="https://developer.mozilla.org/en/CSS/Using_CSS_transforms">Transforms</A></LI>
+      <LI><A 
+      href="https://developer.mozilla.org/en/CSS/CSS_transitions">Transitions</A></LI>
+      <LI><A 
+      href="https://developer.mozilla.org/en/CSS/CSS_animations">Animations</A></LI>
+      <LI><A href="https://developer.mozilla.org/en/CSS/Media_queries">Media 
+      Queries</A></LI></UL></LI>
+    <LI>
+    <UL>
+      <LI><A 
+      href="https://developer.mozilla.org/en/JavaScript">JavaScript</A></LI>
+      <LI><A href="https://developer.mozilla.org/en/Ajax">Ajax</A></LI>
+      <LI><A href="https://developer.mozilla.org/en/HTML/Canvas">Canvas</A></LI>
+      <LI><A 
+      href="https://developer.mozilla.org/en/Using_geolocation">Geolocation</A></LI>
+      <LI><A href="https://developer.mozilla.org/en/DragDrop/Drag_and_Drop">Drag 
+      &amp; Drop</A></LI>
+      <LI><A href="https://developer.mozilla.org/en/Using_web_workers">Web 
+      Workers</A></LI></UL></LI></UL>
+  <P><A href="https://developer.mozilla.org/docs">More docs…</A></P></DIV></LI>
+  <LI id="nav-main-demos"><A class="demos" href="https://developer.mozilla.org/demos">Demos</A></LI>
+  <LI id="nav-main-learning"><A class="learning" href="https://developer.mozilla.org/learn">Learning</A></LI>
+  <LI id="nav-main-community" class="menu"><A aria-haspopup="true" class="community toggle" 
+  aria-labelledby="nav-main-community" href="https://developer.mozilla.org/en/Canvas_tutorial/Basic_usage#nav-sub-community">Community</A>
+  <UL aria-hidden="true" id="nav-sub-community" class="sub-menu">
+    <LI><A href="https://developer.mozilla.org/events">Events</A></LI>
+    <LI><A href="https://developer.mozilla.org/discussions">Discussions</A></LI>
+    <LI><A 
+href="https://developer.mozilla.org/promote">Promote</A></LI></UL></LI></UL></NAV>
+<UL class="user-state">
+  <LI><A href="https://developer.mozilla.org/users/login">Sign in</A></LI></UL>
+<FORM id="site-search" method="get" action="https://www.google.com/search" 
+data-url="/search">
+<P><INPUT id="q" role="search" name="q" type="text" 
+placeholder="Search MDN"><NOSCRIPT>&lt;button 
+type="submit"&gt;Search&lt;/button&gt;</NOSCRIPT></P><INPUT name="sitesearch" 
+value="developer.mozilla.org" type="hidden">
+<DIV id="site-search-gg"></DIV></FORM></DIV></HEADER>
+<DIV class="global-notice head-notice">
+<DIV class="wrap">
+<P style="background: rgb(255, 255, 255); padding: 15px; border: 2px solid rgb(229, 213, 193); color: rgb(255, 85, 85); font-size: 120%; font-weight: bold;">This 
+system is experiencing a problem that causes syntax errors to appear  on many 
+pages. This problem is known and is being <A href="https://bugzilla.mozilla.org/show_bug.cgi?id=715341">tracked 
+in  Bugzilla.</A> Also, the DOM Reference is currently undergoing repairs after 
+an accidental move of much of its content. Apologies and thanks for your 
+patience!</P></DIV></DIV><SECTION id="nav-toolbar">
+<DIV class="wrap"><NAV id="tool-menus">
+<UL id="tools">
+  <LI class="menu"><A class="toggle" href="https://developer.mozilla.org/en/Canvas_tutorial/Basic_usage#site-tools">Site 
+  tools</A>
+  <UL id="site-tools" class="sub-menu" role="navigation">
+    <LI class="site-recent">	<A title="Recent changes" href="https://developer.mozilla.org/Special:Recentchanges">Recent 
+    changes</A></LI>
+    <LI class="site-rss">	<A title="RSS feeds" href="https://developer.mozilla.org/Special:ListRss">RSS 
+    feeds</A></LI>
+    <LI class="siteListusers"><A title="Users" href="https://developer.mozilla.org/User:">Users</A></LI>
+    <LI class="site-templates">	<A title="Templates" href="https://developer.mozilla.org/Template:">Templates</A>
+    </LI>
+    <LI class="site-map">	<A title="Sitemap" href="https://developer.mozilla.org/Special:Sitemap">Sitemap</A>
+    </LI>
+    <LI class="site-popular">	<A title="Popular pages" href="https://developer.mozilla.org/Special:Popularpages">Popular 
+    pages</A></LI>
+    <LI class="siteAbout"><A title="About MDN" href="https://developer.mozilla.org/Special:About">About 
+    MDN</A></LI></UL></LI>
+  <LI class="menu"><A class="toggle" href="https://developer.mozilla.org/en/Canvas_tutorial/Basic_usage#page-tools">This 
+  page</A>
+  <UL id="page-tools" class="sub-menu" role="navigation">
+    <LI class="page-new"><A class="disabled " title="New page" href="https://developer.mozilla.org/en/Canvas_tutorial/Basic_usage#">New 
+    sub-page</A></LI>
+    <LI class="page-history"><A title="Page history" href="https://developer.mozilla.org/index.php?title=en/Canvas_tutorial/Basic_usage&amp;action=history">History</A></LI>
+    <LI class="page-talk">	<A title="Talk page" href="https://developer.mozilla.org/Talk:en/Canvas_tutorial/Basic_usage">Talk 
+    page</A></LI>
+    <LI class="page-print">	<A title="Print page" onclick="return window.print();" 
+    href="https://developer.mozilla.org/en/Canvas_tutorial/Basic_usage#">Print 
+    page</A></LI>
+    <LI class="page-backlinks"><A href="https://developer.mozilla.org/index.php?title=Special:Article&amp;type=backlinks&amp;pageid=20277">Pages 
+    that link here</A></LI></UL></LI>
+  <LI class="menu"><A class="toggle" href="https://developer.mozilla.org/en/Canvas_tutorial/Basic_usage#">Languages</A>
+  <UL>
+    <LI><A title="es/Canvas_tutorial/Uso_básico" href="https://developer.mozilla.org/es/Canvas_tutorial/Uso_b%C3%A1sico" 
+    rel="internal">Español</A></LI>
+    <LI><A title="fr/Tutoriel_canvas/Utilisation_de_base" href="https://developer.mozilla.org/fr/Tutoriel_canvas/Utilisation_de_base" 
+    rel="internal">Français</A></LI>
+    <LI><A title="it/Canvas_tutorial/Utilizzo_di_base" href="https://developer.mozilla.org/it/Canvas_tutorial/Utilizzo_di_base" 
+    rel="internal">Italiano</A></LI>
+    <LI><A title="pl/Przewodnik_po_canvas/Proste_zastosowanie" href="https://developer.mozilla.org/pl/Przewodnik_po_canvas/Proste_zastosowanie" 
+    rel="internal">Polski</A></LI>
+    <LI><A title="ru/Обучение_canvas/Основы" href="https://developer.mozilla.org/ru/%D0%9E%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D0%B5_canvas/%D0%9E%D1%81%D0%BD%D0%BE%D0%B2%D1%8B" 
+    rel="internal">Русский</A></LI>
+    <LI><A title="cn/Canvas_tutorial/Basic_usage" href="https://developer.mozilla.org/cn/Canvas_tutorial/Basic_usage" 
+    rel="internal">中文 (中国)</A></LI>
+    <LI><A title="zh_tw/Canvas_教學/基本用法" href="https://developer.mozilla.org/zh_tw/Canvas_%E6%95%99%E5%AD%B8/%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95" 
+    rel="internal">中文 (台湾)</A></LI>
+    <LI><A title="ja/Canvas_tutorial/Basic_usage" href="https://developer.mozilla.org/ja/Canvas_tutorial/Basic_usage" 
+    rel="internal">日本語</A></LI></UL></LI></UL></NAV><NAV class="crumbs" role="navigation">
+<OL>
+  <LI class="crumb-one"><A href="https://developer.mozilla.org/">MDN</A></LI>
+  <LI class="crumb-two"><A 
+  href="https://developer.mozilla.org/docs">Docs</A></LI>
+  <LI class="first"><A class="deki-ns" 
+  href="https://developer.mozilla.org/">MDN</A></LI>
+  <LI class="second"><A class="deki-ns" 
+  href="https://developer.mozilla.org/en">MDN</A></LI>
+  <LI><A class="deki-ns" 
+  href="https://developer.mozilla.org/en/Canvas_tutorial">Canvas 
+  tutorial</A></LI>
+  <LI class="last"><A class="deki-ns current" href="https://developer.mozilla.org/en/Canvas_tutorial/Basic_usage">Basic 
+  usage</A></LI></OL></NAV></DIV></SECTION><SECTION id="content">
+<DIV class="wrap">
+<DIV id="content-main" class="full">
+<DIV id="sessionMsg">
+<DIV class="inner">
+<UL></UL></DIV></DIV><ARTICLE class="article PageDW-enCanvastutorialBasicusage" 
+role="main">
+<DIV class="page-title hideforedit">
+<H1 id="title" class="first">Basic usage</H1>
+<UL id="page-buttons">
+  <LI class="page-edit"><A class="disabled" title="Log in or sign up to edit this page" 
+  href="https://developer.mozilla.org/index.php?title=Special:Userlogin&amp;returntotitle=en%2FCanvas+tutorial%2FBasic+usage">Edit</A></LI>
+  <LI class="page-watch"><A class="disabled" title="Log in or sign up to add this page to your watch list" 
+  href="https://developer.mozilla.org/index.php?title=Special:Userlogin&amp;returntotitle=en%2FCanvas+tutorial%2FBasic+usage">Watch</A></LI></UL></DIV>
+<DIV class="page-content boxed">
+<DIV id="article-nav" class="hideforedit">
+<DIV class="page-toc">
+<H2>Table of contents</H2>
+<OL style="padding-left: 0px; margin-left: 0px; list-style-type: none;">
+  <LI><SPAN>1.</SPAN> <A href="https://developer.mozilla.org/en/Canvas_tutorial/Basic_usage#The_.3Ccanvas.3E_element" 
+  rel="internal">The &lt;canvas&gt; element</A>
+  <OL style="padding-left: 15px; margin-left: 0px; list-style-type: none;">
+    <LI>
+    <OL style="padding-left: 15px; margin-left: 0px; list-style-type: none;">
+      <LI><SPAN>1.1.1.</SPAN> <A href="https://developer.mozilla.org/en/Canvas_tutorial/Basic_usage#Fallback_content" 
+      rel="internal">Fallback content</A></LI>
+      <LI><SPAN>1.1.2.</SPAN> <A href="https://developer.mozilla.org/en/Canvas_tutorial/Basic_usage#Required_.3C.2Fcanvas.3E_tag" 
+      rel="internal">Required &lt;/canvas&gt; tag</A></LI></OL></LI></OL></LI>
+  <LI><SPAN>2.</SPAN> <A href="https://developer.mozilla.org/en/Canvas_tutorial/Basic_usage#The_rendering_context" 
+  rel="internal">The rendering context</A>
+  <OL style="padding-left: 15px; margin-left: 0px; list-style-type: none;">
+    <LI><SPAN>2.1.</SPAN> <A href="https://developer.mozilla.org/en/Canvas_tutorial/Basic_usage#Checking_for_support" 
+    rel="internal">Checking for support</A></LI></OL></LI>
+  <LI><SPAN>3.</SPAN> <A href="https://developer.mozilla.org/en/Canvas_tutorial/Basic_usage#A_skeleton_template" 
+  rel="internal">A skeleton template</A></LI>
+  <LI><SPAN>4.</SPAN> <A href="https://developer.mozilla.org/en/Canvas_tutorial/Basic_usage#A_simple_example" 
+  rel="internal">A simple example</A></LI></OL></DIV>
+<UL class="page-anchors">
+  <LI class="anchor-tags"><A title="Jump to tags for this article" href="https://developer.mozilla.org/en/Canvas_tutorial/Basic_usage#page-tags">Tags</A></LI>
+  <LI class="anchor-files"><A title="Jump to files for this article" href="https://developer.mozilla.org/en/Canvas_tutorial/Basic_usage#page-files">Files</A></LI></UL>
+<DIV id="deki-page-alerts" class="disabled">
+<DIV class="toggle"><A class="off" href="javascript:void(0);"><SPAN>Page 
+Notifications</SPAN><SPAN class="status">Off</SPAN></A></DIV></DIV></DIV>
+<DIV id="page-top">
+<DIV id="pageToc">
+<DIV class="pageToc">
+<H5>Table of contents</H5>
+<OL style="padding-left: 0px; margin-left: 0px; list-style-type: none;">
+  <LI><SPAN>1.</SPAN> <A href="https://developer.mozilla.org/en/Canvas_tutorial/Basic_usage#The_.3Ccanvas.3E_element" 
+  rel="internal">The &lt;canvas&gt; element</A>
+  <OL style="padding-left: 15px; margin-left: 0px; list-style-type: none;">
+    <LI>
+    <OL style="padding-left: 15px; margin-left: 0px; list-style-type: none;">
+      <LI><SPAN>1.1.1.</SPAN> <A href="https://developer.mozilla.org/en/Canvas_tutorial/Basic_usage#Fallback_content" 
+      rel="internal">Fallback content</A></LI>
+      <LI><SPAN>1.1.2.</SPAN> <A href="https://developer.mozilla.org/en/Canvas_tutorial/Basic_usage#Required_.3C.2Fcanvas.3E_tag" 
+      rel="internal">Required &lt;/canvas&gt; tag</A></LI></OL></LI></OL></LI>
+  <LI><SPAN>2.</SPAN> <A href="https://developer.mozilla.org/en/Canvas_tutorial/Basic_usage#The_rendering_context" 
+  rel="internal">The rendering context</A>
+  <OL style="padding-left: 15px; margin-left: 0px; list-style-type: none;">
+    <LI><SPAN>2.1.</SPAN> <A href="https://developer.mozilla.org/en/Canvas_tutorial/Basic_usage#Checking_for_support" 
+    rel="internal">Checking for support</A></LI></OL></LI>
+  <LI><SPAN>3.</SPAN> <A href="https://developer.mozilla.org/en/Canvas_tutorial/Basic_usage#A_skeleton_template" 
+  rel="internal">A skeleton template</A></LI>
+  <LI><SPAN>4.</SPAN> <A href="https://developer.mozilla.org/en/Canvas_tutorial/Basic_usage#A_simple_example" 
+  rel="internal">A simple example</A></LI></OL></DIV></DIV>
+<DIV id="pageText" class="pageText">
+<DIV id="section_1"><SPAN id="The_.3Ccanvas.3E_element"></SPAN>
+<H2 class="editable">The <CODE>&lt;canvas&gt;</CODE> element</H2>
+<P>Let's start this tutorial by looking at the <CODE>&lt;canvas&gt;</CODE> 
+element itself.</P><PRE class="xml" name="code">&lt;canvas id="tutorial" width="150" height="150"&gt;&lt;/canvas&gt;</PRE>
+<P>This looks a lot like the <CODE>&lt;img&gt;</CODE> element, the only 
+difference is that it doesn't have the <CODE>src</CODE> and <CODE>alt</CODE> 
+attributes. The <CODE>&lt;canvas&gt;</CODE> element has only two attributes - 
+<STRONG>width</STRONG> and <STRONG>height</STRONG>. These are both optional and 
+can also be set using <A title="en/DOM" href="https://developer.mozilla.org/en/DOM" 
+rel="internal">DOM</A> properties. When no width and height attributes are 
+specified, the canvas will initially be <STRONG>300 pixels</STRONG> wide and 
+<STRONG>150 pixels</STRONG> high. The element can be sized arbitrarily by <A 
+title="en/CSS" href="https://developer.mozilla.org/en/CSS" 
+rel="internal">CSS</A>, but during rendering the image is scaled to fit its 
+layout size. (If your renderings seem distorted, try specifying your width and 
+height attributes explicitly in the <CODE>&lt;canvas&gt;</CODE> attributes, and 
+not with CSS.)</P>
+<P><BR>The <CODE>id</CODE> attribute isn't specific to the 
+<CODE>&lt;canvas&gt;</CODE> element but is one of the default HTML attributes 
+which can be applied to (almost) every HTML element (like <CODE>class</CODE> for 
+instance). It's always a good idea to supply an <CODE>id</CODE> because this 
+makes it much easier to identify it in our script.</P>
+<P>The <CODE>&lt;canvas&gt;</CODE> element can be styled just like any normal 
+image (margin, border, background, etc). These rules however don't affect the 
+actual drawing on the canvas. We'll see how this is done later in this tutorial. 
+When no styling rules are applied to the canvas it will initially be fully 
+transparent.</P>
+<DIV id="section_2"><SPAN id="Fallback_content"></SPAN>
+<H4 class="editable">Fallback content</H4>
+<P>Because the <CODE>&lt;canvas&gt;</CODE> element is still relatively new and 
+isn't implemented in some browsers (such as Internet Explorer versions below 
+IE9), we need a means of providing fallback content when a browser doesn't 
+support the element.</P>
+<P>This is very straightforward: we just provide alternative content inside the 
+canvas element. Browsers which don't support <CODE>&lt;canvas&gt;</CODE> will 
+ignore the container and render the fallback content inside it. Browsers which 
+do support <CODE>&lt;canvas&gt;</CODE> will ignore the content inside the 
+container, and just render the canvas normally.</P>
+<P>For example, we could provide a text description of the canvas content or 
+provide a static image of the dynamically rendered content. This can look 
+something like this:</P><PRE class="xml" name="code">&lt;canvas id="stockGraph" width="150" height="150"&gt;
+  current stock price: $3.15 +0.15
+&lt;/canvas&gt;
+
+&lt;canvas id="clock" width="150" height="150"&gt;
+  &lt;img src="images/clock.png" width="150" height="150" alt=""/&gt;
+&lt;/canvas&gt;</PRE></DIV>
+<DIV id="section_3"><SPAN id="Required_.3C.2Fcanvas.3E_tag"></SPAN>
+<H4 class="editable">Required <CODE>&lt;/canvas&gt;</CODE> tag</H4>
+<P>In the Apple Safari implementation, <CODE>&lt;canvas&gt;</CODE> is an element 
+implemented in much the same way <CODE>&lt;img&gt;</CODE> is; it does not have 
+an end tag. However, for <CODE>&lt;canvas&gt;</CODE> to have widespread use on 
+the web, some facility for fallback content must be provided. Therefore, 
+Mozilla's implementation <EM>requires</EM> an end tag 
+(<CODE>&lt;/canvas&gt;</CODE>).</P>
+<P>If fallback content is not needed, a simple <CODE>&lt;canvas id="foo" 
+...&gt;&lt;/canvas&gt;</CODE> will be fully compatible with both Safari and 
+Mozilla -- Safari will simply ignore the end tag.</P>
+<P>If fallback content is desired, some CSS tricks must be employed to mask the 
+fallback content from Safari (which should render just the canvas), and also to 
+mask the CSS tricks themselves from IE (which should render the fallback 
+content).</P></DIV></DIV>
+<DIV id="section_4"><SPAN id="The_Rendering_Context"></SPAN><SPAN id="The_rendering_context"></SPAN>
+<H2 class="editable">The rendering context</H2>
+<P><CODE>&lt;canvas&gt;</CODE> creates a fixed size drawing surface that exposes 
+one or more <EM>rendering contexts</EM>, which are used to create and manipulate 
+the content shown. We'll focus on the 2D rendering context. Other contexts may 
+provide different types of rendering; for example, there is a <A title="https://developer.mozilla.org/en/WebGL/Getting_started_with_WebGL" 
+href="https://developer.mozilla.org/en/WebGL/Getting_started_with_WebGL" rel="internal">3D 
+context</A> ("experimental-webgl") based on <A class="external" title="http://en.wikipedia.org/wiki/OpenGL_ES" 
+href="http://en.wikipedia.org/wiki/OpenGL_ES" rel="external" 
+target="_blank">OpenGL ES</A>.</P>
+<P>The <CODE>&lt;canvas&gt;</CODE> is initially blank, and to display something 
+a script first needs to access the rendering context and draw on it. The canvas 
+element has a DOM method called <CODE>getContext</CODE>, used to obtain the 
+rendering context and its drawing functions. <CODE>getContext()</CODE> takes one 
+parameter, the type of context.</P><PRE class="js" name="code">var canvas = document.getElementById('tutorial');
+var ctx = canvas.getContext('2d');</PRE>
+<P>In the first line we retrieve the canvas DOM node using the <A title="en/DOM/document.getElementById" 
+href="https://developer.mozilla.org/en/DOM/document.getElementById" rel="internal">getElementById</A> 
+method. We can then access the drawing context using the <CODE>getContext</CODE> 
+method.</P>
+<DIV id="section_5"><SPAN id="Checking_for_support"></SPAN>
+<H3 class="editable">Checking for support</H3>
+<P>The fallback content is displayed in browsers which do not support 
+<CODE>&lt;canvas&gt;</CODE>; scripts can also check for support when they 
+execute. This can easily be done by testing for the <CODE>getContext()</CODE> 
+method. Our code snippet from above becomes something like this:</P><PRE class="js" name="code">var canvas = document.getElementById('tutorial');
+if (canvas.getContext){
+  var ctx = canvas.getContext('2d');
+  // drawing code here
+} else {
+  // canvas-unsupported code here
+}</PRE></DIV></DIV>
+<DIV id="section_6"><SPAN id="A_skeleton_template"></SPAN>
+<H2 class="editable">A skeleton template</H2>
+<P>Here is a minimalistic template, which we'll be using as a starting point for 
+later examples. You can <A class="external" title="samples/canvas-tutorial/1_1_canvas_template.html" 
+href="https://developer.mozilla.org/samples/canvas-tutorial/1_1_canvas_template.html" 
+rel="internal">download this file</A> to work with on your system.</P><PRE class="xml" name="code">&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Canvas tutorial&lt;/title&gt;
+    &lt;script type="text/javascript"&gt;
+      function draw(){
+        var canvas = document.getElementById('tutorial');
+        if (canvas.getContext){
+          var ctx = canvas.getContext('2d');
+        }
+      }
+    &lt;/script&gt;
+    &lt;style type="text/css"&gt;
+      canvas { border: 1px solid black; }
+    &lt;/style&gt;
+  &lt;/head&gt;
+  &lt;body onload="draw();"&gt;
+    &lt;canvas id="tutorial" width="150" height="150"&gt;&lt;/canvas&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</PRE>
+<P>If you look at the script you'll see I've made a function called 
+<CODE>draw</CODE>, which will get executed once the page finishes loading (via 
+the <CODE>onload</CODE> attribute on the <CODE>body</CODE> tag). This function 
+could also have been called from a <A title="en/DOM/window.setTimeout" href="https://developer.mozilla.org/en/DOM/window.setTimeout" 
+rel="internal">setTimeout</A>, <A title="en/DOM/window.setInterval" href="https://developer.mozilla.org/en/DOM/window.setInterval" 
+rel="internal">setInterval</A>, or any other event handler function just as long 
+the page has been loaded first.</P></DIV>
+<DIV id="section_7"><SPAN id="A_simple_example"></SPAN>
+<H2 class="editable">A simple example</H2>
+<P>To start off, here's a simple example that draws two intersecting rectangles, 
+one of which has alpha transparency. We'll explore how this works in more detail 
+in later examples.</P>
+<P><IMG class="internal" alt="Simple Example" align="right" src="Basic%20usage%20-%20MDN_files/canvas_ex1.png"></P>
+<P><A class="internal" title="/@api/deki/files/2931/=simple example (1).html" 
+href="https://developer.mozilla.org/@api/deki/files/2931/=simple_example_(1).html" 
+rel="internal">View this example</A>&nbsp;</P><PRE class="js" name="code">&lt;html&gt;
+ &lt;head&gt;
+  &lt;script type="application/javascript"&gt;
+    function draw() {
+      var canvas = document.getElementById("canvas");
+      if (canvas.getContext) {
+        var ctx = canvas.getContext("2d");
+
+        ctx.fillStyle = "rgb(200,0,0)";
+        ctx.fillRect (10, 10, 55, 50);
+
+        ctx.fillStyle = "rgba(0, 0, 200, 0.5)";
+        ctx.fillRect (30, 30, 55, 50);
+      }
+    }
+  &lt;/script&gt;
+ &lt;/head&gt;
+ &lt;body onload="draw();"&gt;
+   &lt;canvas id="canvas" width="150" height="150"&gt;&lt;/canvas&gt;
+ &lt;/body&gt;
+&lt;/html&gt;</PRE>
+<P><BR>
+<DIV class="prevnext">
+<P align="right"><SPAN style="float: left;"><A href="https://developer.mozilla.org/en/Canvas_tutorial" 
+rel="custom">« Previous</A></SPAN><A href="https://developer.mozilla.org/en/Canvas_tutorial%3ADrawing_shapes" 
+rel="custom">Next »</A></P></DIV>
+<P></P>
+<P></P></DIV></DIV></DIV><SECTION class="page-meta"><SECTION id="page-tags">
+<H2>Tags <SPAN class="sub">(3)</SPAN></H2><A id="deki-page-tags-toggleview" 
+class="disabled" onclick="return false;" href="https://developer.mozilla.org/index.php?title=Special:Tags&amp;pageId=20277">Edit 
+tags</A>
+<DIV id="deki-page-tags">
+<UL class="tags">
+  <LI><A class="text" title="Canvas tutorial" href="https://developer.mozilla.org/Special:Tags?tag=Canvas+tutorial" 
+  tagid="1300">Canvas tutorial</A></LI>
+  <LI><A class="text" title="HTML:Canvas" href="https://developer.mozilla.org/Special:Tags?tag=HTML:Canvas" 
+  tagid="45">HTML:Canvas</A></LI>
+  <LI><A class="text" title="Tutorials" href="https://developer.mozilla.org/Special:Tags?tag=Tutorials" 
+  tagid="93">Tutorials</A></LI></UL></DIV></SECTION><SECTION id="page-files">
+<H2>Attachments <SPAN class="sub">(1)</SPAN></H2>
+<DIV id="pageFiles">
+<DIV id="attachFiles" class="filescontent">
+<DIV id="attachTable" class="table">
+<TABLE class="table" border="0" cellSpacing="0" cellPadding="0" width="100%">
+  <COLGROUP>
+  <COL width="16">
+  <COL width="16">
+  <COL width="">
+  <COL width="80">
+  <COL width="145">
+  <COL width="115">
+  <COL width="75"></COLGROUP>
+  <TBODY>
+  <TR>
+    <TH class="col1" colSpan="3">File</TH>
+    <TH class="col4">Size</TH>
+    <TH class="col5">Date</TH>
+    <TH class="col6">Attached by</TH>
+    <TH class="col7">&nbsp;</TH></TR>
+  <TR id="deki-file-row-2931" class="bg1 groupparent">
+    <TD class="col1"><A id="deki-file-revisions-2931" class="internal deki-file-revisions" 
+      href="https://developer.mozilla.org/en/Canvas_tutorial/Basic_usage#"><SPAN 
+      style="display: none;" class="hide"><SPAN class="icon"><IMG class="expand" 
+      alt="" 
+      src="Basic%20usage%20-%20MDN_files/icon-trans.gif"></SPAN></SPAN><SPAN 
+      class="show"><SPAN class="icon"><IMG class="contract" alt="" src="Basic%20usage%20-%20MDN_files/icon-trans.gif"></SPAN></SPAN></A></TD>
+    <TD class="col2"><A class="filelink" title="simple_example (1).html" href="https://developer.mozilla.org/@api/deki/files/2931/=simple_example_(1).html"><SPAN 
+      class="icon"><IMG class="mt-ext-html" alt="" src="Basic%20usage%20-%20MDN_files/icon-trans.gif"></SPAN></A></TD>
+    <TD class="col3"><A class="filelink" title="simple_example (1).html" href="https://developer.mozilla.org/@api/deki/files/2931/=simple_example_(1).html">simple_example 
+      (1).html</A>
+      <DIV><SPAN class="deki-file-description desctext">add fallback text to 
+      &lt;canvas&gt;</SPAN></DIV></TD>
+    <TD class="col4">690 bytes</TD>
+    <TD class="col5">22:42, 9 Oct 2008</TD>
+    <TD class="col6"><A class="link-user" href="https://developer.mozilla.org/User:Skierpage" 
+      rel="internal">Skierpage</A></TD>
+    <TD class="col7"><A id="deki-file-actions-2931" class="deki-file-actions downarrow actionmenu disabled" 
+      href="https://developer.mozilla.org/en/Canvas_tutorial/Basic_usage#">Actions</A>
+      <UL class="deki-file-menu dmenu disabled">
+        <LI class="menu-item new quickpopup disabled"><A title="Attach new version" 
+        href="https://developer.mozilla.org/index.php?title=Special:AttachNewVersion&amp;file_id=2931"><SPAN 
+        class="icon"><IMG class="attachedit" alt="" src="Basic%20usage%20-%20MDN_files/icon-trans.gif"></SPAN><SPAN 
+        class="label">Attach new version</SPAN></A></LI>
+        <LI class="menu-item description disabled"><A href="https://developer.mozilla.org/en/Canvas_tutorial/Basic_usage#"><SPAN 
+        class="icon"><IMG class="attachedit" alt="" src="Basic%20usage%20-%20MDN_files/icon-trans.gif"></SPAN><SPAN 
+        class="label">Edit description</SPAN></A></LI>
+        <LI class="menu-item move disabled"><A href="https://developer.mozilla.org/en/Canvas_tutorial/Basic_usage#"><SPAN 
+        class="icon"><IMG class="attachmove" alt="" src="Basic%20usage%20-%20MDN_files/icon-trans.gif"></SPAN><SPAN 
+        class="label">Move/rename</SPAN></A></LI>
+        <LI class="menu-item delete disabled"><A href="https://developer.mozilla.org/en/Canvas_tutorial/Basic_usage#"><SPAN 
+        class="icon"><IMG class="attachdel" alt="" src="Basic%20usage%20-%20MDN_files/icon-trans.gif"></SPAN><SPAN 
+        class="label">Delete</SPAN></A></LI></UL></TD></TR></TBODY></TABLE></DIV></DIV></DIV>
+<DIV id="deki-image-gallery-lite">
+<TABLE class="table empty" border="0" cellSpacing="0" cellPadding="0" width="100%">
+  <COLGROUP>
+  <COL width="33%">
+  <COL width="33%">
+  <COL width="33%"></COLGROUP>
+  <TBODY>
+  <TR class="bg1">
+    <TH class="col1" colSpan="3">Images 0</TH></TR>
+  <TR class="bg2">
+    <TD class="col1 empty" colSpan="3">No images to display in the 
+  gallery.</TD></TR></TBODY></TABLE></DIV>
+<P class="add"><A class="disabled " title="Attach file">Attach 
+file</A></P></SECTION></SECTION></DIV></ARTICLE>
+<P class="last-mod hideforedit">      Page last modified <A title="19:29, 25 May 2011" 
+href="https://developer.mozilla.org/index.php?title=en/Canvas_tutorial/Basic_usage&amp;action=history">19:29, 
+25 May 2011</A> by <A class="link-user" href="https://developer.mozilla.org/User:Tonitt" 
+rel="internal">Tonitt</A></P></DIV><!-- /#content-main --></DIV><!-- /.wrap -->
+</SECTION><!-- /#content --><FOOTER id="site-info" role="contentinfo">
+<DIV class="wrap">
+<DIV id="legal"><IMG alt="" src="Basic%20usage%20-%20MDN_files/mdn-logo-tiny.png" 
+width="42" height="48">
+<P id="copyright">© 2012 Mozilla Developer Network</P>
+<P>Content is available under <A href="https://developer.mozilla.org/Project:Copyrights">these 
+licenses</A> • <A href="https://developer.mozilla.org/Project:en/About">About 
+MDN</A> • <A 
+href="http://www.mozilla.org/about/policies/privacy-policy.html">Privacy 
+Policy</A> • <A href="https://developer.mozilla.org/Project:en/Using_the_Mozilla_Developer_Center">Help</A></P></DIV>
+<UL class="user-state">
+  <LI><A href="https://developer.mozilla.org/users/login">Sign in</A></LI></UL>
+</DIV></FOOTER>
+<DIV style="display: none;" id="MTMessage" class="ui-msg-wrap">
+<DIV id="MTMessageStyle" class="ui-msg ui-errormsg">
+<DIV class="ui-msg-opt">
+<UL>
+  <LI><A class="dismiss" onclick="return MTMessage.Hide();" href="https://developer.mozilla.org/en/Canvas_tutorial/Basic_usage#">dismiss 
+  message</A></LI>
+  <LI><A id="MTMessageDetailsLink" class="details" onclick="return MTMessage.ShowDetails(this);" 
+  href="https://developer.mozilla.org/en/Canvas_tutorial/Basic_usage#">view 
+  details</A></LI></UL>
+<DIV class="ui-msg-autoclose"><SPAN style="display: inline;" id="MTMessageUnpaused">Message 
+will close by itself in <SPAN id="MTMessageTimer"></SPAN> seconds</SPAN><SPAN 
+style="display: none;" id="MTMessagePaused">Message timer has been 
+stopped</SPAN></DIV></DIV>
+<DIV id="MTMessageHeader" class="ui-msg-header"></DIV>
+<DIV id="MTMessageDesc" class="ui-msg-desc"></DIV>
+<DIV style="display: none;" id="MTMessageDetails" class="ui-msg-desc">
+<P>Viewing Details:</P></DIV></DIV></DIV>
+<SCRIPT type="text/javascript">$(function() {var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");$.getScript(gaJsHost + "google-analytics.com/ga.js", function() {try {var pageTracker = _gat._getTracker("UA-68075-16");pageTracker._setDomainName(".mindtouch.com");pageTracker._trackPageview();} catch(e) {}});});</SCRIPT>
+<!-- Served by pm-dekiwiki02.mozilla.org in 0.55 secs. --><!--
+	Verb      Path                                              Time(ms)       API Stats
+	GET       /deki/site/settings                                  20.53       request-time-ms=18; mysql-queries=2; mysql-time-ms=16; cache-ratio=0.00; cache-hit=0; cache-miss=-1; cache-del=0; cache-ins=1;
+	GET       /deki/users/=Anonymous                                6.48       request-time-ms=4; mysql-queries=4; mysql-time-ms=3; cache-ratio=-0.67; cache-hit=2; cache-miss=-5; cache-del=0; cache-ins=5;
+	GET       /deki/license                                         6.18       request-time-ms=2; mysql-queries=2; mysql-time-ms=1; cache-ratio=-0.50; cache-hit=1; cache-miss=-3; cache-del=0; cache-ins=3;
+	GET       /deki/pages/20277/contents                           54.71       request-time-ms=53; mysql-queries=16; mysql-time-ms=22; cache-ratio=-23.00; cache-hit=23; cache-miss=-24; cache-del=0; cache-ins=24;
+	GET       /deki/pages/20277                                    37.26       request-time-ms=33; mysql-queries=24; mysql-time-ms=23; cache-ratio=6.00; cache-hit=30; cache-miss=-25; cache-del=0; cache-ins=25;
+	GET       /deki/pages/20277/info                                4.87       request-time-ms=3; mysql-queries=3; mysql-time-ms=2; cache-ratio=-0.67; cache-hit=2; cache-miss=-5; cache-del=0; cache-ins=5;
+	GET       /deki/pages/20277/tags                                7.24       request-time-ms=5; mysql-queries=5; mysql-time-ms=4; cache-ratio=-0.75; cache-hit=3; cache-miss=-7; cache-del=0; cache-ins=7;
+	GET       /deki/site/properties                                 9.86       request-time-ms=7; mysql-queries=4; mysql-time-ms=5; cache-ratio=-0.25; cache-hit=1; cache-miss=-5; cache-del=0; cache-ins=5;
+	GET       /deki/site/properties/urn%253Aui.deki.mindtouch.com%2523html.mdn.Transitional     5.81       request-time-ms=4; mysql-queries=3; mysql-time-ms=3; cache-ratio=-0.50; cache-hit=1; cache-miss=-3; cache-del=0; cache-ins=3;
+	GET       /deki/site/nav/=en%252FCanvas%2Btutorial%252FBasic%2Busage/full   339.40       request-time-ms=338; mysql-queries=6; mysql-time-ms=335; cache-ratio=-6.00; cache-hit=6; cache-miss=-7; cache-del=0; cache-ins=7;
+	GET       /deki/pages/20277/tags                                6.49       request-time-ms=5; mysql-queries=5; mysql-time-ms=3; cache-ratio=-0.75; cache-hit=3; cache-miss=-7; cache-del=0; cache-ins=7;
+	                                                             =======
+	                                                     Total:   498.84      
+	                                                     Ideal:   492.34      
+-->
+<DIV id="popupMessage"></DIV> 
+<DIV id="popupMask"></DIV>
+<DIV id="menuFiller"></DIV>
+<DIV id="bodyHeight"></DIV>
+<SCRIPT src="Basic%20usage%20-%20MDN_files/jsapi.js"></SCRIPT>
+
+<SCRIPT src="Basic%20usage%20-%20MDN_files/javascript.min.js"></SCRIPT>
+
+<SCRIPT type="text/javascript">
+//<![CDATA[
+var _tag=new WebTrends();
+_tag.dcsGetId();
+// Add custom parameters here.
+//_tag.DCSext.param_name=param_value;
+_tag.dcsCollect();
+//]]>>
+</SCRIPT>
+<NOSCRIPT>&lt; div&gt;&lt;img alt="DCSIMG" id="DCSIMG" width="1" height="1" 
+src="https://statse.webtrendslive.com/dcs8yrjuavz5bdaun34r2o8bi_8o8x/njs.gif?dcsuri=/nojavascript&amp;WT.js=No&amp;WT.tv=8.6.2"/&gt;&lt;/div&gt;
+</NOSCRIPT><!-- END OF SmartSource Data Collector TAG -->
+<SCRIPT type="text/javascript">/*<![CDATA[*/$(function(){dp.SyntaxHighlighter.HighlightAll('code');});/*]]>*/</SCRIPT>
+</BODY></HTML>

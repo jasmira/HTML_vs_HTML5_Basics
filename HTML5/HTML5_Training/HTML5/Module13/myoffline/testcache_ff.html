@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" manifest="final.appcache">
+<head>
+<link rel="stylesheet" type="text/css" href="mystyle.css">
+</head>
+<body>
+<script src="functions.js"></script>
+<script type="text/javascript">
+
+var appCache = window.applicationCache;
+
+switch (appCache.status) {
+  case appCache.UNCACHED: // UNCACHED == 0
+    return 'UNCACHED';
+    break;
+  case appCache.IDLE: // IDLE == 1
+    return 'IDLE';
+    break;
+  case appCache.CHECKING: // CHECKING == 2
+    return 'CHECKING';
+    break;
+  case appCache.DOWNLOADING: // DOWNLOADING == 3
+    return 'DOWNLOADING';
+    break;
+  case appCache.UPDATEREADY:  // UPDATEREADY == 4
+    return 'UPDATEREADY';
+    break;
+  case appCache.OBSOLETE: // OBSOLETE == 5
+    return 'OBSOLETE';
+    break;
+  default:
+    return 'UKNOWN CACHE STATUS';
+    break;
+};
+
+var appCache = window.applicationCache;
+
+appCache.update(); // Attempt to update the user's cache.
+
+
+
+if (appCache.status == window.applicationCache.UPDATEREADY) {
+  appCache.swapCache();  // The fetch was successful, swap in the new cache.
+}
+</script>
+
+<img src="flower1.jpg">
+<hr>
+<p class="good">ALL things bright and beautiful</p>
+
+<input type="button" onclick="greet()" value="greet">
+
+<hr/>
+<img src="flute1.jpg">
+</body>
+</html>

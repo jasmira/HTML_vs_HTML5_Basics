@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+<head>
+<style type="text/css"> 
+div.test
+{
+white-space:nowrap; 
+overflow:hidden; 
+width:12em; 
+
+border:1px solid #000000;
+}
+</style>
+</head>
+<body>
+<div class="test" style="text-overflow:ellipsis;">This is some long text that will not fit in the box</div>
+<p>This div uses "text-overflow:clip":</p>
+<div class="test" style="text-overflow:clip;">This is some long text that will not fit in the box</div>
+<p><strong>Note:</strong> The text-overflow property is not supported in Firefox.</p>
+</body>
+</html>

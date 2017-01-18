@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+<head>
+<title>Forms 2.0</title>
+</head>
+<body>
+<FORM>
+<label>First Name </label>
+<input name="FirstName" type="text" autofocus required>
+<br/>
+
+<label >Last Name </label>
+<input name="LastName" type="text" required >
+<br/>
+
+<label >Date Of Birth </label required>
+<input name="DOB" type="date">
+<br/>
+
+<label >Week </label required>
+<input name="w" type="week">
+<br/>
+
+<label >Month </label required>
+<input name="m" type="month">
+<br/>
+
+<label >Datetime </label required>
+<input name="dt" type="datetime">
+<br/>
+
+<label >Email Address </label>
+<input name="email" type="email">
+<br/>
+
+<label >Your Personal Web Site</label>
+<input name="WebSite" type="URL" placeholder="Enter your own Web site address">
+<br/>
+
+<label >How Many Hours Do You Surf The Web Each Week?
+</label>
+<input name="SurfWeb" type="range" min="1" max="20" value="0"><output name="rrange" onforminput="value=a.value">0</output>
+<br/>
+
+<label >How many hours do you spend in travelling?
+</label>
+<input name="travel" type="number" min="1" max="10" value="0"><output name="rnumber" onforminput="value=travel.value">0</output>
+<br/>
+
+<label >Enter your search string
+</label>
+
+<input name="search" type="search" >
+<br/>
+
+<label >Enter your favourite color
+</label>
+
+<input name="c" type="color" >
+<br/>
+
+<input type ="submit">
+
+</FORM>
+</body>
+</html>

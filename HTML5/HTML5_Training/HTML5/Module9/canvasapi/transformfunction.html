@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<canvas id="myCanvas" width="300" height="150" style="border:1px solid #d3d3d3;">
+your browser does not support the canvas tag </canvas>
+
+<script type="text/javascript">
+
+var c=document.getElementById("myCanvas");
+var ctx=c.getContext("2d");
+ctx.fillStyle="yellow";
+ctx.fillRect(0,0,250,100)
+ctx.fillStyle="blue";
+ctx.font="30px Arial";
+ctx.fillText("Transform", 10,30);
+ctx.transform(0.93,0.3,-0.3,0.93,0,0);
+ctx.fillStyle="lightblue";
+ctx.fillRect(0,0,250,100)
+ctx.fillStyle="red";
+ctx.fillText("Transform", 10,30);
+
+</script>
+
+</body>
+</html>
+

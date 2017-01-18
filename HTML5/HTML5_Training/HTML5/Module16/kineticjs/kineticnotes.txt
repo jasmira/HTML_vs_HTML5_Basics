@@ -1,0 +1,6 @@
+Kinetic notes
+
+Layer()
+Layer constructor. Layers are tied to their own canvas element and are usedto contain groups or shapes.
+
+ 

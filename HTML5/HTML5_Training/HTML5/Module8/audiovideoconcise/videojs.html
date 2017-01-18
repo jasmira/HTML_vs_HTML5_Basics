@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Video in HTML5</title>
+<style type="text/css">
+a {
+font-family: "Franklin Gothic Medium", "Arial
+Narrow", Arial, sans-serif;
+font-size: large;
+text-decoration: none;
+color: #C0C0C0;
+}
+h1 {
+font-family: "Franklin Gothic Medium", "Arial
+Narrow", Arial, sans-serif;
+font-size: 24pt;
+color: #C0C0C0;
+}
+body {
+background-color: #000000;
+}
+</style>
+</head>
+<body>
+<h1 align="center">Video with Custom JavaScript
+Controls</h1><p align="center">
+<video autoplay>
+<source src="google_main.mp4">
+</video>
+<script>
+var video = document.getElementsByTagName (‘video’)[0];
+</script>
+Figure 4.7 using cSS to control
+the presentation of the Play/
+Pause controls.
+186 HTML5 RicH Media FoundaTion
+<br/>
+<a href="#" onClick="if (video.paused) video.play();
+else video.pause()"> Play/Pause</a>
+</p>
+</body>
+</html>

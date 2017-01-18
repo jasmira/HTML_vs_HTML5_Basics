@@ -1,0 +1,11 @@
+http://html5labs.interoperabilitybridges.com/prototypes/available-for-download/websockets/html5protos_Download
+
+http://www.adobe.com/devnet/coldfusion/articles/html5-websockets-coldfusion-pt2.html
+
+http://dsheiko.com/weblog/websockets-vs-sse-vs-long-polling
+
+
+example :best
+
+
+http://www.websocket.org/echo.html

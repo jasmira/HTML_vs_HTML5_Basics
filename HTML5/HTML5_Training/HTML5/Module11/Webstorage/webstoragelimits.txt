@@ -1,0 +1,8 @@
+User agents must throw a SecurityError exception whenever any of the members of a Storage object originally returned by the localStorage attribute are accessed by scripts whose effective script origin is not the same as the origin of the Document of the Window object on which the localStorage attribute was accessed.
+
+five megabytes per origin 
+
+Web storage provides far greater storage capacity (5MB per domain in Mozilla Firefox,[6] Google Chrome, and Opera, 10MB per storage area in Internet Explorer[7]) compared to 4KB (around 1000 times less space) available to cookies.
+
+
+webappsstore.sqlite

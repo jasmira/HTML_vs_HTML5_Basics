@@ -1,0 +1,96 @@
+Modernizr notes
+@font-face : fontface
+background-size: backgroundsize
+border-image: borderimage
+border-radius: borderradius
+box-shadow: boxshadow
+Flexible Box Model: flexbox
+
+hsla() : hsla
+multiplebackgrounds: multiplebgs
+opacity:opacity
+rgba(): rgba
+text-shadow: textshadow
+
+.glowy { /* ghosted letters */
+    color: transparent;
+    text-shadow: 0 0 10px black;
+}
+.no-textshadow {
+    color: black;
+}
+
+cssAnimations: cssanimations
+csscolumns: csscolumns
+generated content (:before/:after) : generatedcontent
+
+CSS Gradients: cssgradients
+
+.no-js .glossy,
+.no-cssgradients .glossy {
+    background: url("images/glossybutton.png");
+}
+
+.cssgradients .glossy {
+    background-image: linear-gradient(top, #555, #333);
+}
+
+CSS Reflections : cssreflections
+ CSS 2D Transforms : csstransforms
+CSS 3D transforms: csstransforms3d
+CSS Transitions : csstransitions
+
+
+applicationCache : applicationcache
+canvas Text : canvastext
+Drag and drop : draganddrop
+haschange event: haschange
+History Management : history
+HTML5 audio: audio
+IndexedDB : indexeddb
+
+localStorage: localstorage
+Cross-window Messaging: postmessage
+sessionStorage: sessionstorage
+Web Sockets: websockets
+Web SQL Database : websqldatabase
+Web Workers: webworkers
+
+Geolocation API L geolocation
+Inline SVG : inlinesvg
+SMIL: smil???
+SVG; svg
+SVG clip Paths: svgclippaths
+WebGL : webgl
+
+
+if (Modernizr.webgl){
+   loadAllWebGLScripts(); // webgl assets can easily be > 300k
+} else {
+   var msg = 'With a different browser you’ll get to see the WebGL experience here: \
+            get.webgl.org.';
+   document.getElementById( '#notice' ).innerHTML = msg;
+}
+
+Modernizr.prefixed(str)
+
+Modernizr.prefixed("boxsizing")
+
+Modernizr.prefixed('requestAnimationFrame', window) // fn
+
+Modernizr.mq('only all and (max-width: 400px)')
+
+
+Modernizr.addTest('track', function(){
+  var video = document.createElement('video');
+  return typeof video.addTextTrack === 'function'
+});
+
+Modernizr.testAllProps('boxSizing')  
+
+Modernizr.hasEvent('gesturestart', elem)  // true
+
+
+
+
+

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Pick a Phone</title>
+<link rel="stylesheet" type="text/css" href="css/page2.css">
+<script src="https://code.jquery.com/jquery-2.0.1.min.js"></script>
+<script src="js/shop2.js"></script>
+</head>
+<body>
+	<section>
+	<nav>
+		<a id="viewCart" href="#">View Cart</a>
+		<a id ="logout" href="#">Logout</a>
+		<img id="musicOff" src="images/musicoff.jpg" />
+	</nav>
+	<header><h1>Welcome <span id="uname"></span></h1></header>
+	
+	<article id="products">
+		<ul>
+			<li><img id="HTC" src="images/mobiles/htc.jpg"/><br><label>Rs.</label><span>20000</span><br>
+			<input type="number" min="1" max="5" placeholder="Quantity" /><br><button>Add to Cart</button>
+			</li>
+			
+			<li><img id="Nokia" src="images/mobiles/nokia.jpg"/><br><label>Rs.</label><span>10000</span><br>
+			<input type="number" min="1" max="5" placeholder="Quantity" /><br><button>Add to Cart</button>
+			</li>
+			
+			<li><img id="Samsung" src="images/mobiles/samsung.jpg"/><br><label>Rs.</label><span>30000</span><br>
+			<input type="number" min="1" max="5" placeholder="Quantity" /><br><button>Add to Cart</button>
+			</li>
+		</ul>
+	</article>
+	
+	
+	<article>
+		<table id="cart">
+			<thead><tr><th>Product</th><th>Quantity</th><th>Price</th></tr></thead>
+			<tbody>
+				<tr><td><button id="discountBtn">Get final Price</button></td>
+				<td><span id="priceLabel">Rs.</span><span id="finalPrice"></span></td>
+				</tr>
+			</tbody>
+		</table>
+	</article>
+	
+	
+   	<audio id="audio1" src="sound/siteMusic.mp3" autoplay loop></audio>
+   	</section> 
+</body>
+</html>

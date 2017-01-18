@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<body>
+
+<form method="get" action="http://www.google.com/search" autocomplete="on">
+
+		<input type="text"   name="q" size="15" maxlength="255" value="" placeholder="Search" autocomplete="on"/>
+
+		<input type="submit" value="GO" />
+
+		<input type="hidden"  name="sitesearch" value="www.focalpress.com" />
+
+
+		</form>
+	
+<hr>
+
+<form method="POST" action="http://fp1.formmail.com/cgi-bin/fm192">
+
+<input type="hidden" name="_pid" value="119137">
+
+<input type="hidden" name="_fid" value="FNNZXGED">
+
+<input type="hidden" name="recipient" value="mlb@gmail.com">
+
+<label>First Name: </label>
+<br />
+<input name= "FirstName" type="text" autofocus required  autocomplete="on"> 
+
+<br />
+<br />
+
+<label>Middle Name: </label><br />
+<input name="MiddleName" type="text" disabled><- disabled 
+<br />
+<br />
+
+<label>Last Name: </label>
+<br />
+<input name="LastName" type="text" maxlength="25" required autocomplete="true">
+ <br />
+<br />
+
+<label>Age: </label><br />
+<input name="age" type="number" min="18" max="100">
+<br />
+<br />
+
+<label>Email: </label><br />
+<input name="email" type="email" required>
+
+<br />
+<br />
+
+<label>Website address:  </label><br />
+<input name="addr" type="url" >
+<br />
+<br />
+
+
+<label>How Did you hear about us:LIST  </label><br />
+<input name="HowDidYouHear" type="uri" list="mylist">
+<br />
+<br />
+
+<datalist id="mylist">
+
+<option label="google" value="http://google.com">
+
+<option label="yahoo" value="http://yahoo.com">
+
+<option label="Bing" value="http://bing.com">
+
+</datalist>
+
+<label>When would you like us to contact you:  </label><br />
+<input name="ContactDate" type="date">
+<br />
+<br />
+
+
+<label>Date time:   </label><br />
+<input name="dt" type="datetime">
+<br />
+<br />
+
+<label>Week  </label><br />
+<input name="w" type="week">
+<br />
+<br />
+
+
+<label>Month  </label><br />
+<input name="m" type="month">
+<br />
+<br />
+
+
+
+<label>Time  </label><br />
+<input name="t" type="time">
+<br />
+<br />
+
+<label>Local Date time</label>
+<br/>
+<!-- <input type="datetime-local" value="2004-08-31T10:22" name="dtl" step="7200"> -->
+<input type="datetime" value="" name="dtl1" >
+<br />
+<br />
+
+
+
+<label>Color </label><br />
+<input name="c" type="color">
+<br />
+<br />
+
+
+<label>How many of our products do you own: </label>
+<br/>
+<input id="slider" name="sliderValue" type="range" min="0" max="10" 
+value="5"> 
+
+<output name="NumberOfProducts"  value="5"  onforminput="value=sliderValue.value">5</output><br /></input>
+<br />
+<button type=submit>Submit</button>
+</form>
+</body>
+</html>

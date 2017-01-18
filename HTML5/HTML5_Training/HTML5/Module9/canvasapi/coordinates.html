@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<body>
+<canvas width="500px" height="500px" id="myCanvas">
+
+
+</canvas>
+
+<script language="javascript">
+ var x = document.getElementById("myCanvas");
+ alert(x);
+
+        var ctx = x.getContext("2d");
+
+        ctx.fillStyle = "rgb(0,200,0)";
+        ctx.fillRect (10, 10, 55, 50);
+
+        ctx.fillStyle = "rgba(0, 0, 200, 0.5)";
+        ctx.fillRect (30, 30, 55, 50);
+
+
+window.onload = function(){
+ 
+   x.addEventListener('mousemove', function(evt){
+document.getElementById("h").innerHTML=evt.clientX+" :"+ evt.clientY;
+
+document.getElementById("c").innerHTML="Offset"+x.offsetTop+ " :" + x.offsetLeft+":"+ x.offsetParent;
+
+
+//document.getElementById("w").innerHTML="Window"+ window.pageXoffset+ " :" + window.pageYoffset;
+
+        
+});
+};
+
+
+
+</script>
+<h1 id="h">
+
+<h1 id="c">
+
+<h1 id="w">
+</body>
+</html>

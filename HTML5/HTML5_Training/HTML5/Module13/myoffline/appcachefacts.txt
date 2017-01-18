@@ -1,0 +1,70 @@
+The application cache is a poorly understood part of the HTML5 specification with a lot of potential. Let's get rid of some of the confusion and make the web a faster place.
+
+    Appcache was intended to let your web app run offline, no Internet connection required, but it can also be used online to dramatically decrease load times.
+    The manifest file must be served with the MIME type text/cache-manifest.
+
+    The suggested file extension for manifests is .appcache.
+    Appcache manifests have three optional sections: CACHE, NETWORK, and FALLBACK.
+
+    The CACHE section lists all resources that should be downloaded and stored locally. The browser will begin downloading these in the background as soon as the page has loaded. If any are already in the browser's cache, they will not be downloaded again separately.
+
+    The NETWORK section lists all URLs that may be loaded over the Internet. If your application includes any API calls, make sure to enumerate them here. Note that this is a list of URL prefixes, so if all of your network calls begin with http://example.com/api/, that's all you need to include.
+
+    If you want to allow arbitrary URLs to be accessed (scripts, stylesheets, API calls, anything), include *, http://* and https://* in this section. (Chrome and Safari respect the *; Firefox needs the http://* and https://*.)
+
+    The FALLBACK section lists replacements for network URLs to be used when the browser is offline or the remote server is unavailable.
+    Over SSL, all resources in the manifest must respect the same-origin policy.
+
+    That is, all paths must be relative, or point to resources on the same host and port as the current page.
+
+    The exception is Google Chrome, which doesn't follow the specification in this regard. Over SSL, Chrome will load resources from different origins so long as they are still served over SSL.
+    Any changes made to the manifest file will cause the browser to update the application cache.
+
+    If your resources are going to be located at the same URL even when you upload a new version of them, add a comment to the manifest file with a changing version number in it.
+
+    CACHE MANIFEST
+    # version 1
+    CACHE
+    /logo.png
+    ...
+
+    Any line that starts with a # is a comment and will be ignored, but is sufficient to trigger an update when it changes.
+    When updating an existing appcache, the browser sends standard If-Modified-Since headers, so it skips re-downloading files that have not changed.
+    If you've just touched the manifest file, the browser won't bother to re-check the assets — the contents of the manifest file must change somehow. Modifying a comment is good enough, which is why we recommend having a # version line.
+    Any changes made to the manifest or any of its files will not take effect until the next page load.
+
+    This is because once the page has been appcached, it is immediately served from that cache the next time the user returns. The browser then checks the manifest for any changes and downloads any required files in the background. The newest version will be available on the next load of the page.
+
+    If you'd like, you can listen for the updateready event to detect this and prompt the user to reload the page:
+
+    if (window.applicationCache) {
+        applicationCache.addEventListener('updateready', function() {
+            if (confirm('An update is available. Reload now?')) {
+                window.location.reload();
+            }
+        });
+    }
+
+    For most applications, however, temporarily using the previous version of the code is probably acceptable.
+    If any of the files mentioned in the CACHE section can't be retrieved, the entire cache will be disregarded.
+
+    All resources must successfully return. If any do not — returning a 404 or 500, for example — the entire cache will be ignored.
+
+    The next time the browser returns to your page, it will try to use the manifest again as if it was the first time it encountered it.
+    If the manifest file itself can't be retrieved, the cache will ignored and all cached data associated with it will be disregarded.
+    Regardless of whether you include the address of the current page in the manifest, it will be cached.
+    In Chrome, you can see information about appcached sites by visiting chrome://appcache-internals/. This allows you to see which sites have appcached, when they were last modified, and how much space they're using. You can also remove appcaches here.
+    In Firefox, any resources served with Cache-control: no-store will not be cached, even if they're explicitly included in the manifest.
+    Firefox will always ask the user for permission before caching a site for the first time.
+
+Resources
+
+These resources have been invaluable while working with the appcache:
+
+    Dive Into HTML5 – Let's Take This Offline
+    Google Code blog – Using AppCache to Launch Offline
+    HTML5 Rocks – A Beginner's Guide to Using the Application Cache
+    MDN Doc Center – Offline resources in Firefox
+    Safari Developer Library – Storing Data on the Client
+    Cache Manifest Validator – Online validator, JSON(P) validation API and TextMate bundle
+

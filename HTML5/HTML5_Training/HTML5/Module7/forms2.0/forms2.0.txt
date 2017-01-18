@@ -1,0 +1,30 @@
+<input type=“search”>: This attribute allows you to specify the
+element for searching.
+• <input type=“number”>: This attribute allows you to convert
+the input type into a visual spin box.
+• <input type=“range”>: This attribute allows you to convert
+the input type into a visual scrub bar.
+
+<input type=“color”>: This attribute allows you to convert
+the input type into a visual color picker.
+• <input type=“tel”>: This attribute allows you to format the
+input for a telephone line.
+• <input type=“url”>: This attribute allows you to specify a
+web address.
+• <input type=“email”>: This attribute allows you to specify
+an email address.
+• <input type=“date”>: This attribute converts automatically
+into a date picker.
+• <input type=“month”>: This attribute automatically converts
+into a month picker.
+• <input type=“week”>: This attribute automatically converts
+into a picker that allows you to select a week.
+• <input type=“time”>: This attribute allows you to add a
+timestamp.
+• <input type=“datetime”>. This attribute is for precise, absolute
+date and timestamps.
+• <input type=“datetime-local”>: This attribute is for local
+dates and times.
+
+<input name=“FirstName” type=“text” autofocus>
+<input name=“LastName” type=“text” required>

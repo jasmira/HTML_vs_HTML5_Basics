@@ -1,0 +1,21 @@
+ctx.save(); 
+ctx.scale(0.75, 1); 
+ctx.beginPath(); 
+ctx.arc(20, 21, 10, 0, Math.PI*2, false); 
+ctx.stroke(); 
+ctx.closePath(); 
+ctx.restore(); 
+_________
+
+ellipse
+function ellipse(context, cx, cy, rx, ry){ 
+        context.save(); // save state 
+        context.beginPath(); 
+ 
+        context.translate(cx-rx, cy-ry); 
+        context.scale(rx, ry); 
+        context.arc(1, 1, 1, 0, 2 * Math.PI, false); 
+ 
+        context.restore(); // restore to original state 
+        context.stroke(); 
+} 

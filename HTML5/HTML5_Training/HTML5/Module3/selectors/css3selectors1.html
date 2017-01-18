@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+<title>Selectors a) element, element  b)element element c)element+element, *</title>
+</head>
+<body>
+<h1>I am h1 element, element</h1>
+<h2>I am h2 element, element</h2>
+<div>
+	<p>para1</p>
+	<p>para2</p>
+	<p>para3</p>
+
+	<ol>
+		<li>Coffee
+			<p>Para4: Selects all p elements inside div element irrespective of hierarchy.</p>
+		</li>
+	</ol>
+
+</div>
+<p>P is after the div element . i.e div+p.</p>
+<p>P is after the div element . i.e div p but not immediately after div.</p>
+<ol>
+	<li>Tea 
+	</li>
+</ol>
+<p>P is after the div element . i.e div p.
+
+<style>
+	h1, h2{ color:green}
+	div>p{background-color:pink}
+	p img {float:right}
+	img {float:left}
+	div p{color: blue}
+	div+p{background-color:yellow}
+	*{font-style:oblique}
+</style>
+
+</body>
+</html>

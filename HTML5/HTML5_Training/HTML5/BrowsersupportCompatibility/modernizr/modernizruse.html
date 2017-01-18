@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Detecting HTML5 content with Modernizr</title>
+<script src=“modernizr-latest.js”></script>
+<script type="text/javascript">
+if (!Modernizr.inputtypes.date)
+{
+createDatepicker(document.getElementById("DOB"));
+
+}
+</script>
+
+</head>
+<body>
+for migrating from html4 to html5
+
+
+Add the following JavaScript to reference Modernizr, and older
+web browsers will swap out the HTML5 attribute with an Ajax
+alternative.
+<form>
+<input type="date" name="DOB" id="DOB">
+<input type="submit" value="submit query">
+</form>
+
+
+</body>
+</html>

@@ -1,0 +1,927 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0063)https://developer.mozilla.org/en/Canvas_tutorial/Drawing_shapes -->
+<!DOCTYPE html><HTML dir="ltr" id="developer-mozilla-org" 
+lang="en"><HEAD><TITLE>Drawing shapes - MDN</TITLE>
+<META charset="utf-8">
+<META name="viewport" content="initial-scale=1.0, width=device-width">
+<META name="MSSmartTagsPreventParsing" content="true">
+<META name="Copyright" content="Copyright (c) 2005-2012 Mozilla.">
+<META name="Rating" content="General"><LINK rel="home" href="/"><LINK rel="copyright" 
+href="#copyright">
+<META name="robots" content="index,follow"><LINK rel="shortcut icon" href="/favicon.ico">
+<LINK title="What's new feed" rel="alternate" type="application/rss+xml" href="/index.php?title=Special:Recentchanges&amp;feed=rss">
+<LINK title="Page and subpages changes feed" rel="alternate" type="application/rss+xml" 
+href="/index.php?title=Special:Article&amp;type=feed&amp;feedtype=subpagechanges&amp;pageid=22793">
+<LINK title="Page changes feed" rel="alternate" type="application/rss+xml" href="/index.php?title=Special:Article&amp;type=feed&amp;pageid=22793">
+<META name="GENERATOR" content="MSHTML 9.00.8112.16440"><LINK title="MDN Search" 
+rel="search" type="application/opensearchdescription+xml" href="/deki/gui/opensearch.php?type=description">
+<LINK rel="stylesheet" type="text/css" href="Drawing%20shapes%20-%20MDN_files/css.css" 
+media="screen"> <!--[if IE 7]><style type="text/css">@import "/skins/common/_ie7.css";</style><![endif]--><!--[if IE 6]><style type="text/css">@import "/skins/common/_ie.css";</style><![endif]--><LINK 
+rel="stylesheet" type="text/css" href="Drawing%20shapes%20-%20MDN_files/print.css" 
+media="print"><LINK rel="stylesheet" type="text/css" href="Drawing%20shapes%20-%20MDN_files/css(1).css" 
+media="screen,projection"><!--[if lte IE 7]><link rel="stylesheet" type="text/css" media="all" href="/skins/mdn/Transitional/ie7.css"><![endif]--><!--[if lte IE 6]><link rel="stylesheet" type="text/css" media="all" href="/skins/mdn/Transitional/ie6.css"><![endif]-->
+<LINK rel="stylesheet" type="text/css" href="Drawing%20shapes%20-%20MDN_files/print(1).css" 
+media="print">
+<SCRIPT type="text/javascript">CKEDITOR_BASEPATH = "/deki/plugins/page_editor_ckeditor/ckeditor/";</SCRIPT>
+
+<SCRIPT type="text/javascript" src="Drawing%20shapes%20-%20MDN_files/js.js"></SCRIPT>
+
+<SCRIPT type="text/javascript">var _starttime = new Date().getTime();</SCRIPT>
+<!--[if IE]>
+<META content="no" http-equiv="imagetoolbar">
+<META content="IE=Edge" http-equiv="X-UA-Compatible">
+<SCRIPT src="Drawing%20shapes%20-%20MDN_files/html5.js"></SCRIPT>
+<![endif]-->
+<SCRIPT type="text/javascript">
+
+		var aLt = aLt || [];aLt["attach-no-description"] = 'No description'; aLt["cancel"] = 'Cancel'; aLt["close"] = 'Close'; aLt["comment-delete"] = 'Are you sure you want to delete this comment?'; aLt["contentrating-title-popup"] = 'Thanks for your feedback'; aLt["error"] = 'Error'; aLt["error-permission-denied"] = 'Permission denied'; aLt["error-permission-details"] = 'Your account does not have sufficient permissions to perform that action.'; aLt["gallery-close"] = 'close'; aLt["gallery-next"] = 'next'; aLt["gallery-prev"] = 'prev'; aLt["internal-error"] = 'Sorry, but there was an internal problem - please try again soon.'; aLt["js-label_cancel"] = 'Cancel'; aLt["js-label_save"] = 'Save'; aLt["js-tooltip_cancel"] = 'Exit Without Saving Changes'; aLt["js-tooltip_save"] = 'Save and Exit (Alt+S)'; aLt["ldap-provide-credentials"] = 'Please provide external service login credentials.'; aLt["loading"] = 'Loading...'; aLt["menu-confirm-delete"] = 'Are you sure you want to delete this file?'; aLt["menu-delete-file"] = 'Delete'; aLt["menu-edit-description"] = 'Edit description'; aLt["menu-move-file"] = 'Move'; aLt["menu-previous-versions"] = 'Previous versions'; aLt["menu-view-original"] = 'View original'; aLt["ready"] = 'Ready'; aLt["remove-tag"] = 'Remove tag'; aLt["restore-tag"] = 'Restore tag'; aLt["adding-tags"] = 'Adding Tags...'; aLt["save"] = 'Save'; aLt["submit"] = 'Submit'; aLt["wikibits-attach-another"] = 'Attach another file'; aLt["wikibits-attach-file"] = 'Attach File'; aLt["wikibits-cant-attach-editing"] = 'Sorry, you can\'t attach files while editing a page. Please close the editor first.'; aLt["wikibits-edit-section"] = 'Edit section'; aLt["wikibits-remove-file"] = 'Remove file'; aLt["advanced-search"] = 'Advanced Search'; aLt["standard-search"] = 'Standard Search';  var wfMsg = wfMsg || function (key) { return aLt[key] ? aLt[key] : 'MISSING: ' + key; };
+	//hook in menu clicking events to the document's body
+	YAHOO.util.Event.addListener(document, "click", function () { DWMenu.BodyClick(); });
+	YAHOO.util.Event.onDOMReady(function () { new clientWindow });
+
+		
+
+			YAHOO.util.Event.onDOMReady(function() {
+			tb_init("a.lightbox, area.lightbox, input.lightbox, a[rel='awesomebox']");//pass where to apply thickbox
+		});
+	
+			YAHOO.util.Event.onDOMReady(function() {
+			MTComments.HookBehavior();
+		});
+		</SCRIPT>
+<LINK rel="stylesheet" type="text/css" href="Drawing%20shapes%20-%20MDN_files/SyntaxHighlighter.css">
+<SCRIPT type="text/javascript" src="Drawing%20shapes%20-%20MDN_files/shCore.js"></SCRIPT>
+
+<SCRIPT type="text/javascript" src="Drawing%20shapes%20-%20MDN_files/shBrushJScript.js"></SCRIPT>
+
+<SCRIPT type="text/javascript" src="Drawing%20shapes%20-%20MDN_files/rgbcolor.js"></SCRIPT>
+
+<SCRIPT type="text/javascript" src="Drawing%20shapes%20-%20MDN_files/nav.js"></SCRIPT>
+
+<SCRIPT type="text/javascript">
+
+Deki.BaseHref = 'https://developer.mozilla.org';
+Deki.PageId = 22793;
+Deki.PageTitle = 'en/Canvas tutorial/Drawing shapes';
+Deki.PageLanguageCode = 'en';
+Deki.FollowRedirects = 1;
+Deki.PathTpl = '/skins/mdn';
+Deki.PathSkin = '/skins/mdn/Transitional';
+Deki.PathCommon = '/skins/common';
+Deki.UserName = 'Anonymous';
+Deki.Today = '29 Jan 2012';
+Deki.UserIsAnonymous = true;
+Deki.EditorConfigToken = 'db6f5ebb';
+Deki.EditorStylesToken = 'adabed46';
+Deki.PageEditable = false;
+</SCRIPT>
+
+<SCRIPT type="text/javascript">aLt["commercial-required"] = 'Gather feedback on your content with <strong>community scoring</strong> - these ratings weight results in adaptive search. Through curation analytics, ratings are used to highlight pages in need of attention. <a href="http://www.mindtouch.com/redir/mindtouch-tcs/">Learn more on enabling these capabilities with MindTouch 2010.</a>';aLt["login-required"] = 'You must be <a href="/index.php?title=Special:Userlogin&returntotitle=en%2FCanvas+tutorial%2FDrawing+shapes">logged in</a> to perform that action';</SCRIPT>
+<LINK rel="stylesheet" type="text/css" href="Drawing%20shapes%20-%20MDN_files/custom_css.css"></HEAD>
+<BODY id="docs" class="section-docs en ltr yui-skin-sam PageDW-enCanvastutorialDrawingshapes" 
+role="document"><!--[if lte IE 8]>
+<noscript><div class="global-notice">
+<p><strong>Warning:</strong> The Mozilla Developer Network website employs emerging web standards that may not be fully supported in some versions of MicroSoft Internet Explorer. You can improve your experience of this website by enabling JavaScript.</p>
+</div></noscript>
+<![endif]--><NOSCRIPT>&lt;div class="noscript"&gt;This application requires 
+Javascript to be enabled.&lt;/div&gt;</NOSCRIPT><HEADER id="masthead" role="banner">
+<DIV class="wrap">
+<DIV id="branding">
+<H1 id="logo"><A href="https://developer.mozilla.org/"><IMG title="" alt="" src="Drawing%20shapes%20-%20MDN_files/mdn-logo-sm.png" 
+width="62" height="71"> Mozilla Developer Network</A></H1></DIV><A id="moz-tab" 
+href="http://mozilla.org/">Mozilla</A><NAV id="nav" role="menubar">
+<UL id="nav-main">
+  <LI id="nav-main-topics" class="menu"><A aria-haspopup="true" class="toggle" 
+  title="Explore other parts of MDN" href="https://developer.mozilla.org/en/Canvas_tutorial/Drawing_shapes#nav-sub-topics">Topics</A>
+  <UL aria-hidden="true" id="nav-sub-topics" class="sub-menu">
+    <LI id="nav-sub-web"><A 
+href="https://developer.mozilla.org/web">Web</A></LI>
+    <LI id="nav-sub-apps"><A 
+    href="https://developer.mozilla.org/apps">Apps</A></LI>
+    <LI id="nav-sub-mobile"><A 
+    href="https://developer.mozilla.org/mobile">Mobile</A></LI>
+    <LI id="nav-sub-addons"><A 
+    href="https://developer.mozilla.org/addons">Add-ons</A></LI>
+    <LI id="nav-sub-mozilla"><A 
+    href="https://developer.mozilla.org/mozilla">Mozilla</A></LI></UL></LI>
+  <LI id="nav-main-docs" class="menu"><A aria-haspopup="true" class="docs toggle" 
+  aria-labelledby="nav-main-docs" 
+  href="https://developer.mozilla.org/docs">Docs</A>
+  <DIV aria-hidden="true" id="nav-sub-docs" class="sub-menu">
+  <UL>
+    <LI>
+    <UL>
+      <LI><A href="https://developer.mozilla.org/en/HTML">HTML</A></LI>
+      <LI><A href="https://developer.mozilla.org/en/DOM">DOM</A></LI>
+      <LI><A href="https://developer.mozilla.org/en/Using_audio_and_video_in_Firefox">Video</A></LI>
+      <LI><A href="https://developer.mozilla.org/en/Using_audio_and_video_in_Firefox">Audio</A></LI>
+      <LI><A href="https://developer.mozilla.org/en/SVG">SVG</A></LI>
+      <LI><A 
+href="https://developer.mozilla.org/en/WebGL">WebGL</A></LI></UL></LI>
+    <LI>
+    <UL>
+      <LI><A href="https://developer.mozilla.org/en/HTML/HTML5">HTML5</A></LI>
+      <LI><A 
+      href="https://developer.mozilla.org/en/WebSockets">WebSockets</A></LI>
+      <LI><A href="https://developer.mozilla.org/en/Offline_resources_in_Firefox">Offline 
+      Cache</A></LI>
+      <LI><A href="https://developer.mozilla.org/en/DOM/Storage">Local 
+      Storage</A></LI>
+      <LI><A 
+href="https://developer.mozilla.org/en/IndexedDB">IndexedDB</A></LI>
+      <LI><A href="https://developer.mozilla.org/en/Using_files_from_web_applications">File 
+      API</A></LI></UL></LI>
+    <LI>
+    <UL>
+      <LI><A href="https://developer.mozilla.org/en/CSS">CSS</A></LI>
+      <LI><A 
+      href="https://developer.mozilla.org/en/Using_gradients">Gradients</A></LI>
+      <LI><A 
+      href="https://developer.mozilla.org/en/CSS/Using_CSS_transforms">Transforms</A></LI>
+      <LI><A 
+      href="https://developer.mozilla.org/en/CSS/CSS_transitions">Transitions</A></LI>
+      <LI><A 
+      href="https://developer.mozilla.org/en/CSS/CSS_animations">Animations</A></LI>
+      <LI><A href="https://developer.mozilla.org/en/CSS/Media_queries">Media 
+      Queries</A></LI></UL></LI>
+    <LI>
+    <UL>
+      <LI><A 
+      href="https://developer.mozilla.org/en/JavaScript">JavaScript</A></LI>
+      <LI><A href="https://developer.mozilla.org/en/Ajax">Ajax</A></LI>
+      <LI><A href="https://developer.mozilla.org/en/HTML/Canvas">Canvas</A></LI>
+      <LI><A 
+      href="https://developer.mozilla.org/en/Using_geolocation">Geolocation</A></LI>
+      <LI><A href="https://developer.mozilla.org/en/DragDrop/Drag_and_Drop">Drag 
+      &amp; Drop</A></LI>
+      <LI><A href="https://developer.mozilla.org/en/Using_web_workers">Web 
+      Workers</A></LI></UL></LI></UL>
+  <P><A href="https://developer.mozilla.org/docs">More docs…</A></P></DIV></LI>
+  <LI id="nav-main-demos"><A class="demos" href="https://developer.mozilla.org/demos">Demos</A></LI>
+  <LI id="nav-main-learning"><A class="learning" href="https://developer.mozilla.org/learn">Learning</A></LI>
+  <LI id="nav-main-community" class="menu"><A aria-haspopup="true" class="community toggle" 
+  aria-labelledby="nav-main-community" href="https://developer.mozilla.org/en/Canvas_tutorial/Drawing_shapes#nav-sub-community">Community</A>
+  <UL aria-hidden="true" id="nav-sub-community" class="sub-menu">
+    <LI><A href="https://developer.mozilla.org/events">Events</A></LI>
+    <LI><A href="https://developer.mozilla.org/discussions">Discussions</A></LI>
+    <LI><A 
+href="https://developer.mozilla.org/promote">Promote</A></LI></UL></LI></UL></NAV>
+<UL class="user-state">
+  <LI><A href="https://developer.mozilla.org/users/login">Sign in</A></LI></UL>
+<FORM id="site-search" method="get" action="https://www.google.com/search" 
+data-url="/search">
+<P><INPUT id="q" role="search" name="q" type="text" 
+placeholder="Search MDN"><NOSCRIPT>&lt;button 
+type="submit"&gt;Search&lt;/button&gt;</NOSCRIPT></P><INPUT name="sitesearch" 
+value="developer.mozilla.org" type="hidden">
+<DIV id="site-search-gg"></DIV></FORM></DIV></HEADER>
+<DIV class="global-notice head-notice">
+<DIV class="wrap">
+<P style="background: rgb(255, 255, 255); padding: 15px; border: 2px solid rgb(229, 213, 193); color: rgb(255, 85, 85); font-size: 120%; font-weight: bold;">This 
+system is experiencing a problem that causes syntax errors to appear  on many 
+pages. This problem is known and is being <A href="https://bugzilla.mozilla.org/show_bug.cgi?id=715341">tracked 
+in  Bugzilla.</A> Also, the DOM Reference is currently undergoing repairs after 
+an accidental move of much of its content. Apologies and thanks for your 
+patience!</P></DIV></DIV><SECTION id="nav-toolbar">
+<DIV class="wrap"><NAV id="tool-menus">
+<UL id="tools">
+  <LI class="menu"><A class="toggle" href="https://developer.mozilla.org/en/Canvas_tutorial/Drawing_shapes#site-tools">Site 
+  tools</A>
+  <UL id="site-tools" class="sub-menu" role="navigation">
+    <LI class="site-recent">	<A title="Recent changes" href="https://developer.mozilla.org/Special:Recentchanges">Recent 
+    changes</A></LI>
+    <LI class="site-rss">	<A title="RSS feeds" href="https://developer.mozilla.org/Special:ListRss">RSS 
+    feeds</A></LI>
+    <LI class="siteListusers"><A title="Users" href="https://developer.mozilla.org/User:">Users</A></LI>
+    <LI class="site-templates">	<A title="Templates" href="https://developer.mozilla.org/Template:">Templates</A>
+    </LI>
+    <LI class="site-map">	<A title="Sitemap" href="https://developer.mozilla.org/Special:Sitemap">Sitemap</A>
+    </LI>
+    <LI class="site-popular">	<A title="Popular pages" href="https://developer.mozilla.org/Special:Popularpages">Popular 
+    pages</A></LI>
+    <LI class="siteAbout"><A title="About MDN" href="https://developer.mozilla.org/Special:About">About 
+    MDN</A></LI></UL></LI>
+  <LI class="menu"><A class="toggle" href="https://developer.mozilla.org/en/Canvas_tutorial/Drawing_shapes#page-tools">This 
+  page</A>
+  <UL id="page-tools" class="sub-menu" role="navigation">
+    <LI class="page-new"><A class="disabled " title="New page" href="https://developer.mozilla.org/en/Canvas_tutorial/Drawing_shapes#">New 
+    sub-page</A></LI>
+    <LI class="page-history"><A title="Page history" href="https://developer.mozilla.org/index.php?title=en/Canvas_tutorial/Drawing_shapes&amp;action=history">History</A></LI>
+    <LI class="page-talk">	<A title="Talk page" href="https://developer.mozilla.org/Talk:en/Canvas_tutorial/Drawing_shapes">Talk 
+    page</A></LI>
+    <LI class="page-print">	<A title="Print page" onclick="return window.print();" 
+    href="https://developer.mozilla.org/en/Canvas_tutorial/Drawing_shapes#">Print 
+    page</A></LI>
+    <LI class="page-backlinks"><A href="https://developer.mozilla.org/index.php?title=Special:Article&amp;type=backlinks&amp;pageid=22793">Pages 
+    that link here</A></LI></UL></LI>
+  <LI class="menu"><A class="toggle" href="https://developer.mozilla.org/en/Canvas_tutorial/Drawing_shapes#">Languages</A>
+  <UL>
+    <LI><A title="es/Canvas_tutorial/Dibujar_formas" href="https://developer.mozilla.org/es/Canvas_tutorial/Dibujar_formas" 
+    rel="internal">Español</A></LI>
+    <LI><A title="fr/Tutoriel_canvas/Formes_géométriques" href="https://developer.mozilla.org/fr/Tutoriel_canvas/Formes_g%C3%A9om%C3%A9triques" 
+    rel="internal">Français</A></LI>
+    <LI><A title="pl/Przewodnik_po_canvas/Rysowanie_kształtów" href="https://developer.mozilla.org/pl/Przewodnik_po_canvas/Rysowanie_kszta%C5%82t%C3%B3w" 
+    rel="internal">Polski</A></LI>
+    <LI><A title="ru/Обучение_canvas/Рисование_фигур" href="https://developer.mozilla.org/ru/%D0%9E%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D0%B5_canvas/%D0%A0%D0%B8%D1%81%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_%D1%84%D0%B8%D0%B3%D1%83%D1%80" 
+    rel="internal">Русский</A></LI>
+    <LI><A title="cn/Canvas_tutorial/Drawing_shapes" href="https://developer.mozilla.org/cn/Canvas_tutorial/Drawing_shapes" 
+    rel="internal">中文 (中国)</A></LI>
+    <LI><A title="zh_tw/Canvas_教學/繪製圖形" href="https://developer.mozilla.org/zh_tw/Canvas_%E6%95%99%E5%AD%B8/%E7%B9%AA%E8%A3%BD%E5%9C%96%E5%BD%A2" 
+    rel="internal">中文 (台湾)</A></LI>
+    <LI><A title="ja/Canvas_tutorial/Drawing_shapes" href="https://developer.mozilla.org/ja/Canvas_tutorial/Drawing_shapes" 
+    rel="internal">日本語</A></LI></UL></LI></UL></NAV><NAV class="crumbs" role="navigation">
+<OL>
+  <LI class="crumb-one"><A href="https://developer.mozilla.org/">MDN</A></LI>
+  <LI class="crumb-two"><A 
+  href="https://developer.mozilla.org/docs">Docs</A></LI>
+  <LI class="first"><A class="deki-ns" 
+  href="https://developer.mozilla.org/">MDN</A></LI>
+  <LI class="second"><A class="deki-ns" 
+  href="https://developer.mozilla.org/en">MDN</A></LI>
+  <LI><A class="deki-ns" 
+  href="https://developer.mozilla.org/en/Canvas_tutorial">Canvas 
+  tutorial</A></LI>
+  <LI class="last"><A class="deki-ns current" href="https://developer.mozilla.org/en/Canvas_tutorial/Drawing_shapes">Drawing 
+  shapes</A></LI></OL></NAV></DIV></SECTION><SECTION id="content">
+<DIV class="wrap">
+<DIV id="content-main" class="full">
+<DIV id="sessionMsg">
+<DIV class="inner">
+<UL></UL></DIV></DIV><ARTICLE class="article PageDW-enCanvastutorialDrawingshapes" 
+role="main">
+<DIV class="page-title hideforedit">
+<H1 id="title" class="first">Drawing shapes</H1>
+<UL id="page-buttons">
+  <LI class="page-edit"><A class="disabled" title="Log in or sign up to edit this page" 
+  href="https://developer.mozilla.org/index.php?title=Special:Userlogin&amp;returntotitle=en%2FCanvas+tutorial%2FDrawing+shapes">Edit</A></LI>
+  <LI class="page-watch"><A class="disabled" title="Log in or sign up to add this page to your watch list" 
+  href="https://developer.mozilla.org/index.php?title=Special:Userlogin&amp;returntotitle=en%2FCanvas+tutorial%2FDrawing+shapes">Watch</A></LI></UL></DIV>
+<DIV class="page-content boxed">
+<DIV id="article-nav" class="hideforedit">
+<DIV class="page-toc">
+<H2>Table of contents</H2>
+<OL style="padding-left: 0px; margin-left: 0px; list-style-type: none;">
+  <LI><SPAN>1.</SPAN> <A href="https://developer.mozilla.org/en/Canvas_tutorial/Drawing_shapes#The_grid" 
+  rel="internal">The grid</A></LI>
+  <LI><SPAN>2.</SPAN> <A href="https://developer.mozilla.org/en/Canvas_tutorial/Drawing_shapes#Drawing_shapes" 
+  rel="internal">Drawing shapes</A>
+  <OL style="padding-left: 15px; margin-left: 0px; list-style-type: none;">
+    <LI><SPAN>2.1.</SPAN> <A href="https://developer.mozilla.org/en/Canvas_tutorial/Drawing_shapes#Rectangles" 
+    rel="internal">Rectangles</A>
+    <OL style="padding-left: 15px; margin-left: 0px; list-style-type: none;">
+      <LI><SPAN>2.1.1.</SPAN> <A href="https://developer.mozilla.org/en/Canvas_tutorial/Drawing_shapes#Rectangular_shape_example" 
+      rel="internal">Rectangular shape example</A></LI></OL></LI></OL></LI>
+  <LI><SPAN>3.</SPAN> <A href="https://developer.mozilla.org/en/Canvas_tutorial/Drawing_shapes#Drawing_paths" 
+  rel="internal">Drawing paths</A>
+  <OL style="padding-left: 15px; margin-left: 0px; list-style-type: none;">
+    <LI><SPAN>3.1.</SPAN> <A href="https://developer.mozilla.org/en/Canvas_tutorial/Drawing_shapes#moveTo" 
+    rel="internal">moveTo</A>
+    <OL style="padding-left: 15px; margin-left: 0px; list-style-type: none;">
+      <LI><SPAN>3.1.1.</SPAN> <A href="https://developer.mozilla.org/en/Canvas_tutorial/Drawing_shapes#moveTo_example" 
+      rel="internal">moveTo example</A></LI></OL></LI>
+    <LI><SPAN>3.2.</SPAN> <A href="https://developer.mozilla.org/en/Canvas_tutorial/Drawing_shapes#Lines" 
+    rel="internal">Lines</A>
+    <OL style="padding-left: 15px; margin-left: 0px; list-style-type: none;">
+      <LI><SPAN>3.2.1.</SPAN> <A href="https://developer.mozilla.org/en/Canvas_tutorial/Drawing_shapes#lineTo_example" 
+      rel="internal">lineTo example</A></LI></OL></LI>
+    <LI><SPAN>3.3.</SPAN> <A href="https://developer.mozilla.org/en/Canvas_tutorial/Drawing_shapes#Arcs" 
+    rel="internal">Arcs</A>
+    <OL style="padding-left: 15px; margin-left: 0px; list-style-type: none;">
+      <LI><SPAN>3.3.1.</SPAN> <A href="https://developer.mozilla.org/en/Canvas_tutorial/Drawing_shapes#arc_example" 
+      rel="internal">arc example</A></LI></OL></LI>
+    <LI><SPAN>3.4.</SPAN> <A href="https://developer.mozilla.org/en/Canvas_tutorial/Drawing_shapes#Bezier_and_quadratic_curves" 
+    rel="internal">Bezier and quadratic curves</A>
+    <OL style="padding-left: 15px; margin-left: 0px; list-style-type: none;">
+      <LI><SPAN>3.4.1.</SPAN> <A href="https://developer.mozilla.org/en/Canvas_tutorial/Drawing_shapes#quadraticCurveTo_example" 
+      rel="internal">quadraticCurveTo example</A></LI>
+      <LI><SPAN>3.4.2.</SPAN> <A href="https://developer.mozilla.org/en/Canvas_tutorial/Drawing_shapes#bezierCurveTo_example" 
+      rel="internal">bezierCurveTo example</A></LI></OL></LI>
+    <LI><SPAN>3.5.</SPAN> <A href="https://developer.mozilla.org/en/Canvas_tutorial/Drawing_shapes#Firefox_1.5_quadraticCurveTo()_bug_workaround" 
+    rel="internal">Firefox 1.5 quadraticCurveTo() bug workaround</A></LI>
+    <LI><SPAN>3.6.</SPAN> <A href="https://developer.mozilla.org/en/Canvas_tutorial/Drawing_shapes#Rectangles_2" 
+    rel="internal">Rectangles</A></LI>
+    <LI><SPAN>3.7.</SPAN> <A href="https://developer.mozilla.org/en/Canvas_tutorial/Drawing_shapes#Making_combinations" 
+    rel="internal">Making combinations</A>
+    <OL style="padding-left: 15px; margin-left: 0px; list-style-type: none;">
+      <LI><SPAN>3.7.1.</SPAN> <A href="https://developer.mozilla.org/en/Canvas_tutorial/Drawing_shapes#Example" 
+      rel="internal">Example</A></LI></OL></LI></OL></LI></OL></DIV>
+<UL class="page-anchors">
+  <LI class="anchor-tags"><A title="Jump to tags for this article" href="https://developer.mozilla.org/en/Canvas_tutorial/Drawing_shapes#page-tags">Tags</A></LI>
+  <LI class="anchor-files"><A title="Jump to files for this article" href="https://developer.mozilla.org/en/Canvas_tutorial/Drawing_shapes#page-files">Files</A></LI></UL>
+<DIV id="deki-page-alerts" class="disabled">
+<DIV class="toggle"><A class="off" href="javascript:void(0);"><SPAN>Page 
+Notifications</SPAN><SPAN class="status">Off</SPAN></A></DIV></DIV></DIV>
+<DIV id="page-top">
+<DIV id="pageToc">
+<DIV class="pageToc">
+<H5>Table of contents</H5>
+<OL style="padding-left: 0px; margin-left: 0px; list-style-type: none;">
+  <LI><SPAN>1.</SPAN> <A href="https://developer.mozilla.org/en/Canvas_tutorial/Drawing_shapes#The_grid" 
+  rel="internal">The grid</A></LI>
+  <LI><SPAN>2.</SPAN> <A href="https://developer.mozilla.org/en/Canvas_tutorial/Drawing_shapes#Drawing_shapes" 
+  rel="internal">Drawing shapes</A>
+  <OL style="padding-left: 15px; margin-left: 0px; list-style-type: none;">
+    <LI><SPAN>2.1.</SPAN> <A href="https://developer.mozilla.org/en/Canvas_tutorial/Drawing_shapes#Rectangles" 
+    rel="internal">Rectangles</A>
+    <OL style="padding-left: 15px; margin-left: 0px; list-style-type: none;">
+      <LI><SPAN>2.1.1.</SPAN> <A href="https://developer.mozilla.org/en/Canvas_tutorial/Drawing_shapes#Rectangular_shape_example" 
+      rel="internal">Rectangular shape example</A></LI></OL></LI></OL></LI>
+  <LI><SPAN>3.</SPAN> <A href="https://developer.mozilla.org/en/Canvas_tutorial/Drawing_shapes#Drawing_paths" 
+  rel="internal">Drawing paths</A>
+  <OL style="padding-left: 15px; margin-left: 0px; list-style-type: none;">
+    <LI><SPAN>3.1.</SPAN> <A href="https://developer.mozilla.org/en/Canvas_tutorial/Drawing_shapes#moveTo" 
+    rel="internal">moveTo</A>
+    <OL style="padding-left: 15px; margin-left: 0px; list-style-type: none;">
+      <LI><SPAN>3.1.1.</SPAN> <A href="https://developer.mozilla.org/en/Canvas_tutorial/Drawing_shapes#moveTo_example" 
+      rel="internal">moveTo example</A></LI></OL></LI>
+    <LI><SPAN>3.2.</SPAN> <A href="https://developer.mozilla.org/en/Canvas_tutorial/Drawing_shapes#Lines" 
+    rel="internal">Lines</A>
+    <OL style="padding-left: 15px; margin-left: 0px; list-style-type: none;">
+      <LI><SPAN>3.2.1.</SPAN> <A href="https://developer.mozilla.org/en/Canvas_tutorial/Drawing_shapes#lineTo_example" 
+      rel="internal">lineTo example</A></LI></OL></LI>
+    <LI><SPAN>3.3.</SPAN> <A href="https://developer.mozilla.org/en/Canvas_tutorial/Drawing_shapes#Arcs" 
+    rel="internal">Arcs</A>
+    <OL style="padding-left: 15px; margin-left: 0px; list-style-type: none;">
+      <LI><SPAN>3.3.1.</SPAN> <A href="https://developer.mozilla.org/en/Canvas_tutorial/Drawing_shapes#arc_example" 
+      rel="internal">arc example</A></LI></OL></LI>
+    <LI><SPAN>3.4.</SPAN> <A href="https://developer.mozilla.org/en/Canvas_tutorial/Drawing_shapes#Bezier_and_quadratic_curves" 
+    rel="internal">Bezier and quadratic curves</A>
+    <OL style="padding-left: 15px; margin-left: 0px; list-style-type: none;">
+      <LI><SPAN>3.4.1.</SPAN> <A href="https://developer.mozilla.org/en/Canvas_tutorial/Drawing_shapes#quadraticCurveTo_example" 
+      rel="internal">quadraticCurveTo example</A></LI>
+      <LI><SPAN>3.4.2.</SPAN> <A href="https://developer.mozilla.org/en/Canvas_tutorial/Drawing_shapes#bezierCurveTo_example" 
+      rel="internal">bezierCurveTo example</A></LI></OL></LI>
+    <LI><SPAN>3.5.</SPAN> <A href="https://developer.mozilla.org/en/Canvas_tutorial/Drawing_shapes#Firefox_1.5_quadraticCurveTo()_bug_workaround" 
+    rel="internal">Firefox 1.5 quadraticCurveTo() bug workaround</A></LI>
+    <LI><SPAN>3.6.</SPAN> <A href="https://developer.mozilla.org/en/Canvas_tutorial/Drawing_shapes#Rectangles_2" 
+    rel="internal">Rectangles</A></LI>
+    <LI><SPAN>3.7.</SPAN> <A href="https://developer.mozilla.org/en/Canvas_tutorial/Drawing_shapes#Making_combinations" 
+    rel="internal">Making combinations</A>
+    <OL style="padding-left: 15px; margin-left: 0px; list-style-type: none;">
+      <LI><SPAN>3.7.1.</SPAN> <A href="https://developer.mozilla.org/en/Canvas_tutorial/Drawing_shapes#Example" 
+      rel="internal">Example</A></LI></OL></LI></OL></LI></OL></DIV></DIV>
+<DIV id="pageText" class="pageText">
+<P>&nbsp;</P>
+<DIV id="section_1"><SPAN id="The_grid"></SPAN>
+<H2 class="editable">The grid</H2>
+<P><IMG class="internal" alt="" align="right" src="Drawing%20shapes%20-%20MDN_files/=_UTF-8_B_Q2FudmFzX2RlZmF1bHRfZ3JpZC5wbmc=_=">Before 
+we can start drawing, we need to talk about the canvas grid or <EM>coordinate 
+space</EM>. The HTML template on the previous page had a canvas element 150 
+pixels wide and 150 pixels high. I've drawn this image with the default grid 
+overlayed. Normally 1 unit in the grid corresponds to 1 pixel on the canvas. The 
+origin of this grid is positioned in the top left corner (coordinate (0,0)). All 
+elements are placed relative to this origin. So the position of the top left 
+corner of the blue square becomes x pixels from the left and y pixels from the 
+top (coordinate (x,y)). Later in this tutorial we'll see how we can translate 
+the origin to a different position, rotate the grid and even scale it. For now 
+we'll stick to the default.</P></DIV>
+<DIV id="section_2"><SPAN id="Drawing_shapes"></SPAN>
+<H2 class="editable">Drawing shapes</H2>
+<P>Unlike <A title="en/SVG" href="https://developer.mozilla.org/en/SVG" rel="internal">SVG</A>, 
+canvas only supports one primitive shape - rectangles. All other shapes must be 
+created by combining one or more paths. Luckily, we have a collection of path 
+drawing functions which make it possible to compose very complex shapes.</P>
+<DIV id="section_3"><SPAN id="Rectangles"></SPAN>
+<H3 class="editable">Rectangles</H3>
+<P>First let's look at the rectangle. There are three functions that draw 
+rectangles on the canvas:</P>
+<DIV style="background: rgb(239, 248, 206); border: 1px solid rgb(208, 221, 158); padding-left: 10px; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;"> 
+
+<P><CODE><STRONG>fillRect</STRONG>(x,y,width,height)</CODE>&nbsp;: Draws a 
+filled rectangle<BR> 
+<CODE><STRONG>strokeRect</STRONG>(x,y,width,height)</CODE>&nbsp;: Draws a 
+rectangular outline<BR> 
+<CODE><STRONG>clearRect</STRONG>(x,y,width,height)</CODE>&nbsp;: Clears the 
+specified area and makes it fully transparent</P></DIV>
+<P>Each of these three functions takes the same parameters. <CODE>x</CODE> and 
+<CODE>y</CODE> specify the position on the canvas (relative to the origin) of 
+the top-left corner of the rectangle. <CODE>width</CODE> and <CODE>height</CODE> 
+are pretty obvious. Let's see these functions in action.</P>
+<P>Below is the <CODE>draw()</CODE> function from the previous page, but now 
+I've added the three functions above.</P>
+<DIV id="section_4"><SPAN id="Rectangular_shape_example"></SPAN>
+<H4 class="editable">Rectangular shape example</H4>
+<P><A class="external" title="samples/canvas-tutorial/2_1_canvas_rect.html" 
+href="https://developer.mozilla.org/samples/canvas-tutorial/2_1_canvas_rect.html" 
+rel="internal">View this example</A></P><PRE class="js" name="code">function draw(){
+  var canvas = document.getElementById('tutorial');
+  if (canvas.getContext){
+    var ctx = canvas.getContext('2d');
+
+    ctx.fillRect(25,25,100,100);
+    ctx.clearRect(45,45,60,60);
+    ctx.strokeRect(50,50,50,50);
+  }
+}</PRE>
+<P><IMG class="internal" alt="" align="right" src="Drawing%20shapes%20-%20MDN_files/=_UTF-8_B_Q2FudmFzX3JlY3QucG5n_=">The 
+result should look something like the image on the right. The 
+<CODE>fillRect</CODE> function draws a large black square 100x100 pixels. The 
+<CODE>clearRect</CODE> function removes a 60x60 pixels square from the center 
+and finally the <CODE>strokeRect</CODE> draws a rectangular outline 50x50 pixels 
+inside the cleared square. In the following pages we'll see two alternative 
+methods for the <CODE>clearRect</CODE> function and we'll also see how to change 
+the color and stroke style of the rendered shapes.</P>
+<P>Unlike the path functions we'll see in the next section, all three rectangle 
+functions draw immediately to the canvas.</P></DIV></DIV></DIV>
+<DIV id="section_5"><SPAN id="Drawing_paths"></SPAN>
+<H2 class="editable">Drawing paths</H2>
+<P>To make shapes using paths, we need a couple of extra steps.</P>
+<DIV style="background: rgb(239, 248, 206); border: 1px solid rgb(208, 221, 158); padding-left: 10px; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;"> 
+
+<P><CODE><STRONG>beginPath</STRONG>()<BR> <STRONG>closePath</STRONG>()<BR> 
+<STRONG>stroke</STRONG>()<BR> <STRONG>fill</STRONG>()<BR> </CODE></P></DIV>
+<P>The first step to create a path is calling the <CODE>beginPath</CODE> method. 
+Internally, paths are stored as a list of sub-paths (lines, arcs, etc) which 
+together form a shape. Every time this method is called, the list is reset and 
+we can start drawing new shapes.</P>
+<DIV class="note"><STRONG>Note:</STRONG> When the current path is empty, such as 
+immediately after calling <CODE>beginPath()</CODE>, or on a newly created 
+canvas, the first path construction command is always treated as a 
+<CODE>moveTo()</CODE>, regardless of what it actually is. For that reason, you 
+will almost always want to specifically set your starting position after 
+resetting a path.</DIV>
+<P>The second step is calling the methods that actually specify the paths to be 
+drawn. We'll see these shortly.</P>
+<P>The third, and an optional step, would be to call the <CODE>closePath</CODE> 
+method. This method tries to close the shape by drawing a straight line from the 
+current point to the start. If the shape has already been closed or there's only 
+one point in the list, this function does nothing.</P>
+<P>The final step will be calling the <CODE>stroke</CODE> and/or 
+<CODE>fill</CODE> methods. Calling one of these will actually draw the shape to 
+the canvas. <CODE>stroke</CODE> is used to draw an outlined shape, while 
+<CODE>fill</CODE> is used to paint a solid shape.</P>
+<DIV class="note"><STRONG>Note:</STRONG> When calling the <CODE>fill</CODE> 
+method, any open shapes will be closed automatically and it isn't necessary to 
+use the <CODE>closePath</CODE> method.</DIV>
+<P>For example, the code for drawing a triangle would look something like 
+this:</P><PRE class="js" name="code">ctx.beginPath();
+ctx.moveTo(75,50);
+ctx.lineTo(100,75);
+ctx.lineTo(100,25);
+ctx.fill();</PRE>
+<DIV id="section_6"><SPAN id="moveTo"></SPAN>
+<H3 class="editable">moveTo</H3>
+<P>One very useful function, which doesn't actually draw anything, but is part 
+of the path list described above, is the <CODE>moveTo</CODE> function. You can 
+probably best think of this as lifting a pen or pencil from one spot on a piece 
+of paper and placing it on the next.</P>
+<DIV style="background: rgb(239, 248, 206); border: 1px solid rgb(208, 221, 158); padding-left: 10px; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;"> 
+
+<P><CODE><STRONG>moveTo</STRONG>(x, y)</CODE></P></DIV>
+<P>The <CODE>moveTo</CODE> function takes two arguments,&nbsp;<CODE>x</CODE> and 
+<CODE>y,&nbsp;</CODE>which are the coordinates of the new starting point.</P>
+<P><IMG class="internal" alt="" align="right" src="Drawing%20shapes%20-%20MDN_files/=_UTF-8_B_Q2FudmFzX3NtaWxleS5wbmc=_=">When 
+the canvas is initialized or the <CODE>beginPath</CODE> method is called, you 
+typically will want to use the <CODE>moveTo</CODE> method to place the starting 
+point somewhere else. We could also use the <CODE>moveTo</CODE> method to draw 
+unconnected paths. Take a look at the smiley face on the right. I've marked the 
+places where I used the <CODE>moveTo</CODE> method (the red lines).</P>
+<P>To try this for yourself, you can use the code snippet below. Just paste it 
+into the <CODE>draw</CODE> function we saw earlier.</P>
+<DIV id="section_7"><SPAN id="moveTo_example"></SPAN>
+<H4 class="editable"><CODE>moveTo</CODE> example</H4>
+<P><A class="external" title="samples/canvas-tutorial/2_2_canvas_moveto.html" 
+href="https://developer.mozilla.org/samples/canvas-tutorial/2_2_canvas_moveto.html" 
+rel="internal">View this example</A></P><PRE class="js" name="code">ctx.beginPath();
+ctx.arc(75,75,50,0,Math.PI*2,true); // Outer circle
+ctx.moveTo(110,75);
+ctx.arc(75,75,35,0,Math.PI,false);   // Mouth (clockwise)
+ctx.moveTo(65,65);
+ctx.arc(60,65,5,0,Math.PI*2,true);  // Left eye
+ctx.moveTo(95,65);
+ctx.arc(90,65,5,0,Math.PI*2,true);  // Right eye
+ctx.stroke();</PRE>
+<P><STRONG>Note</STRONG>: remove the <CODE>moveTo</CODE> methods to see the 
+connecting lines.<BR> <STRONG>Note</STRONG>: For a description of the 
+<CODE>arc</CODE> function and its parameters look below.</P></DIV></DIV>
+<DIV id="section_8"><SPAN id="Lines"></SPAN>
+<H3 class="editable">Lines</H3>
+<P>For drawing straight lines we use the <CODE>lineTo</CODE> method.</P>
+<DIV style="background: rgb(239, 248, 206); border: 1px solid rgb(208, 221, 158); padding-left: 10px; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;"> 
+
+<P><CODE><STRONG>lineTo</STRONG>(x, y)</CODE></P></DIV>
+<P>This method takes two arguments - <CODE>x</CODE> and <CODE>y</CODE>, - which 
+are the coordinates of the line's end point. The starting point is dependent on 
+previous drawn paths, where the end point of the previous path is the starting 
+point for the following, etc. The starting point can also be changed by using 
+the <CODE>moveTo</CODE> method.</P>
+<DIV id="section_9"><SPAN id="lineTo_example"></SPAN>
+<H4 class="editable"><CODE>lineTo</CODE> example</H4>
+<P><IMG class="internal" alt="" align="right" src="Drawing%20shapes%20-%20MDN_files/=_UTF-8_B_Q2FudmFzX2xpbmVUby5wbmc=_=">In 
+the example below two triangles are drawn, one filled and one outlined. (The 
+result can be seen in the image on the right). First the <CODE>beginPath</CODE> 
+method is called to begin a new shape path. We then use the <CODE>moveTo</CODE> 
+method to move the starting point to the desired position. Below this two lines 
+are drawn which make up two sides of the triangle.</P>
+<P>You'll notice the difference between the filled and stroked triangle. This 
+is, as mentioned above, because shapes are automatically closed when a path is 
+filled, but not when they are stroked. If we would have left out the closePath() 
+for the stroked triangle, only two lines would have been drawn, not a complete 
+triangle.</P>
+<P><A class="external" title="samples/canvas-tutorial/2_3_canvas_lineto.html" 
+href="https://developer.mozilla.org/samples/canvas-tutorial/2_3_canvas_lineto.html" 
+rel="internal">View this example</A></P><PRE class="js" name="code">// Filled triangle
+ctx.beginPath();
+ctx.moveTo(25,25);
+ctx.lineTo(105,25);
+ctx.lineTo(25,105);
+ctx.fill();
+
+// Stroked triangle
+ctx.beginPath();
+ctx.moveTo(125,125);
+ctx.lineTo(125,45);
+ctx.lineTo(45,125);
+ctx.closePath();
+ctx.stroke();</PRE></DIV></DIV>
+<DIV id="section_10"><SPAN id="Arcs"></SPAN>
+<H3 class="editable">Arcs</H3>
+<P>For drawing arcs or circles we use the <CODE>arc</CODE> method. The 
+specification also describes the <CODE>arcTo</CODE> method, which is supported 
+by Safari and Firefox, but wasn't implemented in the older Gecko browsers.</P>
+<DIV style="background: rgb(239, 248, 206); border: 1px solid rgb(208, 221, 158); padding-left: 10px; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;"> 
+
+<P><CODE><STRONG>arc</STRONG>(x, y, radius, startAngle, endAngle, 
+anticlockwise)</CODE></P></DIV>
+<P>This method takes five parameters: <CODE>x</CODE> and <CODE>y</CODE> are the 
+coordinates of the circle's center. Radius is self explanatory. The 
+<CODE>startAngle</CODE> and <CODE>endAngle</CODE> parameters define the start 
+and end points of the arc in radians. The starting and closing angle are 
+measured from the x axis. The <CODE>anticlockwise</CODE> parameter is a Boolean 
+value which when <CODE>true</CODE> draws the arc anticlockwise, otherwise in a 
+clockwise direction.<BR> </P>
+<P><STRONG>Note</STRONG>: Angles in the <CODE>arc</CODE> function are measured 
+in radians, not degrees. To convert degrees to radians you can use the following 
+JavaScript expression: <CODE>var radians = (Math.PI/180)*degrees</CODE>.</P>
+<DIV id="section_11"><SPAN id="arc_example"></SPAN>
+<H4 class="editable"><CODE>arc</CODE> example</H4>
+<P><IMG class="internal" alt="" align="right" src="Drawing%20shapes%20-%20MDN_files/=_UTF-8_B_Q2FudmFzX2FyYy5wbmc=_=">The 
+following example is a little more complex than the ones we've seen above. I've 
+drawn 12 different arcs all with different angles and fills. If I would have 
+written this example just like the smiley face above, firstly this would have 
+become a very long list of statements and secondly, when drawing arcs, I would 
+need to know every single starting point. For arcs of 90, 180 and 270 degrees, 
+like the ones I used here, this wouldn't be to much of a problem, but for more 
+complex ones this becomes way too difficult.</P>
+<P>The two <CODE>for</CODE> loops are for looping through the rows and columns 
+of arcs. For every arc I start a new path using <CODE>beginPath</CODE>. Below 
+this I've written out all the parameters as variables, so it's easier to read 
+what's going on. Normally this would be just one statement. The <CODE>x</CODE> 
+and <CODE>y</CODE> coordinates should be clear enough. <CODE>radius</CODE> and 
+<CODE>startAngle</CODE> are fixed. The <CODE>endAngle</CODE> starts of as 180 
+degrees (first column) and is increased with steps of 90 degrees to form a 
+complete circle (last column). The statement for the <CODE>clockwise</CODE> 
+parameter results in the first and third row being drawn as clockwise arcs and 
+the second and fourth row as counterclockwise arcs. Finally, the <CODE>if</CODE> 
+statement makes the top half stroked arcs and the bottom half filled arcs.</P>
+<P><A class="external" title="samples/canvas-tutorial/2_4_canvas_arc.html" href="https://developer.mozilla.org/samples/canvas-tutorial/2_4_canvas_arc.html" 
+rel="internal">View this example</A></P><PRE class="js" name="code">for(var i=0;i&lt;4;i++){
+  for(var j=0;j&lt;3;j++){
+    ctx.beginPath();
+    var x              = 25+j*50;               // x coordinate
+    var y              = 25+i*50;               // y coordinate
+    var radius         = 20;                    // Arc radius
+    var startAngle     = 0;                     // Starting point on circle
+    var endAngle       = Math.PI+(Math.PI*j)/2; // End point on circle
+    var anticlockwise  = i%2==0 ? false : true; // clockwise or anticlockwise
+
+    ctx.arc(x,y,radius,startAngle,endAngle, anticlockwise);
+
+    if (i&gt;1){
+      ctx.fill();
+    } else {
+      ctx.stroke();
+    }
+  }
+}</PRE></DIV></DIV>
+<DIV id="section_12"><SPAN id="Bezier_and_quadratic_curves"></SPAN>
+<H3 class="editable">Bezier and quadratic curves</H3>
+<P>The next type of paths available are <A class="external" title="http://en.wikipedia.org/wiki/B%C3%A9zier_curve" 
+href="http://en.wikipedia.org/wiki/B%C3%A9zier_curve" rel="external" target="_blank">Bézier 
+curves</A>, available in the cubic and quadratic varieties. These are generally 
+used to draw complex organic shapes.</P>
+<P>&nbsp;</P>
+<DIV style="background: rgb(239, 248, 206); border: 1px solid rgb(208, 221, 158); padding-left: 10px; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;"> 
+
+<P><CODE><STRONG>quadraticCurveTo</STRONG>(cp1x, cp1y, x, y) // BROKEN in 
+Firefox 1.5 (see work around below)</CODE><BR> 
+<CODE><STRONG>bezierCurveTo</STRONG>(cp1x, cp1y, cp2x, cp2y, x, y)</CODE></P>
+</DIV>
+<P><BR> <IMG class="internal" alt="" align="right" src="Drawing%20shapes%20-%20MDN_files/=_UTF-8_B_Q2FudmFzX2N1cnZlcy5wbmc=_=">The 
+difference between these can best be described using the image on the right. A 
+quadratic Bézier curve has a start and an end point (blue dots) and just one 
+<EM>control point</EM> (red dot) while a cubic Bézier curve uses two control 
+points.</P>
+<P>The <CODE>x</CODE> and <CODE>y</CODE> parameters in both these methods are 
+the coordinates of the end point. <CODE>cp1x</CODE> and <CODE>cp1y</CODE> are 
+the coordinates of the first control point, and <CODE>cp2x</CODE> and 
+<CODE>cp2y</CODE> are the coordinates of the second control point.</P>
+<P>Using quadratic and cubic Bézier curves can be quite challenging, because 
+unlike vector drawing software like Adobe Illustrator, we don't have direct 
+visual feedback as to what we're doing. This makes it pretty hard to draw 
+complex shapes. In the following example, we'll be drawing some simple organic 
+shapes, but if you have the time and, most of all, the patience, much more 
+complex shapes can be created.</P>
+<P>There's nothing very difficult in these examples. In both cases we see a 
+succession of curves being drawn which finally result in a complete shape.</P>
+<DIV id="section_13"><SPAN id="quadraticCurveTo_example"></SPAN>
+<H4 class="editable"><CODE>quadraticCurveTo</CODE> example</H4>
+<P><A class="external" title="samples/canvas-tutorial/2_5_canvas_quadraticcurveto.html" 
+href="https://developer.mozilla.org/samples/canvas-tutorial/2_5_canvas_quadraticcurveto.html" 
+rel="internal">View this example</A> <IMG class="internal" alt="" align="right" 
+src="Drawing%20shapes%20-%20MDN_files/=_UTF-8_B_Q2FudmFzX3F1YWRyYXRpYy5wbmc=_="></P><PRE class="js" name="code">// Quadratric curves example
+ctx.beginPath();
+ctx.moveTo(75,25);
+ctx.quadraticCurveTo(25,25,25,62.5);
+ctx.quadraticCurveTo(25,100,50,100);
+ctx.quadraticCurveTo(50,120,30,125);
+ctx.quadraticCurveTo(60,120,65,100);
+ctx.quadraticCurveTo(125,100,125,62.5);
+ctx.quadraticCurveTo(125,25,75,25);
+ctx.stroke();</PRE>
+<P>It is possible to convert any quadratic Bézier curve to a cubic Bézier curve 
+by correctly computing both cubic Bézier control points from the single 
+quadratic Bézier control point, although the reverse is NOT true. An exact 
+conversion of a cubic Bézier curve to a quadratic Bézier curve is only possible 
+if the cubic term is zero, more commonly a subdivision method is used to 
+approximate a cubic Bézier using multiple quadratic Bézier curves.</P></DIV>
+<DIV id="section_14"><SPAN id="bezierCurveTo_example"></SPAN>
+<H4 class="editable"><CODE>bezierCurveTo</CODE> example</H4>
+<P><A class="external" title="samples/canvas-tutorial/2_6_canvas_beziercurveto.html" 
+href="https://developer.mozilla.org/samples/canvas-tutorial/2_6_canvas_beziercurveto.html" 
+rel="internal">View this example</A> <IMG class="internal" alt="" align="right" 
+src="Drawing%20shapes%20-%20MDN_files/=_UTF-8_B_Q2FudmFzX2Jlemllci5wbmc=_="></P><PRE class="js" name="code">// Bezier curves example
+ctx.beginPath();
+ctx.moveTo(75,40);
+ctx.bezierCurveTo(75,37,70,25,50,25);
+ctx.bezierCurveTo(20,25,20,62.5,20,62.5);
+ctx.bezierCurveTo(20,80,40,102,75,120);
+ctx.bezierCurveTo(110,102,130,80,130,62.5);
+ctx.bezierCurveTo(130,62.5,130,25,100,25);
+ctx.bezierCurveTo(85,25,75,37,75,40);
+ctx.fill();</PRE></DIV></DIV>
+<DIV id="section_15"><SPAN id="Firefox_1.5_quadraticCurveTo.28.29_bug_workaround"></SPAN><SPAN 
+id="Firefox_1.5_quadraticCurveTo()_bug_workaround"></SPAN>
+<H3 class="editable">Firefox 1.5 quadraticCurveTo() bug workaround</H3>
+<P>There is a bug in the Firefox 1.5 implementation of quadatricCurveTo(). It 
+does NOT draw a quadratic curve, as it is just calling the same cubic curve 
+function bezierCurveTo() calls, and repeating the single quadratic control point 
+(x,y) coordinate twice. For this reason quadraticCurveTo() will yield incorrect 
+results. If you require the use of quadraticCurveTo() you must convert your 
+quadratic Bézier curve to a cubic Bézier curve yourself, so you can use the 
+working bezierCurveTo() method.</P><PRE class="js" name="code">var currentX, currentY;  // set to last x,y sent to lineTo/moveTo/bezierCurveTo or quadraticCurveToFixed()
+
+function quadraticCurveToFixed( cpx, cpy, x, y ) {
+  /*
+   For the equations below the following variable name prefixes are used:
+     qp0 is the quadratic curve starting point (you must keep this from your last point sent to moveTo(), lineTo(), or bezierCurveTo() ).
+     qp1 is the quadratic curve control point (this is the cpx,cpy you would have sent to quadraticCurveTo() ).
+     qp2 is the quadratic curve ending point (this is the x,y arguments you would have sent to quadraticCurveTo() ).
+   We will convert these points to compute the two needed cubic control points (the starting/ending points are the same for both
+   the quadratic and cubic curves.
+
+   The exact equations for the two cubic control points are:
+     cp0 = qp0 and cp3 = qp2
+     cp1 = qp0 + (qp1 - qp0) * ratio
+     cp2 = cp1 + (qp2 - qp0) * (1 - ratio)
+     where ratio = (sqrt(2) - 1) * 4 / 3 exactly (approx. 0.5522847498307933984022516322796)
+                   if the quadratic is an approximation of an elliptic arc, and the cubic must approximate the same arc, or
+           ratio = 2.0 / 3.0 for keeping the same quadratic curve.
+
+   In the code below, we must compute both the x and y terms for each point separately.
+
+    cp1x = qp0x + (qp1x - qp0x) * ratio;
+    cp1y = qp0y + (qp1y - qp0y) * ratio;
+    cp2x = cp1x + (qp2x - qp0x) * (1 - ratio);
+    cp2y = cp1y + (qp2y - qp0y) * (1 - ratio);
+
+   We will now 
+     a) replace the qp0x and qp0y variables with currentX and currentY (which *you* must store for each moveTo/lineTo/bezierCurveTo)
+     b) replace the qp1x and qp1y variables with cpx and cpy (which we would have passed to quadraticCurveTo)
+     c) replace the qp2x and qp2y variables with x and y.
+   which leaves us with: 
+  */
+  var ratio = 2.0 / 3.0; // 0.5522847498307933984022516322796 if the Bezier is approximating an elliptic arc with best fitting
+  var cp1x = currentX + (cpx - currentX) * ratio;
+  var cp1y = currentY + (cpy - currentY) * ratio;
+  var cp2x = cp1x + (x - currentX) * (1 - ratio);
+  var cp2y = cp1y + (y - currentY) * (1 - ratio);
+
+  // and now call cubic Bezier curve to function 
+  bezierCurveTo( cp1x, cp1y, cp2x, cp2y, x, y );
+
+  currentX = x;
+  currentY = y;
+}</PRE></DIV>
+<DIV id="section_16"><SPAN id="Rectangles_2"></SPAN><SPAN 
+id="Rectangles_2"></SPAN>
+<H3 class="editable">Rectangles</H3>
+<P>Besides the three methods we saw above which draw rectangular shapes directly 
+to the canvas, we also have a method <CODE>rect</CODE> which adds a rectangular 
+path to the path list.</P>
+<DIV style="background: rgb(239, 248, 206); border: 1px solid rgb(208, 221, 158); padding-left: 10px; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;"> 
+
+<P><CODE><STRONG>rect</STRONG>(x, y, width, height)</CODE></P></DIV>
+<P>This method takes four arguments. The <CODE>x</CODE> and <CODE>y</CODE> 
+parameters define the coordinate of the top left corner of the new rectangular 
+path. <CODE>width</CODE> and <CODE>height</CODE> define the width and the height 
+of the rectangle.</P>
+<P>When this method is executed, the <CODE>moveTo</CODE> method is automatically 
+called with the parameters (0,0) (i.e. it resets the starting point to its 
+default location).</P></DIV>
+<DIV id="section_17"><SPAN id="Making_combinations"></SPAN>
+<H3 class="editable">Making combinations</H3>
+<P>In all examples on this page I've only used one type of path function per 
+shape. However there's absolutely no limitation to the amount or type of paths 
+you can use to create a shape. So in this last example I've tried to combine all 
+of the path functions to make a set of very famous game characters.</P>
+<DIV id="section_18"><SPAN id="Example"></SPAN>
+<H4 class="editable">Example</H4>
+<P>I'm not going to run through this complete script, but the most important 
+things to note are the function <CODE>roundedRect</CODE> and the use of the 
+<CODE>fillStyle</CODE> property. It can be very useful and time saving to define 
+your own functions to draw more complex shapes. In this script it would have 
+taken me twice as many lines of code as I have now.<BR> We will look at the 
+<CODE>fillStyle</CODE> property in greater depth later in this tutorial. Here 
+I'm using it to change the fill color from the default black, to white, and back 
+again.</P>
+<P><A class="external" title="samples/canvas-tutorial/2_7_canvas_combined.html" 
+href="https://developer.mozilla.org/samples/canvas-tutorial/2_7_canvas_combined.html" 
+rel="internal">View this example</A></P><PRE class="js" name="code">function draw() {
+  var ctx = document.getElementById('canvas').getContext('2d');
+  roundedRect(ctx,12,12,150,150,15);
+  roundedRect(ctx,19,19,150,150,9);
+  roundedRect(ctx,53,53,49,33,10);
+  roundedRect(ctx,53,119,49,16,6);
+  roundedRect(ctx,135,53,49,33,10);
+  roundedRect(ctx,135,119,25,49,10);
+
+  ctx.beginPath();
+  ctx.arc(37,37,13,Math.PI/7,-Math.PI/7,false);
+  ctx.lineTo(31,37);
+  ctx.fill();
+  for(var i=0;i&lt;8;i++){
+    ctx.fillRect(51+i*16,35,4,4);
+  }
+  for(i=0;i&lt;6;i++){
+    ctx.fillRect(115,51+i*16,4,4);
+  }
+  for(i=0;i&lt;8;i++){
+    ctx.fillRect(51+i*16,99,4,4);
+  }
+  ctx.beginPath();
+  ctx.moveTo(83,116);
+  ctx.lineTo(83,102);
+  ctx.bezierCurveTo(83,94,89,88,97,88);
+  ctx.bezierCurveTo(105,88,111,94,111,102);
+  ctx.lineTo(111,116);
+  ctx.lineTo(106.333,111.333);
+  ctx.lineTo(101.666,116);
+  ctx.lineTo(97,111.333);
+  ctx.lineTo(92.333,116);
+  ctx.lineTo(87.666,111.333);
+  ctx.lineTo(83,116);
+  ctx.fill();
+  ctx.fillStyle = "white";
+  ctx.beginPath();
+  ctx.moveTo(91,96);
+  ctx.bezierCurveTo(88,96,87,99,87,101);
+  ctx.bezierCurveTo(87,103,88,106,91,106);
+  ctx.bezierCurveTo(94,106,95,103,95,101);
+  ctx.bezierCurveTo(95,99,94,96,91,96);
+  ctx.moveTo(103,96);
+  ctx.bezierCurveTo(100,96,99,99,99,101);
+  ctx.bezierCurveTo(99,103,100,106,103,106);
+  ctx.bezierCurveTo(106,106,107,103,107,101);
+  ctx.bezierCurveTo(107,99,106,96,103,96);
+  ctx.fill();
+  ctx.fillStyle = "black";
+  ctx.beginPath();
+  ctx.arc(101,102,2,0,Math.PI*2,true);
+  ctx.fill();
+  ctx.beginPath();
+  ctx.arc(89,102,2,0,Math.PI*2,true);
+  ctx.fill();
+}
+function roundedRect(ctx,x,y,width,height,radius){
+  ctx.beginPath();
+  ctx.moveTo(x,y+radius);
+  ctx.lineTo(x,y+height-radius);
+  ctx.quadraticCurveTo(x,y+height,x+radius,y+height);
+  ctx.lineTo(x+width-radius,y+height);
+  ctx.quadraticCurveTo(x+width,y+height,x+width,y+height-radius);
+  ctx.lineTo(x+width,y+radius);
+  ctx.quadraticCurveTo(x+width,y,x+width-radius,y);
+  ctx.lineTo(x+radius,y);
+  ctx.quadraticCurveTo(x,y,x,y+radius);
+  ctx.stroke();
+}</PRE>
+<P>
+<DIV class="prevnext">
+<P align="right"><SPAN style="float: left;"><A href="https://developer.mozilla.org/en/Canvas_tutorial%3ABasic_usage" 
+rel="custom">« Previous</A></SPAN><A href="https://developer.mozilla.org/en/Canvas_tutorial%3AUsing_images" 
+rel="custom">Next »</A></P></DIV>
+<P></P>
+<P></P></DIV></DIV></DIV></DIV></DIV><SECTION class="page-meta"><SECTION id="page-tags">
+<H2>Tags <SPAN class="sub">(3)</SPAN></H2><A id="deki-page-tags-toggleview" 
+class="disabled" onclick="return false;" href="https://developer.mozilla.org/index.php?title=Special:Tags&amp;pageId=22793">Edit 
+tags</A>
+<DIV id="deki-page-tags">
+<UL class="tags">
+  <LI><A class="text" title="Canvas tutorial" href="https://developer.mozilla.org/Special:Tags?tag=Canvas+tutorial" 
+  tagid="1300">Canvas tutorial</A></LI>
+  <LI><A class="text" title="HTML:Canvas" href="https://developer.mozilla.org/Special:Tags?tag=HTML:Canvas" 
+  tagid="45">HTML:Canvas</A></LI>
+  <LI><A class="text" title="Tutorials" href="https://developer.mozilla.org/Special:Tags?tag=Tutorials" 
+  tagid="93">Tutorials</A></LI></UL></DIV></SECTION><SECTION id="page-files">
+<H2>Attachments <SPAN class="sub">(0)</SPAN></H2>
+<DIV id="pageFiles">
+<DIV class="nofiles">&nbsp;</DIV></DIV>
+<DIV id="deki-image-gallery-lite">
+<TABLE class="table empty" border="0" cellSpacing="0" cellPadding="0" width="100%">
+  <COLGROUP>
+  <COL width="33%">
+  <COL width="33%">
+  <COL width="33%"></COLGROUP>
+  <TBODY>
+  <TR class="bg1">
+    <TH class="col1" colSpan="3">Images 0</TH></TR>
+  <TR class="bg2">
+    <TD class="col1 empty" colSpan="3">No images to display in the 
+  gallery.</TD></TR></TBODY></TABLE></DIV>
+<P class="add"><A class="disabled " title="Attach file">Attach 
+file</A></P></SECTION></SECTION></DIV></ARTICLE>
+<P class="last-mod hideforedit">      Page last modified <A title="16:55, 16 Oct 2011" 
+href="https://developer.mozilla.org/index.php?title=en/Canvas_tutorial/Drawing_shapes&amp;action=history">16:55, 
+16 Oct 2011</A> by <A class="link-user" href="https://developer.mozilla.org/User:alanhaggai" 
+rel="internal">alanhaggai</A></P></DIV><!-- /#content-main --></DIV><!-- /.wrap -->
+</SECTION><!-- /#content --><FOOTER id="site-info" role="contentinfo">
+<DIV class="wrap">
+<DIV id="legal"><IMG alt="" src="Drawing%20shapes%20-%20MDN_files/mdn-logo-tiny.png" 
+width="42" height="48">
+<P id="copyright">© 2012 Mozilla Developer Network</P>
+<P>Content is available under <A href="https://developer.mozilla.org/Project:Copyrights">these 
+licenses</A> • <A href="https://developer.mozilla.org/Project:en/About">About 
+MDN</A> • <A 
+href="http://www.mozilla.org/about/policies/privacy-policy.html">Privacy 
+Policy</A> • <A href="https://developer.mozilla.org/Project:en/Using_the_Mozilla_Developer_Center">Help</A></P></DIV>
+<UL class="user-state">
+  <LI><A href="https://developer.mozilla.org/users/login">Sign in</A></LI></UL>
+</DIV></FOOTER>
+<DIV style="display: none;" id="MTMessage" class="ui-msg-wrap">
+<DIV id="MTMessageStyle" class="ui-msg ui-errormsg">
+<DIV class="ui-msg-opt">
+<UL>
+  <LI><A class="dismiss" onclick="return MTMessage.Hide();" href="https://developer.mozilla.org/en/Canvas_tutorial/Drawing_shapes#">dismiss 
+  message</A></LI>
+  <LI><A id="MTMessageDetailsLink" class="details" onclick="return MTMessage.ShowDetails(this);" 
+  href="https://developer.mozilla.org/en/Canvas_tutorial/Drawing_shapes#">view 
+  details</A></LI></UL>
+<DIV class="ui-msg-autoclose"><SPAN style="display: inline;" id="MTMessageUnpaused">Message 
+will close by itself in <SPAN id="MTMessageTimer"></SPAN> seconds</SPAN><SPAN 
+style="display: none;" id="MTMessagePaused">Message timer has been 
+stopped</SPAN></DIV></DIV>
+<DIV id="MTMessageHeader" class="ui-msg-header"></DIV>
+<DIV id="MTMessageDesc" class="ui-msg-desc"></DIV>
+<DIV style="display: none;" id="MTMessageDetails" class="ui-msg-desc">
+<P>Viewing Details:</P></DIV></DIV></DIV>
+<SCRIPT type="text/javascript">$(function() {var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");$.getScript(gaJsHost + "google-analytics.com/ga.js", function() {try {var pageTracker = _gat._getTracker("UA-68075-16");pageTracker._setDomainName(".mindtouch.com");pageTracker._trackPageview();} catch(e) {}});});</SCRIPT>
+<!-- Served by pm-dekiwiki01.mozilla.org in 0.53 secs. --><!--
+	Verb      Path                                              Time(ms)       API Stats
+	GET       /deki/site/settings                                   5.91       request-time-ms=3; mysql-queries=2; mysql-time-ms=1; cache-ratio=0.00; cache-hit=0; cache-miss=-1; cache-del=0; cache-ins=1;
+	GET       /deki/users/=Anonymous                                6.43       request-time-ms=4; mysql-queries=4; mysql-time-ms=2; cache-ratio=-0.67; cache-hit=2; cache-miss=-5; cache-del=0; cache-ins=5;
+	GET       /deki/license                                         6.72       request-time-ms=2; mysql-queries=2; mysql-time-ms=1; cache-ratio=-0.50; cache-hit=1; cache-miss=-3; cache-del=0; cache-ins=3;
+	GET       /deki/pages/22793/contents                           80.07       request-time-ms=77; mysql-queries=17; mysql-time-ms=23; cache-ratio=Infinity; cache-hit=23; cache-miss=-23; cache-del=0; cache-ins=23;
+	GET       /deki/pages/22793                                    31.67       request-time-ms=28; mysql-queries=21; mysql-time-ms=18; cache-ratio=25.00; cache-hit=25; cache-miss=-24; cache-del=0; cache-ins=24;
+	GET       /deki/pages/22793/info                                5.21       request-time-ms=3; mysql-queries=3; mysql-time-ms=2; cache-ratio=-0.67; cache-hit=2; cache-miss=-5; cache-del=0; cache-ins=5;
+	GET       /deki/pages/22793/tags                                6.81       request-time-ms=5; mysql-queries=5; mysql-time-ms=3; cache-ratio=-0.75; cache-hit=3; cache-miss=-7; cache-del=0; cache-ins=7;
+	GET       /deki/site/properties                                 8.88       request-time-ms=6; mysql-queries=4; mysql-time-ms=3; cache-ratio=-0.25; cache-hit=1; cache-miss=-5; cache-del=0; cache-ins=5;
+	GET       /deki/site/properties/urn%253Aui.deki.mindtouch.com%2523html.mdn.Transitional     5.31       request-time-ms=3; mysql-queries=3; mysql-time-ms=2; cache-ratio=-0.50; cache-hit=1; cache-miss=-3; cache-del=0; cache-ins=3;
+	GET       /deki/site/nav/=en%252FCanvas%2Btutorial%252FDrawing%2Bshapes/full   295.03       request-time-ms=293; mysql-queries=6; mysql-time-ms=290; cache-ratio=-6.00; cache-hit=6; cache-miss=-7; cache-del=0; cache-ins=7;
+	GET       /deki/pages/22793/tags                                6.78       request-time-ms=5; mysql-queries=5; mysql-time-ms=3; cache-ratio=-0.75; cache-hit=3; cache-miss=-7; cache-del=0; cache-ins=7;
+	                                                             =======
+	                                                     Total:   458.81      
+	                                                     Ideal:   452.03      
+-->
+<DIV id="popupMessage"></DIV> 
+<DIV id="popupMask"></DIV>
+<DIV id="menuFiller"></DIV>
+<DIV id="bodyHeight"></DIV>
+<SCRIPT src="Drawing%20shapes%20-%20MDN_files/jsapi.js"></SCRIPT>
+
+<SCRIPT src="Drawing%20shapes%20-%20MDN_files/javascript.min.js"></SCRIPT>
+
+<SCRIPT type="text/javascript">
+//<![CDATA[
+var _tag=new WebTrends();
+_tag.dcsGetId();
+// Add custom parameters here.
+//_tag.DCSext.param_name=param_value;
+_tag.dcsCollect();
+//]]>>
+</SCRIPT>
+<NOSCRIPT>&lt; div&gt;&lt;img alt="DCSIMG" id="DCSIMG" width="1" height="1" 
+src="https://statse.webtrendslive.com/dcs8yrjuavz5bdaun34r2o8bi_8o8x/njs.gif?dcsuri=/nojavascript&amp;WT.js=No&amp;WT.tv=8.6.2"/&gt;&lt;/div&gt;
+</NOSCRIPT><!-- END OF SmartSource Data Collector TAG -->
+<SCRIPT type="text/javascript">/*<![CDATA[*/$(function(){dp.SyntaxHighlighter.HighlightAll('code');});/*]]>*/</SCRIPT>
+</BODY></HTML>

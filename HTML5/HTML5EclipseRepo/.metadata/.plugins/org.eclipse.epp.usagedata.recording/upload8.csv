@@ -1,0 +1,26 @@
+what,kind,bundleId,bundleVersion,description,time
+started,bundle,org.eclipse.wst.html.ui,1.0.400.v200904292008,"org.eclipse.wst.html.ui",1469438744595
+started,bundle,org.eclipse.jst.jsp.core,1.2.202.v200905081451,"org.eclipse.jst.jsp.core",1469438744631
+started,bundle,org.eclipse.wst.wsdl.validation,1.1.401.v200902271605,"org.eclipse.wst.wsdl.validation",1469438744654
+started,bundle,org.eclipse.wst.xsd.core,1.1.401.v200903020335,"org.eclipse.wst.xsd.core",1469438744656
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1469438748892
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1469438752629
+started,bundle,org.eclipse.wst.ws.service.policy,1.0.103.v200905151848,"org.eclipse.wst.ws.service.policy",1469438752817
+started,bundle,org.eclipse.wst.command.env,1.0.408.v200903110045,"org.eclipse.wst.command.env",1469438752826
+started,bundle,org.eclipse.wst.ws,1.1.103.v200903111822,"org.eclipse.wst.ws",1469438752826
+started,bundle,org.eclipse.compare,3.5.0.I20090514-0808,"org.eclipse.compare",1469438753055
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1469438756260
+started,bundle,org.eclipse.ltk.core.refactoring,3.5.0.v20090513-2000,"org.eclipse.ltk.core.refactoring",1469438763874
+started,bundle,org.eclipse.ltk.ui.refactoring,3.4.100.v20090604,"org.eclipse.ltk.ui.refactoring",1469438763875
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1469438767306
+started,bundle,org.eclipse.wst.wsi.ui,1.0.500.v200901141851,"org.eclipse.wst.wsi.ui",1469438767572
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1469438770770
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1469438776409
+started,bundle,org.eclipse.equinox.p2.ui,1.0.100.v20090527-1812,"org.eclipse.equinox.p2.ui",1469438792638
+started,bundle,org.eclipse.equinox.p2.ui.sdk,1.0.100.v20090520-1905,"org.eclipse.equinox.p2.ui.sdk",1469438792639
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1469438792767
+error,log,,,"Unable to load the repository http://pydev.sf.net/updates/",1469438801544
+started,bundle,org.eclipse.equinox.p2.updatesite,1.0.100.v20090525,"org.eclipse.equinox.p2.updatesite",1469438803167
+error,log,,,"Unable to load the repository http://download.eclipse.org/tools/cdt",1469438803542
+error,log,,,"Unable to load the repository http://pydev.org/updates",1469438809591
+error,log,,,"Unable to load the repository http://download.eclipse.org/tools/mylyn/update/e3.4/",1469438811618

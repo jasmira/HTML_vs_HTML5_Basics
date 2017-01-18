@@ -1,0 +1,12 @@
+@font-face {
+	font-family: 'html5css3';
+	src: url('fonts/ColabReg-webfont.eot');
+	src: local(''), url('fonts/ColabReg-webfont.woff') format('woff'), url('fonts/ColabReg-webfont.ttf') format('truetype'), url('fonts/ColabReg-webfont.svg#webfont') format('svg');
+}
+
+@font-face {
+	font-family: 'accenture';
+	src: url('fonts/HighlandGothicLightFLF-webfont.eot');
+	src: local(''), url('fonts/HighlandGothicLightFLF-webfont.woff') format('woff'), url('fonts/HighlandGothicLightFLF-webfont.ttf') format('truetype'), url('fonts/HighlandGothicLightFLF-webfont.svg#webfont') format('svg');
+}
+

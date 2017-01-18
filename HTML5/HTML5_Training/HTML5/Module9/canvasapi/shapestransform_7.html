@@ -1,0 +1,37 @@
+<!doctype html>
+<head>
+<title>
+Drawing Shapes in Canvas
+</title>
+</head>
+<body>
+<canvas id="c1" width="500" height="300">
+    <p>Your Browser Does Not Support HTML5 canvas!</p>
+</canvas>  
+<hr/>
+
+
+<script language="javascript">
+var grid_canvas = document.getElementById("c1");
+var grid = grid_canvas.getContext("2d");
+    
+grid.fillStyle = "rgb(150,150,150)";
+grid.fillRect(0,0,100,100);  
+
+grid.translate(100,100);
+grid.fillStyle = "rgb(0,0,255)";
+grid.fillRect(0,0,100,100);  
+
+grid.rotate(20);
+grid.fillStyle = "rgb(0,255,0)";
+grid.fillRect(0,0,100,100);  
+
+grid.scale(200,200);
+grid.fillStyle = "rgba(0,255,123,0.2)";
+grid.fillRect(0,0,100,100);  
+
+
+</script>
+
+</body>
+</html>

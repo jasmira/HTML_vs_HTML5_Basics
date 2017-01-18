@@ -1,0 +1,66 @@
+context.transform(a,b,c,d,e,f);
+Parameter
+
+Values
+
+Description
+
+Play it
+
+
+
+a
+
+scale-x
+
+Scales the drawings horizontally
+
+Play it »
+
+
+
+b
+
+skew-x
+
+Skew the the drawings horizontally
+
+Play it »
+
+
+
+c
+
+skew-y
+
+Skew the the drawings vertically
+
+Play it »
+
+
+
+d
+
+scale-y
+
+Scales the drawings vertically
+
+Play it »
+
+
+
+e
+
+translate-x
+
+Moves the the drawings horizontally
+
+Play it »
+
+
+
+f
+
+translate-y
+
+Moves the the drawings vertically

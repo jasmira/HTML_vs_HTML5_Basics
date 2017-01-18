@@ -1,0 +1,19 @@
+<!doctype html>
+<head>
+<title>
+WebWorkers
+</title>
+<body>
+<script type="text/javascript">
+
+var worker = new Worker('doWork.js');
+
+worker.addEventListener('message', function(e) {
+  //alert('Worker said: ', e.data);
+}, true);
+
+worker.postMessage('Hello World'); 
+</script>
+</body>
+</html>
+

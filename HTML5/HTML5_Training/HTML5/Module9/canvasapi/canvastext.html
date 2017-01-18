@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<script type="text/javascript">
+function drawShape(){
+  // get the canvas element using the DOM
+  var canvas = document.getElementById('mycanvas');
+ 
+  // Make sure we don't execute when canvas isn't supported
+  if (canvas.getContext){
+ 
+    // use getContext to use the canvas for drawing
+    var ctx = canvas.getContext('2d');
+ 
+    ctx.fillStyle    = '#00F';
+    ctx.font         = 'Italic 80px Sans-Serif';
+    ctx.textBaseline = 'middle';
+    ctx.fillText  ('Hello Canvas!', 40, 100);
+    ctx.strokeStyle    = 'red';
+    ctx.strokeText('Hello Canvas!', 40, 100);
+
+    ctx.font         = 'Bold 30px Sans-Serif';
+    ctx.strokeText('Hi Canvas!', 40, 50); 
+/* ctx.translate(1500, 1500); */
+
+  
+  } else {
+    alert('Canvas not supported');
+  }
+}
+</script>
+</head>
+<body onload="drawShape();">
+   <canvas id="mycanvas"></canvas>
+</body>
+</html>

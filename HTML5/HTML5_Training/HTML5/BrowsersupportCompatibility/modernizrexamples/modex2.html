@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+	<meta charset="utf-8">
+	<title>My Beautiful Sample Page</title>
+	<script src="modernizr-2.5.3.js"></script>
+
+<style>
+
+h1 {
+	color: #e33a89;
+	font: 27px/27px Baskerville, Palatino, "Palatino Linotype", 
+        "Book Antiqua", Georgia, serif;
+	margin: 0;
+	text-shadow: #aaa 5px 5px 5px;
+}
+
+@font-face {
+	src: url(Beautiful-ES.ttf);
+	font-family: "Beautiful";
+}
+.fontface h1 {
+	font: 42px/50px Beautiful;
+	text-shadow: none;
+}
+/*tested */
+.csscolumns ol {
+	-moz-column-count: 2;
+	-webkit-columns: 2;
+	-o-columns: 2;
+	columns: 2;
+}
+.no-csscolumns ol {
+	float: left;
+	margin: 0 0 20px;
+}
+.no-csscolumns ol li {
+	float: left;
+	width: 180px;
+}
+
+.box {
+   border-bottom: 1px solid #666;
+   border-right: 1px solid #777;
+}
+.boxshadow div.box {
+   border: none;
+   -webkit-box-shadow: #666 1px 1px 1px;
+      -moz-box-shadow: #666 1px 1px 1px;
+               box-shadow: #666 1px 1px 1px;
+}
+
+.no-cssgradients #d1 {
+    background: url("buttonimg.jpg"); 
+
+}
+
+.cssgradients #d1 {
+    background-image: linear-gradient(top, green, blue);
+}
+</style>
+</head>
+<body>
+features supported by modernizr
+<ol class="features">
+
+<li>    applicationCache</li>
+<li>
+
+    border-image:
+</li>
+<li>
+    border-radius:
+</li>
+<li>
+    box-shadow
+</li>
+<li>
+    Canvas
+</li>
+<li>
+    Canvas Text
+</li>
+<li>
+    CSS 2D Transforms
+</li>
+<li>
+
+    CSS 3D Transforms
+</li>
+<li>
+
+    CSS Animations
+
+</li>
+<li>
+
+    CSS Columns
+</li>
+<li>
+
+    CSS Gradients
+</li>
+<li>
+
+    CSS Reflections
+</li>
+<li>
+
+    CSS Transitions
+</li>
+<li>
+
+    @font-face
+</li>
+<li>
+
+    Geolocation API
+</li>
+<li>
+
+    hsla()
+</li>
+<li>
+
+    HTML5 Audio
+</li>
+<li>
+
+    HTML5 Video
+</li>
+<li>
+
+    Input Attributes
+</li>
+<li>
+
+
+    Input Types
+</li>
+<li>
+
+    localStorage
+</li>
+<li>
+
+    Multiple backgrounds
+</li>
+<li>
+
+    opacity:
+</li>
+<li>
+
+    rgba()
+</li>
+<li>
+
+    sessionStorage
+</li>
+<li>
+
+    Web Workers
+</li>
+</ol>
+
+<div id="d1" style="width:20%;height:40%">
+Audio vvideo
+var audio = new Audio();
+audio.src = Modernizr.audio.ogg ? 'background.ogg' :
+            Modernizr.audio.mp3 ? 'background.mp3' :
+                                  'background.m4a';
+audio.play();
+<br>
+</div>
+</body>
+</html>

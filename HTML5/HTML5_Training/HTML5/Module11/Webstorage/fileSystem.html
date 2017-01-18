@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+<title>
+File System API in HTML5
+</title>
+</head>
+<body>
+<script type="text/javascript">
+function writefile()
+{
+alert("write")
+window.requestFileSystem(window.TEMPORARY, 1024*1024, wfs, errwfs);
+alert("about write")
+}
+function wfs()
+{
+alert("wfs");
+}
+
+function errwfs()
+{
+alert("errwfs");
+}
+
+function readfile()
+{
+alert("read file");
+
+}
+</script>
+<input type="button" onclick="writefile()" value="writefile()">
+<br/>
+<input type="button" onclick="readfile()" value="readfile()">
+<br/>
+
+</body>
+</html>

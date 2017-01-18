@@ -1,0 +1,29 @@
+Canvas notes
+transformations
+save()
+restore()
+translate(x, y)
+rotate(angle)
+scale(x, y)
+transform(m11, m21, m21, m22, dx, dy)
+setTransform(m11, m21, m21, m22, dx, dy)
+
+m11  m21  dx
+m12  m22  dy
+0   0  1
+
+
+________________
+optimizations
+
+_________
+images
+get the image
+var img= new Image();
+img.src='img.png';
+
+var img= new Image()
+var img.onload = function()
+{
+
+}

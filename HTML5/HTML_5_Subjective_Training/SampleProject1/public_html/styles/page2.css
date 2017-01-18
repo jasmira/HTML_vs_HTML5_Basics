@@ -1,0 +1,23 @@
+form {
+    border: solid 1px;
+    padding: 5px;
+    background-color: lightblue;
+    width: 300px;
+    margin: auto;
+}
+
+
+form label, form input{
+    width: 250px;
+    float: left;
+    margin-bottom: 10px;
+}
+
+br {
+    clear: left;
+}
+
+h2{
+    text-align: center;
+    
+}

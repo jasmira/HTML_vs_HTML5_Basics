@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+<script language="json2.js">
+</script>
+
+</head>
+<body>
+<button id="b1" onclick="sayHI()">Say HI</button>
+<button onclick="unknownCmd()">Send unknown command</button>
+<button onclick="stop()">Stop worker</button>
+<output id="result"></output>
+<script>
+ var w = new Worker('exjson.js');
+  function sayHI() {
+    w.postMessage(JSON.stringify({'cmd': 'start', 'msg': 'Hi'}));
+  }
+  function stop() {
+    w.postMessage(JSON.stringify({'cmd': 'stop', 'msg': 'Bye'}));
+  }
+  function unknownCmd() {
+    w.postMessage(JSON.stringify({'cmd': 'Know', 'msg': '???'}));
+  }
+ 
+  w.addEventListener('message', function(e) {
+
+var x= e.data;
+eval("("+contact+")")
+    document.getElementById('result').textContent = e.data;
+  }, false);
+</script>
+</body>
+</html>

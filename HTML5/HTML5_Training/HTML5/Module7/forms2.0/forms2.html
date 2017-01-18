@@ -1,0 +1,71 @@
+<html>
+<head>
+<title>Stylizing forms </title>
+<style>
+INPUT {
+	font-family:arial;
+	font-family:SansationLight;
+	font-size:9pt;
+	font-weight:bold;
+	background-color:336699;
+	border-color:336699;
+	border-style:solid;
+	border-width:2px;
+	color:gray;
+ height:20px ;
+-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+border-radius:10px;
+color:#FFFFFF;
+}
+form
+{
+margin-left:30%;
+width:50%;
+height:auto;
+border-color:336699;
+border-style:solid;
+border-width:2px;
+-moz-border-radius: 10px;
+-webkit-border-radius: 10px;
+border-radius:10px;
+padding:3%;
+}
+</style>
+
+</head>
+<body>
+<FORM>
+<p><label >First Name </label>
+<input name=“FirstName” type=“text”>
+</p>
+<p>
+<label >Last Name </label>
+<input name=“LastName” type=“text”>
+</p>
+<p>
+
+<label >Date Of Birth </label>
+<input name=“DOB” type=“date”>
+</p>
+<p>
+
+<label >Email Address </label>
+<input name=“email” type=“email”>
+</p>
+<p>
+
+<label >Your Personal Web Site</label>
+<input name=“WebSite” type=“URL”>
+</p>
+<p>
+
+<label >How Many Hours Do You Surf The Web Each Week?
+</label>
+<input name=“SurfWeb” type=“range” min=“1” max=“20”
+value=“0”><output name=“result” onforminput=“value=a.
+value”>0</output>
+
+</FORM>
+</body>
+</html>

@@ -1,0 +1,37 @@
+
+Property and Description
+
+ 
+
+1
+
+font [ = value ]
+ This property returns the current font settings and can be set, to change the font.
+
+ 
+
+2
+
+textAlign [ = value ]
+This property returns the current text alignment settings and can be set, to change the alignment. The possible values are start, end, left, right, and center.
+
+ 
+
+3
+
+textBaseline [ = value ]
+This property returns the current baseline alignment settings and can be set, to change the baseline alignment. The possible values are top, hanging, middle , alphabetic, ideographic and bottom 
+
+
+
+4
+
+fillText(text, x, y [, maxWidth ] )
+This property fills the given text at the given position indicated by the given coordinates x and y.
+
+ 
+
+5
+
+strokeText(text, x, y [, maxWidth ] )
+This property strokes the given text at the given position indicated by the given coordinates x and y.

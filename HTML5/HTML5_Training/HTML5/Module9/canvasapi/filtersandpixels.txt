@@ -1,0 +1,49 @@
+Pixel based manipulation
+The 2D Context API provides you with three methods that help you draw pixel-by-pixel: createImageData, getImageData, and putImageData.
+
+Raw pixels are held in objects of type ImageData. Each object has three properties: width, height and data. The data property is of type CanvasPixelArray, holding a number of elements equal to width*height*4; this means that for every pixel you define the red, green, blue and alpha values of all the pixels, in the order you want them to appear (all the values range from 0 to 255, including alpha!). Pixels are ordered left to right, row by row, from top to bottom.
+
+
+FILTTERS
+div { +filter: grayscale(100%); 
+__________
+
+ilter effect	Browser support	Performance
+grayscale
+Chrome
+very fast
+sepia
+Chrome
+very fast
+saturate
+Chrome
+very fast
+hue-rotate
+Chrome
+fast
+invert
+Chrome
+very fast
+opacity
+Chrome
+can be slow
+brightness
+Chrome
+fast
+contrast
+Chrome
+fast
+blur
+Chrome
+slow unless accelerated
+drop-shadow
+Chrome
+can be slow
+url()
+Mozilla
+Varies, fast to slow
+
+
+<filter id=”foo”>...</filter>
+then from CSS you could do something as simple as:
+	div { +filter: url(#foo); }

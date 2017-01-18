@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<script type="text/javascript">
+var db = openDatabase('hr', '1.0', 'Human Resources', 2 * 1024 * 1024);
+var msg;
+db.transaction(function (tx) {
+  tx.executeSql('CREATE TABLE IF NOT EXISTS emp (empid unique, empname)');
+  tx.executeSql('INSERT INTO emp (empid, empname) VALUES (1, "Mohini")');
+tx.executeSql('INSERT INTO emp (empid, empname) VALUES (2, "Seema")');  msg = '<p>Log message created and row inserted.</p>';
+  document.querySelector('#answer').innerHTML =  msg;
+});
+
+db.transaction(function (tx) {
+  tx.executeSql('SELECT * FROM emp', [], function (tx, results) {
+   var len = results.rows.length, i;
+   msg = "<p>Found rows: " + len + "</p>";
+   document.querySelector('#answer').innerHTML +=  msg;
+   for (i = 0; i < len; i++){
+     msg = "<p><b>" + results.rows.item(i).empname + "</b></p>";
+     document.querySelector('#answer').innerHTML +=  msg;
+   }
+
+var ans= "The id of " +results.rows.item(0).empname +" is" + results.rows.item(0).empid;
+
+document.getElementById("test").innerHTML= ans;
+
+ }, null);
+});
+</script>
+</head>
+<body>
+<div id="answer" name="answer">Status Message</div>
+<hr/>
+<div id="test" name="answer">Status Message</div>
+</body>
+</html>

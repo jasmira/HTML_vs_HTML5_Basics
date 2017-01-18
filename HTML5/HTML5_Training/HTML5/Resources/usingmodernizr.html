@@ -1,0 +1,28 @@
+<!doctype html>
+<head>
+<title>Using Modernizr</title>
+<script src="modernizr.js">
+</script>
+<script language="javascript">
+
+window.onload = function() {
+    // get the form and its input elements
+    var form = document.forms[0],
+        inputs = form.elements;
+    // if no autofocus, put the focus in the first field
+    if (!Modernizr.input.autofocus) {
+alert("hi");
+        inputs[1].focus();
+    }
+    
+}
+</script>
+</head>
+<body>
+<form>
+<input type="text" >
+<br/>
+<input type="text" autofocus>
+</form>
+</body>
+</html>
